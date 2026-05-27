@@ -1,0 +1,12 @@
+from pycheevos.core.helpers import *
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Memory:
+{% for note in notes %}
+    {%+ if note.region %}{{ note.region|upper }}_{% endif %}{{ note.slug }} = {{ note.type }}({{ note.address}})
+    """
+    {{ note.note|indent }}
+    """
+
+{% endfor %}

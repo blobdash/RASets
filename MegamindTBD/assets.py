@@ -1,0 +1,138 @@
+from pycheevos.models.achievement import Achievement
+from pycheevos.models.leaderboard import Leaderboard
+from pycheevos.core.constants import AchievementType, LeaderboardFormat
+from collections import OrderedDict
+
+achievements = OrderedDict({
+    611949: Achievement(
+        id=611949,
+        title="""Chaos in the Streets""",
+        description="""Clear Downtown 1""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611954: Achievement(
+        id=611954,
+        title="""Construction Site Raid""",
+        description="""Clear Downtown 2""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611955: Achievement(
+        id=611955,
+        title="""Feeling like Spiderman""",
+        description="""Clear Downtown 3""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611956: Achievement(
+        id=611956,
+        title="""City Heights""",
+        description="""Clear Downtown 4""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611957: Achievement(
+        id=611957,
+        title="""My Unworthy Opponent""",
+        description="""Clear Downtown 5""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611958: Achievement(
+        id=611958,
+        title="""Entering the Sewers""",
+        description="""Clear Underground 1""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611959: Achievement(
+        id=611959,
+        title="""The Underground Command Center""",
+        description="""Clear Underground 2""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611960: Achievement(
+        id=611960,
+        title="""Acid Complex""",
+        description="""Clear Underground 3""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611961: Achievement(
+        id=611961,
+        title="""Through the Railyard""",
+        description="""Clear Underground 4""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611962: Achievement(
+        id=611962,
+        title="""Colorfully Deranged""",
+        description="""Clear Underground 5""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611963: Achievement(
+        id=611963,
+        title="""Loading Bay Inspection""",
+        description="""Clear Waterfront 1""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611964: Achievement(
+        id=611964,
+        title="""Under Construction!""",
+        description="""Clear Waterfront 2""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611965: Achievement(
+        id=611965,
+        title="""Shipment Labyrinth""",
+        description="""Clear Waterfront 3""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611966: Achievement(
+        id=611966,
+        title="""This is my Ship Now""",
+        description="""Clear Waterfront 4""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611967: Achievement(
+        id=611967,
+        title="""Hot Waters""",
+        description="""Clear Waterfront 5""",
+        points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    611968: Achievement(
+        id=611968,
+        title="""Another Impressive Performance""",
+        description="""Clear The Museum and beat the game.""",
+        points=10,
+        badge="00000",
+        type=AchievementType.WIN_CONDITION,
+    ),
+})
+
+leaderboards = OrderedDict({
+})

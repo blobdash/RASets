@@ -1,0 +1,4 @@
+requests
+tabulate
+pycheevos
+jinja2

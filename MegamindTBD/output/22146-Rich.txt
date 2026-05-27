@@ -1,0 +1,24 @@
+Lookup:Level
+3=Downtown 1
+4=Downtown 2
+5=Downtown 3
+6=Downtown 4
+7=Downtown 5
+8=The Museum
+9=Underground 1
+10=Underground 2
+11=Underground 3
+12=Underground 4
+13=Underground 5
+14=Waterfront 1
+15=Waterfront 2
+16=Waterfront 3
+17=Waterfront 4
+18=Waterfront 5
+*=UNDEF_LVL
+
+Display:
+?0xX00083154=4294967295?In the Main Menu
+?0xX00083154=4294967294?Loading...
+?0xX0008a000!=0?Megamind is fighting crime in @Level(0x00083154) • ❤️@Number(I:0xX0008a000-33554432_I:0xX00000064-33554432_I:0xX00000000-33554432_K:0xX0000010c_Q:{recall}<655360_M:{recall}/406)% • /48 🇲🇪🇬🇦 • /16 🎞️
+Playing Megamind: The Blue Defender

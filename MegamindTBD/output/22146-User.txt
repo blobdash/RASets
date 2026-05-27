@@ -1,0 +1,18 @@
+1.0
+Megamind: The Blue Defender
+611949:"0xX8a000!=0_d0xQ39855a=0_0xQ39855a=1":"Chaos in the Streets":"Clear Downtown 1":::progression:blobdash:5:::::00000
+611954:"0xX8a000!=0_d0xQ39855d=0_0xQ39855d=1":"Construction Site Raid":"Clear Downtown 2":::progression:blobdash:5:::::00000
+611955:"0xX8a000!=0_d0xQ398560=0_0xQ398560=1":"Feeling like Spiderman":"Clear Downtown 3":::progression:blobdash:5:::::00000
+611956:"0xX8a000!=0_d0xQ398563=0_0xQ398563=1":"City Heights":"Clear Downtown 4":::progression:blobdash:5:::::00000
+611957:"0xX8a000!=0_d0xQ398566=0_0xQ398566=1":"My Unworthy Opponent":"Clear Downtown 5":::progression:blobdash:5:::::00000
+611958:"0xX8a000!=0_d0xQ398569=0_0xQ398569=1":"Entering the Sewers":"Clear Underground 1":::progression:blobdash:5:::::00000
+611959:"0xX8a000!=0_d0xQ39856c=0_0xQ39856c=1":"The Underground Command Center":"Clear Underground 2":::progression:blobdash:5:::::00000
+611960:"0xX8a000!=0_d0xQ39856f=0_0xQ39856f=1":"Acid Complex":"Clear Underground 3":::progression:blobdash:5:::::00000
+611961:"0xX8a000!=0_d0xQ398572=0_0xQ398572=1":"Through the Railyard":"Clear Underground 4":::progression:blobdash:5:::::00000
+611962:"0xX8a000!=0_d0xQ398575=0_0xQ398575=1":"Colorfully Deranged":"Clear Underground 5":::progression:blobdash:5:::::00000
+611963:"0xX8a000!=0_d0xQ398578=0_0xQ398578=1":"Loading Bay Inspection":"Clear Waterfront 1":::progression:blobdash:5:::::00000
+611964:"0xX8a000!=0_d0xQ39857b=0_0xQ39857b=1":"Under Construction!":"Clear Waterfront 2":::progression:blobdash:5:::::00000
+611965:"0xX8a000!=0_d0xQ39857e=0_0xQ39857e=1":"Shipment Labyrinth":"Clear Waterfront 3":::progression:blobdash:5:::::00000
+611966:"0xX8a000!=0_d0xQ398581=0_0xQ398581=1":"This is my Ship Now":"Clear Waterfront 4":::progression:blobdash:5:::::00000
+611967:"0xX8a000!=0_d0xQ398584=0_0xQ398584=1":"Hot Waters":"Clear Waterfront 5":::progression:blobdash:5:::::00000
+611968:"0xX8a000!=0_d0xQ398587=0_0xQ398587=1":"Another Impressive Performance":"Clear The Museum and beat the game.":::win_condition:blobdash:10:::::00000
