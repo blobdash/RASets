@@ -1,3 +1,4 @@
+from pycheevos.models.leaderboard import Leaderboard
 from pycheevos.models.set import AchievementSet
 from pycheevos.models.achievement import Achievement
 from pycheevos.core.helpers import *
@@ -5,7 +6,7 @@ from pycheevos.core.constants import *
 
 from logic import *
 from memory import Memory
-from framework import achievement, achievement_set
+from framework import achievement, achievement_set, leaderboard
 
 import assets
 
@@ -116,7 +117,94 @@ class MegamindSet(AchievementSet):
             on_first_clear(Memory.MUSEUM_STATE)
         )
     
+    @achievement(612686)
+    def massive_goon_extinction(self, ach: Achievement):
+        ach.add_core(
+            track_kills(1500)
+        )
+        ach.add_alt(
+            track_kills_alt(1500)
+        )
+        ach.add_alt(
+            (always_true())
+        )
     
+    @leaderboard(163681)
+    def dt1_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.DOWNTOWN_1, lb)
+    
+    @leaderboard(163685)
+    def dt2_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.DOWNTOWN_2, lb)
+    
+    @leaderboard(163686)
+    def dt3_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.DOWNTOWN_3, lb)
+    
+    @leaderboard(163687)
+    def dt4_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.DOWNTOWN_4, lb)
+    
+    @leaderboard(163688)
+    def dt5_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.DOWNTOWN_5, lb)
+
+    @leaderboard(163689)
+    def ug1_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.UNDERGROUND_1, lb)
+    
+    @leaderboard(163690)
+    def ug2_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.UNDERGROUND_2, lb)
+    
+    @leaderboard(163691)
+    def ug3_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.UNDERGROUND_3, lb)
+    
+    @leaderboard(163692)
+    def ug4_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.UNDERGROUND_4, lb)
+    
+    @leaderboard(163693)
+    def ug5_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.UNDERGROUND_5, lb)
+
+    @leaderboard(163694)
+    def wf1_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.WATERFRONT_1, lb)
+    
+    @leaderboard(163695)
+    def wf2_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.WATERFRONT_2, lb)
+    
+    @leaderboard(163696)
+    def wf3_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.WATERFRONT_3, lb)
+    
+    @leaderboard(163697)
+    def wf4_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.WATERFRONT_4, lb)
+    
+    @leaderboard(163698)
+    def wf5_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.WATERFRONT_5, lb)
+    
+    @leaderboard(163699)
+    def museum_tt_lb(self, lb: Leaderboard):
+        generate_single_tt_lb(Levels.MUSEUM, lb)
+
+    @leaderboard(163717)
+    def downtown_section_tt_lb(self, lb: Leaderboard):
+        generate_section_tt_lb(range(Levels.DOWNTOWN_1, Levels.DOWNTOWN_5+1), lb)
+
+    @leaderboard(163718)
+    def underground_section_tt_lb(self, lb: Leaderboard):
+        generate_section_tt_lb(range(Levels.UNDERGROUND_1, Levels.UNDERGROUND_5+1), lb)
+
+    @leaderboard(163719)
+    def waterfront_section_tt_lb(self, lb: Leaderboard):
+        generate_section_tt_lb(range(Levels.WATERFRONT_1, Levels.WATERFRONT_5+1), lb)
+        
 
 if __name__=="__main__":
     MegamindSet().save("output/")

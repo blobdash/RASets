@@ -20,6 +20,9 @@ class Memory:
     [32-bit Pointer] Root (null when not ingame)
     +0x64: [32-bit Pointer]
     ++0x00: [32-bit Pointer] Player Struct
+    +++0x48 [32-bit Pointer] ???
+    ++++0x138 [32-bit Pointer] ???
+    +++++0x4 [32-bit] Kills during level
     +++0xa8: [32-bit] Position X
     +++0xac: [32-bit] Position Z
     +++0xb0: [32-bit] Position Y
@@ -64,6 +67,13 @@ class Memory:
     0x07 = Expand-O-Matic
     0x08 = Doom Barrage
     0x0e = Nothing (happens after loading a level)
+    """
+
+    END_SCREEN_REACHED = byte(0x398443)
+    """
+    [8-bit] End Screen Reached
+    0x00 = Not reached, reset on new level load
+    0x01 = Inside end screen
     """
 
     DOWNTOWN_1_COLLECTIBLES = byte(0x398558)
@@ -336,5 +346,23 @@ class Memory:
     [8-bit BitCount] Museum State
     bit0 = Unlocked
     bit4 = Cleared
+    """
+
+    TOTAL_ENNEMY_KILLS = word(0x3985a8)
+    """
+    [16-bit] Total Ennemy Kills (written on level finish)
+    """
+
+    PAUSED_STATE = byte(0x39a2f4)
+    """
+    [8-bit] Paused State
+    0x00 = Unpaused
+    0x01 = Paused
+    Affected by pause menu, dialog boxes (anything that will say Paused on top screen)
+    """
+
+    FRAMES_SINCE_GAME_START = dword(0x3ffc3c)
+    """
+    [32-bit] Frames since game start
     """
 

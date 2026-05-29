@@ -2,7 +2,7 @@
 Megamind: The Blue Defender
 611949:"0xX8a000!=0_d0xQ39855a=0_0xQ39855a=1":"Chaos in the Streets":"Clear Downtown 1":::progression:blobdash:5:::::00000
 611954:"0xX8a000!=0_d0xQ39855d=0_0xQ39855d=1":"Construction Site Raid":"Clear Downtown 2":::progression:blobdash:5:::::00000
-611955:"0xX8a000!=0_d0xQ398560=0_0xQ398560=1":"Feeling like Spiderman":"Clear Downtown 3":::progression:blobdash:5:::::00000
+611955:"0xX8a000!=0_d0xQ398560=0_0xQ398560=1":"Feeling Llike Spiderman":"Clear Downtown 3":::progression:blobdash:5:::::00000
 611956:"0xX8a000!=0_d0xQ398563=0_0xQ398563=1":"City Heights":"Clear Downtown 4":::progression:blobdash:5:::::00000
 611957:"0xX8a000!=0_d0xQ398566=0_0xQ398566=1":"My Unworthy Opponent":"Clear Downtown 5":::progression:blobdash:5:::::00000
 611958:"0xX8a000!=0_d0xQ398569=0_0xQ398569=1":"Entering the Sewers":"Clear Underground 1":::progression:blobdash:5:::::00000
@@ -13,6 +13,26 @@ Megamind: The Blue Defender
 611963:"0xX8a000!=0_d0xQ398578=0_0xQ398578=1":"Loading Bay Inspection":"Clear Waterfront 1":::progression:blobdash:5:::::00000
 611964:"0xX8a000!=0_d0xQ39857b=0_0xQ39857b=1":"Under Construction!":"Clear Waterfront 2":::progression:blobdash:5:::::00000
 611965:"0xX8a000!=0_d0xQ39857e=0_0xQ39857e=1":"Shipment Labyrinth":"Clear Waterfront 3":::progression:blobdash:5:::::00000
-611966:"0xX8a000!=0_d0xQ398581=0_0xQ398581=1":"This is my Ship Now":"Clear Waterfront 4":::progression:blobdash:5:::::00000
+611966:"0xX8a000!=0_d0xQ398581=0_0xQ398581=1":"I'm the Captain Now":"Clear Waterfront 4":::progression:blobdash:5:::::00000
 611967:"0xX8a000!=0_d0xQ398584=0_0xQ398584=1":"Hot Waters":"Clear Waterfront 5":::progression:blobdash:5:::::00000
 611968:"0xX8a000!=0_d0xQ398587=0_0xQ398587=1":"Another Impressive Performance":"Clear The Museum and beat the game.":::win_condition:blobdash:10:::::00000
+1000018:"0xH398443=0_A:0x3985a8_I:0xW8a000_I:0xW0064_I:0xW0000_I:0xW0048_I:0xW0138_d0xX0004<1500_A:0x3985a8_I:0xW8a000_I:0xW0064_I:0xW0000_I:0xW0048_I:0xW0138_0xX0004>=1500SM:0x3985a8=1500S1=1":"massive_goon_extinction":""::::blobdash:0:::::00000
+L163681:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=3_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Downtown 1 Time Trial:Clear Downtown 1 as fast as possible:1
+L163685:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=4_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Downtown 2 Time Trial:Clear Downtown 2 as fast as possible:1
+L163686:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=5_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Downtown 3 Time Trial:Clear Downtown 3 as fast as possible:1
+L163687:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=6_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Downtown 4 Time Trial:Clear Downtown 4 as fast as possible:1
+L163688:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=7_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Downtown 5 Time Trial:Clear Downtown 5 as fast as possible:1
+L163689:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=9_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Underground 1 Time Trial:Clear Underground 1 as fast as possible:1
+L163690:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=10_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Underground 2 Time Trial:Clear Underground 2 as fast as possible:1
+L163691:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=11_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Underground 3 Time Trial:Clear Underground 3 as fast as possible:1
+L163692:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=12_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Underground 4 Time Trial:Clear Underground 4 as fast as possible:1
+L163693:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=13_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Underground 5 Time Trial:Clear Underground 5 as fast as possible:1
+L163694:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=14_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Waterfront 1 Time Trial:Clear Waterfront 1 as fast as possible:1
+L163695:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=15_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Waterfront 2 Time Trial:Clear Waterfront 2 as fast as possible:1
+L163696:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=16_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Waterfront 3 Time Trial:Clear Waterfront 3 as fast as possible:1
+L163697:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=17_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Waterfront 4 Time Trial:Clear Waterfront 4 as fast as possible:1
+L163698:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=18_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Waterfront 5 Time Trial:Clear Waterfront 5 as fast as possible:1
+L163699:"0xX8a000!=0_d0xX83154=4294967294_0xX83154=8_0xH398443=0":"0xX8a000=0_0xH398443=0":"d0xH398443=0_0xH398443=1":"M:0xH39a2f4!=1":TIME:Museum Time Trial:Clear The Museum as fast as possible:1
+L163717:"0xX8a000!=0_d0xX83154=4294967294_0xX83154>=3_0xX83154<=8_0xH398443=0":"0xX83154<4294967294_O:0xX83154>8_0xX83154<3":"N:d0xH398443=0_N:0xH398443=1_0xX83154=3.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=4.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=5.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=6.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=7.1.":"N:0xH39a2f4=0_M:0xX83154<4294967294":TIME:Downtown Section Time Trial:Clear all Downtown levels in any order as fast as possible:1
+L163718:"0xX8a000!=0_d0xX83154=4294967294_0xX83154>=9_0xX83154<=14_0xH398443=0":"0xX83154<4294967294_O:0xX83154>14_0xX83154<9":"N:d0xH398443=0_N:0xH398443=1_0xX83154=9.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=10.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=11.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=12.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=13.1.":"N:0xH39a2f4=0_M:0xX83154<4294967294":TIME:Underground Section Time Trial:Clear all Underground levels in any order as fast as possible:1
+L163719:"0xX8a000!=0_d0xX83154=4294967294_0xX83154>=14_0xX83154<=19_0xH398443=0":"0xX83154<4294967294_O:0xX83154>19_0xX83154<14":"N:d0xH398443=0_N:0xH398443=1_0xX83154=14.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=15.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=16.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=17.1._N:d0xH398443=0_N:0xH398443=1_0xX83154=18.1.":"N:0xH39a2f4=0_M:0xX83154<4294967294":TIME:Waterfront Section Time Trial:Clear all Waterfront levels in any order as fast as possible:1
