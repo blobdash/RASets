@@ -1,5 +1,3 @@
-
-from ast import Constant
 from pycheevos.core.constants import *
 from pycheevos.core.helpers import *
 from pycheevos.core.value import MemoryValue
@@ -25,14 +23,12 @@ class Levels:
     WATERFRONT_4 = 17
     WATERFRONT_5 = 18
 
-class Weapons:
-    SCEPTER = 0x03
-    BLASTER = 0x04
-    FUSION = 0x05
-    LASSO = 0x06
-    EOM = 0x07
-    BARRAGE = 0x08
-    NOTHING = 0x0e
+class Weapons_Offsets:
+    BLASTER = 0x00
+    LASSO = 0x20
+    FUSION = 0x08
+    EOM = 0x10
+    BARRAGE = 0x18
 
 def ptr(value):
   return tbyte(value)
@@ -44,12 +40,18 @@ def on_first_clear(mem: MemoryValue) :
         (bit4(mem.address) == 1)
     )
 
+def weapon_unlock(weapon_offset: int):
+    return (
+        (Memory.ROOT != 0) &
+        ((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x00) >> ptr(0x2E8) >> ptr(0x1C) >> ptr(weapon_offset) >> delta(dword(0x70))) == 0) &
+        ((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x00) >> ptr(0x2E8) >> ptr(0x1C) >> ptr(weapon_offset) >> dword(0x70) == 1))
+    )
+
 def generate_single_tt_lb(levelid: int, lb: Leaderboard):
     lb.set_start(
         (Memory.ROOT != 0) &
         (delta(Memory.INGAME_CURRENT_STATUS) == 0xfffffffe) &
-        (Memory.INGAME_CURRENT_STATUS == levelid) &
-        (Memory.END_SCREEN_REACHED == 0x00)
+        (Memory.INGAME_CURRENT_STATUS == levelid)
     )
     lb.set_cancel(
         (Memory.ROOT == 0) &
@@ -68,8 +70,7 @@ def generate_section_tt_lb(range: range, lb: Leaderboard):
         (Memory.ROOT != 0) &
         (delta(Memory.INGAME_CURRENT_STATUS) == 0xfffffffe) &
         (Memory.INGAME_CURRENT_STATUS >= range.start) &
-        (Memory.INGAME_CURRENT_STATUS <= range.stop) &
-        (Memory.END_SCREEN_REACHED == 0x00)
+        (Memory.INGAME_CURRENT_STATUS <= range.stop)
     )
     lb.set_cancel(
         (Memory.INGAME_CURRENT_STATUS < 0xfffffffe) &
@@ -103,3 +104,11 @@ def track_kills_alt(quantity: int):
     return (
         measured(Memory.TOTAL_ENNEMY_KILLS == quantity)
     )
+
+def get_megas_for_level(level: MemoryValue):
+    return (group(
+        (add_source(bit0(level.address))),
+        (add_source(bit1(level.address))),
+        (add_source(bit2(level.address))),
+        (add_source(bit3(level.address))) 
+    ))

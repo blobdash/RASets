@@ -20,6 +20,14 @@ achievements = OrderedDict({
         badge="00000",
         type=AchievementType.PROGRESSION,
     ),
+    612811: Achievement(
+        id=612811,
+        title="""220kV of Evil Goodness""",
+        description="""Unlock the Electric Lasso""",
+        points=2,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
     611955: Achievement(
         id=611955,
         title="""Feeling Llike Spiderman""",
@@ -52,6 +60,14 @@ achievements = OrderedDict({
         badge="00000",
         type=AchievementType.PROGRESSION,
     ),
+    612812: Achievement(
+        id=612812,
+        title="""Bouncy Grenades""",
+        description="""Unlock the Fusion Bouncer""",
+        points=2,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
     611959: Achievement(
         id=611959,
         title="""The Underground Command Center""",
@@ -76,6 +92,14 @@ achievements = OrderedDict({
         badge="00000",
         type=AchievementType.PROGRESSION,
     ),
+    612813: Achievement(
+        id=612813,
+        title="""Expanding the Collection""",
+        description="""Unlock the Expand-O-Matic""",
+        points=2,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
     611962: Achievement(
         id=611962,
         title="""Colorfully Deranged""",
@@ -97,6 +121,14 @@ achievements = OrderedDict({
         title="""Under Construction!""",
         description="""Clear Waterfront 2""",
         points=5,
+        badge="00000",
+        type=AchievementType.PROGRESSION,
+    ),
+    612814: Achievement(
+        id=612814,
+        title="""The Michael Bay Gun""",
+        description="""Unlock the Doom Barrage""",
+        points=2,
         badge="00000",
         type=AchievementType.PROGRESSION,
     ),
@@ -137,6 +169,13 @@ achievements = OrderedDict({
         title="""Mass Goon Extinction""",
         description="""Defeat 1500 goons""",
         points=5,
+        badge="00000",
+    ),
+    612842: Achievement(
+        id=612842,
+        title="""Untouchable""",
+        description="""Complete any stage without taking damage.""",
+        points=10,
         badge="00000",
     ),
 })

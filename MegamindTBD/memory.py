@@ -35,26 +35,31 @@ class Memory:
     ++++++0x4c: [32-bit] Blaster Max Ammo
     ++++++0x50: [32-bit] Blaster Level
     ++++++0x54: [16-bit] Blaster EXP
+    ++++++0x70: [8-bit] Blaster Unlocked
     +++++0x20: [32-bit Pointer] Lasso
     ++++++0x48: [32-bit] Lasso Ammo
     ++++++0x4c: [32-bit] Lasso Max Ammo
     ++++++0x50: [32-bit] Lasso Level
     ++++++0x54: [16-bit] Lasso EXP
+    ++++++0x70: [8-bit] Lasso Unlocked
     +++++0x08: [32-bit Pointer] Fusion Bouncer
     ++++++0x48: [32-bit] FB Ammo
     ++++++0x4c: [32-bit] FB Max Ammo
     ++++++0x50: [32-bit] FB Level
     ++++++0x54: [16-bit] FB EXP
+    ++++++0x70: [8-bit] FB Unlocked
     +++++0x10: [32-bit Pointer] Expand-O-Matic
     ++++++0x48: [32-bit] EOM Ammo
     ++++++0x4c: [32-bit] EOM Max Ammo
     ++++++0x50: [32-bit] EOM Level
     ++++++0x54: [16-bit] EOM EXP
+    ++++++0x70: [8-bit] EOM Unlocked
     +++++0x18: [32-bit Pointer] Doom Barrage
     ++++++0x48: [32-bit] DB Ammo
     ++++++0x4c: [32-bit] DB Max Ammo
     ++++++0x50: [32-bit] DB Level
     ++++++0x54: [16-bit] DB EXP
+    ++++++0x70: [8-bit] DB Unlocked
     """
 
     LAST_USED_WEAPON = dword(0x386310)

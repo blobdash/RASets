@@ -117,6 +117,55 @@ class MegamindSet(AchievementSet):
             on_first_clear(Memory.MUSEUM_STATE)
         )
     
+    @achievement(612811)
+    def lasso_unlock(self, ach: Achievement):
+        ach.add_core(
+            weapon_unlock(Weapons_Offsets.LASSO)
+        )
+    
+    @achievement(612812)
+    def fusion_unlock(self, ach: Achievement):
+        ach.add_core(
+            weapon_unlock(Weapons_Offsets.FUSION)
+        )
+    
+    @achievement(612813)
+    def eom_unlock(self, ach: Achievement):
+        ach.add_core(
+            weapon_unlock(Weapons_Offsets.EOM)
+        )
+    
+    @achievement(612814)
+    def barrage_unlock(self, ach: Achievement):
+        ach.add_core(
+            weapon_unlock(Weapons_Offsets.BARRAGE)
+        )
+    
+    @achievement(612842)
+    def untouchable(self, ach: Achievement):
+        ach.add_core([
+            (
+                # checkpoint hit for entering level
+                (delta(Memory.INGAME_CURRENT_STATUS) == 0xfffffffe) &
+                (Memory.INGAME_CURRENT_STATUS < 0xfffffffe).with_hits(1)
+            ),
+            (
+                # resetif hp goes down
+                and_next((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x0) >> delta(dword(0x10c))) == 0xa000) &
+                reset_if((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x0) >> dword(0x10c)) < 0xa000)
+            ),
+            (
+                # resetif exited level
+                reset_if(Memory.INGAME_CURRENT_STATUS >= 0xfffffffe)
+            ),
+            (
+                # trigger if end screen goes from 0 to 1
+                trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
+                trigger(Memory.END_SCREEN_REACHED == 0x01)
+            )
+        ])
+    
+    
     @achievement(612686)
     def massive_goon_extinction(self, ach: Achievement):
         ach.add_core(
