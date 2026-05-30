@@ -141,6 +141,132 @@ class MegamindSet(AchievementSet):
             weapon_unlock(Weapons_Offsets.BARRAGE)
         )
     
+    @achievement(612844)
+    def downtown_megas(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            get_megas_deltas_for_level(Memory.DOWNTOWN_1_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.DOWNTOWN_2_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.DOWNTOWN_3_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.DOWNTOWN_4_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.DOWNTOWN_5_COLLECTIBLES),
+            (value(0x0) < 20),
+            get_megas_for_level(Memory.DOWNTOWN_1_COLLECTIBLES),
+            get_megas_for_level(Memory.DOWNTOWN_2_COLLECTIBLES),
+            get_megas_for_level(Memory.DOWNTOWN_3_COLLECTIBLES),
+            get_megas_for_level(Memory.DOWNTOWN_4_COLLECTIBLES),
+            get_megas_for_level(Memory.DOWNTOWN_5_COLLECTIBLES),
+            (measured(value(0x0) == 20))
+        ))
+
+    @achievement(612845)
+    def underground_megas(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            get_megas_deltas_for_level(Memory.UNDERGROUND_1_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.UNDERGROUND_2_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.UNDERGROUND_3_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.UNDERGROUND_4_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.UNDERGROUND_5_COLLECTIBLES),
+            (value(0x0) < 20),
+            get_megas_for_level(Memory.UNDERGROUND_1_COLLECTIBLES),
+            get_megas_for_level(Memory.UNDERGROUND_2_COLLECTIBLES),
+            get_megas_for_level(Memory.UNDERGROUND_3_COLLECTIBLES),
+            get_megas_for_level(Memory.UNDERGROUND_4_COLLECTIBLES),
+            get_megas_for_level(Memory.UNDERGROUND_5_COLLECTIBLES),
+            (measured(value(0x0) == 20))
+        ))
+    
+    @achievement(612846)
+    def waterfront_megas(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            get_megas_deltas_for_level(Memory.WATERFRONT_1_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.WATERFRONT_2_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.WATERFRONT_3_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.WATERFRONT_4_COLLECTIBLES),
+            get_megas_deltas_for_level(Memory.WATERFRONT_5_COLLECTIBLES),
+            (value(0x0) < 20),
+            get_megas_for_level(Memory.WATERFRONT_1_COLLECTIBLES),
+            get_megas_for_level(Memory.WATERFRONT_2_COLLECTIBLES),
+            get_megas_for_level(Memory.WATERFRONT_3_COLLECTIBLES),
+            get_megas_for_level(Memory.WATERFRONT_4_COLLECTIBLES),
+            get_megas_for_level(Memory.WATERFRONT_5_COLLECTIBLES),
+            (measured(value(0x0) == 20))
+        ))
+
+    @achievement(612847)
+    def museum_megas(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            get_megas_deltas_for_level(Memory.MUSEUM_COLLECTIBLES),
+            (value(0x0) < 4),
+            get_megas_for_level(Memory.MUSEUM_COLLECTIBLES),
+            (measured(value(0x0) == 4))
+        ))
+    
+    @achievement(612848)
+    def downtown_films(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            add_source(delta(bit4(Memory.DOWNTOWN_1_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.DOWNTOWN_2_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.DOWNTOWN_3_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.DOWNTOWN_4_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.DOWNTOWN_5_COLLECTIBLES.address))),
+            (value(0x0) == 4),
+            add_source(bit4(Memory.DOWNTOWN_1_COLLECTIBLES.address)),
+            add_source(bit4(Memory.DOWNTOWN_2_COLLECTIBLES.address)),
+            add_source(bit4(Memory.DOWNTOWN_3_COLLECTIBLES.address)),
+            add_source(bit4(Memory.DOWNTOWN_4_COLLECTIBLES.address)),
+            add_source(bit4(Memory.DOWNTOWN_5_COLLECTIBLES.address)),
+            (measured(value(0x0) == 5))
+        ))
+    
+    @achievement(612849)
+    def underground_films(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            add_source(delta(bit4(Memory.UNDERGROUND_1_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.UNDERGROUND_2_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.UNDERGROUND_3_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.UNDERGROUND_4_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.UNDERGROUND_5_COLLECTIBLES.address))),
+            (value(0x0) == 4),
+            add_source(bit4(Memory.UNDERGROUND_1_COLLECTIBLES.address)),
+            add_source(bit4(Memory.UNDERGROUND_2_COLLECTIBLES.address)),
+            add_source(bit4(Memory.UNDERGROUND_3_COLLECTIBLES.address)),
+            add_source(bit4(Memory.UNDERGROUND_4_COLLECTIBLES.address)),
+            add_source(bit4(Memory.UNDERGROUND_5_COLLECTIBLES.address)),
+            (measured(value(0x0) == 5))
+        ))
+
+    @achievement(612850)
+    def waterfront_films(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            add_source(delta(bit4(Memory.WATERFRONT_1_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.WATERFRONT_2_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.WATERFRONT_3_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.WATERFRONT_4_COLLECTIBLES.address))),
+            add_source(delta(bit4(Memory.WATERFRONT_5_COLLECTIBLES.address))),
+            (value(0x0) == 4),
+            add_source(bit4(Memory.WATERFRONT_1_COLLECTIBLES.address)),
+            add_source(bit4(Memory.WATERFRONT_2_COLLECTIBLES.address)),
+            add_source(bit4(Memory.WATERFRONT_3_COLLECTIBLES.address)),
+            add_source(bit4(Memory.WATERFRONT_4_COLLECTIBLES.address)),
+            add_source(bit4(Memory.WATERFRONT_5_COLLECTIBLES.address)),
+            (measured(value(0x0) == 5))
+        ))
+    
+    @achievement(612851)
+    def museum_film(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            delta(bit4(Memory.MUSEUM_COLLECTIBLES.address)) == 0,
+            bit4(Memory.MUSEUM_COLLECTIBLES.address) == 1
+        ))
+
     @achievement(612842)
     def untouchable(self, ach: Achievement):
         ach.add_core([
@@ -178,6 +304,34 @@ class MegamindSet(AchievementSet):
             (always_true())
         )
     
+    @achievement(612924)
+    def all_ingame_achievements(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            add_source(delta(bit0(Memory.ACHIEVEMENTS.address))),
+            add_source(delta(bit1(Memory.ACHIEVEMENTS.address))),
+            add_source(delta(bit2(Memory.ACHIEVEMENTS.address))),
+            add_source(delta(bit3(Memory.ACHIEVEMENTS.address))),
+            add_source(delta(bit4(Memory.ACHIEVEMENTS.address))),
+            add_source(delta(bit5(Memory.ACHIEVEMENTS.address))),
+            add_source(delta(bit6(Memory.ACHIEVEMENTS.address))),
+            add_source(delta(bit7(Memory.ACHIEVEMENTS.address))),
+            add_source(delta(bit0(Memory.ACHIEVEMENTS_1.address))),
+            add_source(delta(bit1(Memory.ACHIEVEMENTS_1.address))),
+            (value(0x0) < 10),
+            add_source(bit0(Memory.ACHIEVEMENTS.address)),
+            add_source(bit1(Memory.ACHIEVEMENTS.address)),
+            add_source(bit2(Memory.ACHIEVEMENTS.address)),
+            add_source(bit3(Memory.ACHIEVEMENTS.address)),
+            add_source(bit4(Memory.ACHIEVEMENTS.address)),
+            add_source(bit5(Memory.ACHIEVEMENTS.address)),
+            add_source(bit6(Memory.ACHIEVEMENTS.address)),
+            add_source(bit7(Memory.ACHIEVEMENTS.address)),
+            add_source(bit0(Memory.ACHIEVEMENTS_1.address)),
+            add_source(bit1(Memory.ACHIEVEMENTS_1.address)),
+            (value(0x0) == 10),
+        ))
+
     @leaderboard(163681)
     def dt1_tt_lb(self, lb: Leaderboard):
         generate_single_tt_lb(Levels.DOWNTOWN_1, lb)
@@ -244,15 +398,15 @@ class MegamindSet(AchievementSet):
 
     @leaderboard(163717)
     def downtown_section_tt_lb(self, lb: Leaderboard):
-        generate_section_tt_lb(range(Levels.DOWNTOWN_1, Levels.DOWNTOWN_5+1), lb)
+        generate_section_tt_lb(range(Levels.DOWNTOWN_1, Levels.DOWNTOWN_5 + 1), lb)
 
     @leaderboard(163718)
     def underground_section_tt_lb(self, lb: Leaderboard):
-        generate_section_tt_lb(range(Levels.UNDERGROUND_1, Levels.UNDERGROUND_5+1), lb)
+        generate_section_tt_lb(range(Levels.UNDERGROUND_1, Levels.UNDERGROUND_5 + 1), lb)
 
     @leaderboard(163719)
     def waterfront_section_tt_lb(self, lb: Leaderboard):
-        generate_section_tt_lb(range(Levels.WATERFRONT_1, Levels.WATERFRONT_5+1), lb)
+        generate_section_tt_lb(range(Levels.WATERFRONT_1, Levels.WATERFRONT_5 + 1), lb)
         
 
 if __name__=="__main__":

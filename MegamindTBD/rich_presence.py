@@ -65,7 +65,7 @@ class MegamindRichPresence(RichPresence):
             get_megas_for_level(Memory.WATERFRONT_5_COLLECTIBLES),
             get_megas_for_level(Memory.MUSEUM_COLLECTIBLES),
             (measured(value(0x0)))
-        )})/48"
+        )})/64"
     
     def getFilms(self):
         return f"🎞️ @Number({group(

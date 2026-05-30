@@ -353,6 +353,26 @@ class Memory:
     bit4 = Cleared
     """
 
+    ACHIEVEMENTS = byte(0x3985a6)
+    """
+    [8-bit BitCount] Achievements (Page 1)
+    bit0 = 50 Goons Defeated
+    bit1 = The Electric Lasso
+    bit2 = Weapon Upgrade
+    bit3 = Rooftop Hero
+    bit4 = 200 Goons Defeated
+    bit5 = Untouchable
+    bit6 = Goon Balloons
+    bit7 = Mega Popper
+    """
+
+    ACHIEVEMENTS_1 = byte(0x3985a7)
+    """
+    [8-bit BitCount] Achievements (Page 2)
+    bit0 = 500 Goons Defeated
+    bit1 = MEGA Explorer
+    """
+
     TOTAL_ENNEMY_KILLS = word(0x3985a8)
     """
     [16-bit] Total Ennemy Kills (written on level finish)

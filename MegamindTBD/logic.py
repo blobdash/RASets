@@ -70,13 +70,13 @@ def generate_section_tt_lb(range: range, lb: Leaderboard):
         (Memory.ROOT != 0) &
         (delta(Memory.INGAME_CURRENT_STATUS) == 0xfffffffe) &
         (Memory.INGAME_CURRENT_STATUS >= range.start) &
-        (Memory.INGAME_CURRENT_STATUS <= range.stop)
+        (Memory.INGAME_CURRENT_STATUS <= range.stop - 1)
     )
     lb.set_cancel(
         (Memory.INGAME_CURRENT_STATUS < 0xfffffffe) &
             (
-                (Memory.INGAME_CURRENT_STATUS > range.stop) |
-                (Memory.INGAME_CURRENT_STATUS < range.start)
+                (Memory.INGAME_CURRENT_STATUS < range.start) |
+                (Memory.INGAME_CURRENT_STATUS > range.stop - 1)
             )
     )
     sub_conditions = []
@@ -111,4 +111,12 @@ def get_megas_for_level(level: MemoryValue):
         (add_source(bit1(level.address))),
         (add_source(bit2(level.address))),
         (add_source(bit3(level.address))) 
+    ))
+
+def get_megas_deltas_for_level(level: MemoryValue):
+    return (group(
+        (add_source(delta(bit0(level.address)))),
+        (add_source(delta(bit1(level.address)))),
+        (add_source(delta(bit2(level.address)))),
+        (add_source(delta(bit3(level.address)))) 
     ))
