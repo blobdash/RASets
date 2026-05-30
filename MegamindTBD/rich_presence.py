@@ -47,7 +47,7 @@ class MegamindRichPresence(RichPresence):
         )})%"
     
     def getMEGAs(self):
-        return f"🇲🇪🇬🇦 @Number({group(
+        return f"MEGA @Number({group(
             get_megas_for_level(Memory.DOWNTOWN_1_COLLECTIBLES),
             get_megas_for_level(Memory.DOWNTOWN_2_COLLECTIBLES),
             get_megas_for_level(Memory.DOWNTOWN_3_COLLECTIBLES),
