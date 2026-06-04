@@ -62,6 +62,28 @@ class Memory:
     ++++++0x70: [8-bit] DB Unlocked
     """
 
+    MENU_STATE = dword(0x08a5f4)
+    """
+    [32-bit Pointer] Menu State
+    +0xAC: [32-bit pointer]
+    ++0x140: [32-bit pointer]
+    +++0xF0: [32-bit] Current Scene ID
+    --- 0x04 = Start Screen
+    --- 0x0a = Profiile Menu
+    --- 0x0c = Slot Select (same for Load/New)
+    --- 0x1c = Main Menu
+    --- 0x1d = Main Menu after refusing prompt
+    --- 0x1a = Prompt to quit to Profile Menu
+    --- 0x26 = Level Select
+    --- 0x16 = Goals
+    --- 0x12 = Extras
+    --- 0x18 = Extras > Films
+    --- 0x20 = Credits
+    --- 0x10 = Options
+    --- 0x0e = Options > Sound
+    --- 0x1e = Options > Controls
+    """
+
     LAST_USED_WEAPON = dword(0x386310)
     """
     [32-bit] Last Used Weapon
