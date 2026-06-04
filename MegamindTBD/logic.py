@@ -73,11 +73,15 @@ def generate_section_tt_lb(range: range, lb: Leaderboard):
         (Memory.INGAME_CURRENT_STATUS <= range.stop - 1)
     )
     lb.set_cancel(
-        (Memory.INGAME_CURRENT_STATUS < 0xfffffffe) &
-            (
-                (Memory.INGAME_CURRENT_STATUS < range.start) |
-                (Memory.INGAME_CURRENT_STATUS > range.stop - 1)
-            )
+        # force core to always true
+        always_true(),
+        # alt1 : cancel if player loads a level before this section
+        (Memory.INGAME_CURRENT_STATUS < range.start),
+        # alt2 : cancel if player loads a level after this section
+        (Memory.INGAME_CURRENT_STATUS < 0xfffffffe) & (Memory.INGAME_CURRENT_STATUS > range.stop - 1),
+        # alt3 : cancel if player is on title screen
+        (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> delta(dword(0xf0)) == 0x0a) &
+        (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> dword(0xf0) == 0x04)
     )
     sub_conditions = []
     for i in range:
@@ -86,9 +90,16 @@ def generate_section_tt_lb(range: range, lb: Leaderboard):
             (Memory.END_SCREEN_REACHED == 0x01) &
             (Memory.INGAME_CURRENT_STATUS == i)).with_hits(1)
         )
-    lb.set_submit(
-       sub_conditions
-    )
+    lb.set_submit(group(
+        sub_conditions,
+        # reset if player loads a level not in this section
+        reset_if(Memory.INGAME_CURRENT_STATUS < range.start),
+        reset_if((Memory.INGAME_CURRENT_STATUS < 0xfffffffe) & (Memory.INGAME_CURRENT_STATUS > range.stop - 1)),
+        # reset if player is on title screen
+        reset_if((ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> delta(dword(0xf0)) == 0x0a) &
+            (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> dword(0xf0) == 0x04)
+        )
+    ))
     lb.set_value(
         measured((Memory.PAUSED_STATE == 0x00) & (Memory.INGAME_CURRENT_STATUS < 0xfffffffe))
     )
