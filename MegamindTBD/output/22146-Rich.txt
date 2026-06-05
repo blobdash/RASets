@@ -33,6 +33,7 @@ Lookup:MenuScene
 0x1d=In the Main Menu
 0x1e=Tweaking some settings
 0x20=Reading the credits
+0x22=Choosing a level
 0x26=Choosing a level
 *=In the backrooms
 

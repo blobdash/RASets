@@ -36,7 +36,7 @@ class MegamindRichPresence(RichPresence):
             0x04: 'Staring at the title screen',
             (0x0a, 0x0c, 0x06, 0x07, 0x08): 'Selecting a save file',
             (0x1c, 0x1d, 0x1a): 'In the Main Menu',
-            0x26: 'Choosing a level',
+            (0x26, 0x22): 'Choosing a level',
             0x16: 'Looking at goals',
             (0x12, 0x18): 'Admiring the film images',
             0x20: 'Reading the credits',
