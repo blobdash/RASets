@@ -449,6 +449,49 @@ class MegamindSet(AchievementSet):
                 trigger(Memory.END_SCREEN_REACHED == 0x01)
             )
         ])
+    
+    @achievement(614528)
+    def first_upgrade(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            delta(bit2(Memory.ACHIEVEMENTS.address)) == 0,
+            bit2(Memory.ACHIEVEMENTS.address) == 1
+        ))
+    
+    @achievement(614523)
+    def blaster_mk3(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            Weapons.BLASTER.reachedLevel(3)
+        ))
+    
+    @achievement(614524)
+    def lasso_mk3(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            Weapons.LASSO.reachedLevel(3)
+        ))
+    
+    @achievement(614525)
+    def fusion_mk3(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            Weapons.FUSION.reachedLevel(3)
+        ))
+    
+    @achievement(614526)
+    def eom_mk3(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            Weapons.EOM.reachedLevel(3)
+        ))
+    
+    @achievement(614527)
+    def barrage_mk3(self, ach: Achievement):
+        ach.add_core(group(
+            (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+            Weapons.BARRAGE.reachedLevel(3)
+        ))
 
 if __name__=="__main__":
     MegamindSet().save("output/")

@@ -30,6 +30,49 @@ class Weapons_Offsets:
     EOM = 0x10
     BARRAGE = 0x18
 
+class Weapon:
+    OFFSET: int
+    
+    def __init__(self, offset) -> None:
+        self.OFFSET = offset
+    
+    def hasUpgraded(self):
+        return (
+            ptr(Memory.ROOT.address)
+            >> ptr(0x64)
+            >> ptr(0x00)
+            >> ptr(0x2E8)
+            >> ptr(0x1C)
+            >> ptr(self.OFFSET)
+            >> delta(dword(0x50)) < dword(0x50)
+        )
+    
+    def reachedLevel(self, level):
+        return (
+            ptr(Memory.ROOT.address)
+            >> ptr(0x64)
+            >> ptr(0x00)
+            >> ptr(0x2E8)
+            >> ptr(0x1C)
+            >> ptr(self.OFFSET)
+            >> delta(dword(0x50)) == level-2
+        ) & (
+            ptr(Memory.ROOT.address)
+            >> ptr(0x64)
+            >> ptr(0x00)
+            >> ptr(0x2E8)
+            >> ptr(0x1C)
+            >> ptr(self.OFFSET)
+            >> dword(0x50) == level-1
+        )
+
+class Weapons:
+    BLASTER = Weapon(0x00)
+    LASSO = Weapon(0x20)
+    FUSION = Weapon(0x08)
+    EOM = Weapon(0x10)
+    BARRAGE = Weapon(0x18)
+
 class BOUNDING_BOX:
     MAX_X: int
     MIN_X: int
