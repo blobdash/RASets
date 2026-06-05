@@ -28,6 +28,7 @@ class Memory:
     +++0xb0: [32-bit] Position Y
     +++0x10C: [32-bit] Health
     +++0x110: [32-bit] Health Max
+    +++0x1b8: [32-bit] Invincibilty Flag
     +++0x2E8: [32-bit Pointer] Inv
     ++++0x1C: [32-bit Pointer] Weapons
     +++++0x00: [32-bit Pointer] Blaster
@@ -67,7 +68,9 @@ class Memory:
     [32-bit Pointer] Menu State
     +0xAC: [32-bit pointer]
     ++0x140: [32-bit pointer]
-    +++0xF0: [32-bit] Current Scene ID
+    +++0xF4: [32-bit] Current Scene ID
+    --- 0x01-0x03 = Loading
+    --- 0xffffffff = Loading
     --- 0x04 = Start Screen
     --- 0x0a = Profiile Menu
     --- 0x0c = Slot Select (same for Load/New)

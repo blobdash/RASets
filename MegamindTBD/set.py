@@ -407,7 +407,48 @@ class MegamindSet(AchievementSet):
     @leaderboard(163719)
     def waterfront_section_tt_lb(self, lb: Leaderboard):
         generate_section_tt_lb(range(Levels.WATERFRONT_1, Levels.WATERFRONT_5 + 1), lb)
-        
+    
+    @achievement(614379)
+    def destruction_worker_nohit(self, ach: Achievement):
+        ach.add_core(
+            nohit_boss(Levels.DOWNTOWN_5, BOSS_ARENAS.DESTRUCTION_WORKER)
+        )
+
+    @achievement(614380)
+    def psycho_delic_nohit(self, ach: Achievement):
+        ach.add_core(
+            nohit_boss(Levels.UNDERGROUND_5, BOSS_ARENAS.PSYCHO_DELIC)
+        )
+    
+    @achievement(614381)
+    def hot_flash_nohit(self, ach: Achievement):
+        ach.add_core(
+            nohit_boss(Levels.WATERFRONT_5, BOSS_ARENAS.HOT_FLASH)
+        )
+    
+    @achievement(614387)
+    def tighthen_nohit(self, ach: Achievement):
+        ach.add_core([
+            (
+                # checkpoint hit for entering level
+                (delta(Memory.INGAME_CURRENT_STATUS) == 0xfffffffe) &
+                (Memory.INGAME_CURRENT_STATUS == Levels.MUSEUM).with_hits(1)
+            ),
+            (
+                # resetif hp goes down
+                and_next((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x0) >> delta(dword(0x10c))) == 0xa000) &
+                reset_if((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x0) >> dword(0x10c)) < 0xa000)
+            ),
+            (
+                # resetif exited level
+                reset_if(Memory.INGAME_CURRENT_STATUS >= 0xfffffffe)
+            ),
+            (
+                # trigger if end screen goes from 0 to 1
+                trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
+                trigger(Memory.END_SCREEN_REACHED == 0x01)
+            )
+        ])
 
 if __name__=="__main__":
     MegamindSet().save("output/")

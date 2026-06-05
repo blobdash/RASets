@@ -30,6 +30,32 @@ class Weapons_Offsets:
     EOM = 0x10
     BARRAGE = 0x18
 
+class BOUNDING_BOX:
+    MAX_X: int
+    MIN_X: int
+    MAX_Y: int
+    MIN_Y: int
+    MARGIN:int = 10000
+
+    def __init__(self, MAX_X: int, MIN_X: int, MAX_Y: int, MIN_Y: int) -> None:
+        self.MAX_X = MAX_X
+        self.MIN_X = MIN_X
+        self.MAX_Y = MAX_Y
+        self.MIN_Y = MIN_Y
+
+    def getConditionsInBox(self):
+        return (
+            (ptr(Memory.ROOT.address) >> ptr(0x64)>> ptr(0x00) >> dword(0xa8) >= (self.MIN_X - self.MARGIN)) &
+            (ptr(Memory.ROOT.address) >> ptr(0x64)>> ptr(0x00) >> dword(0xa8) <= (self.MAX_X + self.MARGIN)) &
+            (ptr(Memory.ROOT.address) >> ptr(0x64)>> ptr(0x00) >> dword(0xb0) >= (self.MIN_Y - self.MARGIN)) &
+            (ptr(Memory.ROOT.address) >> ptr(0x64)>> ptr(0x00) >> dword(0xb0) <= (self.MAX_Y + self.MARGIN))
+        )
+
+class BOSS_ARENAS:
+    DESTRUCTION_WORKER = BOUNDING_BOX(882096, 783990, 1179411, 1067632)
+    PSYCHO_DELIC = BOUNDING_BOX(476299, 375155, 2989493, 2891571)
+    HOT_FLASH= BOUNDING_BOX(649610, 457808, 1579085, 1408314)
+
 def ptr(value):
   return tbyte(value)
 
@@ -80,8 +106,8 @@ def generate_section_tt_lb(range: range, lb: Leaderboard):
         # alt2 : cancel if player loads a level after this section
         (Memory.INGAME_CURRENT_STATUS < 0xfffffffe) & (Memory.INGAME_CURRENT_STATUS > range.stop - 1),
         # alt3 : cancel if player is on title screen
-        (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> delta(dword(0xf0)) == 0x0a) &
-        (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> dword(0xf0) == 0x04)
+        (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> delta(dword(0xf4)) == 0x0a) &
+        (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> dword(0xf4) == 0x04)
     )
     sub_conditions = []
     for i in range:
@@ -96,8 +122,8 @@ def generate_section_tt_lb(range: range, lb: Leaderboard):
         reset_if(Memory.INGAME_CURRENT_STATUS < range.start),
         reset_if((Memory.INGAME_CURRENT_STATUS < 0xfffffffe) & (Memory.INGAME_CURRENT_STATUS > range.stop - 1)),
         # reset if player is on title screen
-        reset_if((ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> delta(dword(0xf0)) == 0x0a) &
-            (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> dword(0xf0) == 0x04)
+        reset_if((ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> delta(dword(0xf4)) == 0x0a) &
+            (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> dword(0xf4) == 0x04)
         )
     ))
     lb.set_value(
@@ -131,3 +157,30 @@ def get_megas_deltas_for_level(level: MemoryValue):
         (add_source(delta(bit2(level.address)))),
         (add_source(delta(bit3(level.address)))) 
     ))
+
+def nohit_boss(level: int, box: BOUNDING_BOX):
+    return group(
+        (
+            (Memory.INGAME_CURRENT_STATUS == level) &
+            box.getConditionsInBox()
+        ),
+        (
+            # pauseif hp goes down and in box
+            reset_next_if(Memory.INGAME_CURRENT_STATUS >= 0xfffffffe)
+        ),
+        (
+            pause_if((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x0) >> dword(0x10c) < delta(dword(0x10c))) & box.getConditionsInBox()).with_hits(1)
+        ),
+        (
+            # pauseif invincibility triggers (for voidouts)
+            reset_next_if(Memory.INGAME_CURRENT_STATUS >= 0xfffffffe)
+        ),
+        (
+            pause_if((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x0) >> dword(0x1b8) == 1) & box.getConditionsInBox()).with_hits(1)
+        ),
+        (
+            # trigger if end screen goes from 0 to 1
+            trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
+            trigger(Memory.END_SCREEN_REACHED == 0x01)
+        )
+    )
