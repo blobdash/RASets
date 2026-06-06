@@ -243,7 +243,7 @@ achievements = OrderedDict({
     ),
     614525: Achievement(
         id=614525,
-        title="""Now With More Explosions""",
+        title="""Now with More Explosions""",
         description="""Upgrade your Fusion Bouncer to its maximum level""",
         points=5,
         badge="00000",
