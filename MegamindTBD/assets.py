@@ -272,7 +272,7 @@ achievements = OrderedDict({
     612842: Achievement(
         id=612842,
         title="""Untouchable""",
-        description="""Complete any stage without taking damage.""",
+        description="""Complete any stage without taking damage""",
         points=5,
         badge="00000",
     ),
