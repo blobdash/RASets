@@ -65,6 +65,19 @@ class Weapon:
             >> ptr(self.OFFSET)
             >> dword(0x50) == level-1
         )
+    
+    def ammoConsumed(self):
+        return group(
+            (ptr(Memory.ROOT.address)
+            >> delta(dword(0x64)) != 0) &
+            (ptr(Memory.ROOT.address)
+            >> ptr(0x64)
+            >> ptr(0x00)
+            >> ptr(0x2E8)
+            >> ptr(0x1C)
+            >> ptr(self.OFFSET)
+            >> delta(dword(0x48)) > dword(0x48)),
+        )
 
 class Weapons:
     BLASTER = Weapon(0x00)
