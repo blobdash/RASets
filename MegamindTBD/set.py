@@ -1,3 +1,4 @@
+from turtle import speed
 from pycheevos.models.leaderboard import Leaderboard
 from pycheevos.models.set import AchievementSet
 from pycheevos.models.achievement import Achievement
@@ -540,6 +541,39 @@ class MegamindSet(AchievementSet):
             trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
             trigger(Memory.END_SCREEN_REACHED == 0x01)
         ))
+    
+    @achievement(614638)
+    def museum_speedrun(self, ach: Achievement):
+        ach.add_core(group(
+            # checkpoint hit for entering level
+            (delta(Memory.INGAME_CURRENT_STATUS) == 0xfffffffe) &
+            (Memory.INGAME_CURRENT_STATUS == Levels.MUSEUM).with_hits(1),
+            # resetif exited level
+            reset_if(Memory.INGAME_CURRENT_STATUS >= 0xfffffffe),
+            # resetif timer expired
+            reset_if((Memory.PAUSED_STATE == 0x00) & (Memory.INGAME_CURRENT_STATUS < 0xfffffffe).with_hits(speedrun_hits(5, 30))),
+            # trigger if end screen goes from 0 to 1
+            trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
+            trigger(Memory.END_SCREEN_REACHED == 0x01)
+        ))
+    
+    @achievement(614639)
+    def downtown_section_speedrun(self, ach: Achievement):
+        ach.add_core(
+            generate_section_tt_ach(range(Levels.DOWNTOWN_1, Levels.DOWNTOWN_5 + 1), 28, 0)
+        )
+
+    @achievement(614640)
+    def underground_section_speedrun(self, ach: Achievement):
+        ach.add_core(
+            generate_section_tt_ach(range(Levels.UNDERGROUND_1, Levels.UNDERGROUND_5 + 1), 40, 0)
+        )
+
+    @achievement(614641)
+    def waterfront_section_speedrun(self, ach: Achievement):
+        ach.add_core(
+            generate_section_tt_ach(range(Levels.WATERFRONT_1, Levels.WATERFRONT_5 + 1), 42, 0)
+        )
 
 if __name__=="__main__":
     MegamindSet().save("output/")

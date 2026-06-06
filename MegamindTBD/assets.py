@@ -325,6 +325,34 @@ achievements = OrderedDict({
         points=10,
         badge="00000",
     ),
+    614639: Achievement(
+        id=614639,
+        title="""Fast Sweep in the Neighbourhood""",
+        description="""Clear all Downtown levels in any order in under 28 minutes (reset by entering another section or going to the title screen)""",
+        points=10,
+        badge="00000",
+    ),
+    614640: Achievement(
+        id=614640,
+        title="""Funky and Fast""",
+        description="""Clear all Underground levels in any order in under 40 minutes (reset by entering another section or going to the title screen)""",
+        points=10,
+        badge="00000",
+    ),
+    614641: Achievement(
+        id=614641,
+        title="""No Time for Fishing""",
+        description="""Clear all Waterfront levels in any order in under 42 minutes (reset by entering another section or going to the title screen)""",
+        points=10,
+        badge="00000",
+    ),
+    614638: Achievement(
+        id=614638,
+        title="""Fast Pass""",
+        description="""Clear The Museum in under 5 minutes and 30 seconds""",
+        points=5,
+        badge="00000",
+    ),
 })
 
 leaderboards = OrderedDict({

@@ -5,6 +5,8 @@ from pycheevos.models.leaderboard import Leaderboard
 
 from memory import Memory
 
+FRAMERATE = 60
+
 class Levels:
     DOWNTOWN_1 = 3
     DOWNTOWN_2 = 4
@@ -186,6 +188,30 @@ def generate_section_tt_lb(range: range, lb: Leaderboard):
         measured((Memory.PAUSED_STATE == 0x00) & (Memory.INGAME_CURRENT_STATUS < 0xfffffffe))
     )
 
+def generate_section_tt_ach(range: range, minutes: int, seconds: int):
+    sub_conditions = []
+    for i in range:
+        sub_conditions.append(
+            trigger(((delta(Memory.END_SCREEN_REACHED) == 0x00) &
+            (Memory.END_SCREEN_REACHED == 0x01) &
+            (Memory.INGAME_CURRENT_STATUS == i)).with_hits(1))
+        )
+    return group(
+        ((delta(Memory.INGAME_CURRENT_STATUS) == 0xfffffffe) &
+        (Memory.INGAME_CURRENT_STATUS >= range.start) &
+        (Memory.INGAME_CURRENT_STATUS <= range.stop - 1)).with_hits(1),
+        # reset if player loads a level before this section
+        reset_if(Memory.INGAME_CURRENT_STATUS < range.start),
+        # reset if player loads a level after this section
+        reset_if((Memory.INGAME_CURRENT_STATUS < 0xfffffffe) & (Memory.INGAME_CURRENT_STATUS > range.stop - 1)),
+        # reset if player is on title screen
+        reset_if((ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> delta(dword(0xf4)) == 0x0a) &
+        (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> dword(0xf4) == 0x04)),
+        # resetif timer expired
+        reset_if((Memory.PAUSED_STATE == 0x00) & (Memory.INGAME_CURRENT_STATUS < 0xfffffffe).with_hits(speedrun_hits(minutes, seconds))),
+        sub_conditions
+    )
+
 def track_kills(quantity: int):
     return (
         (Memory.END_SCREEN_REACHED == 0x00) &
@@ -240,3 +266,6 @@ def nohit_boss(level: int, box: BOUNDING_BOX):
             trigger(Memory.END_SCREEN_REACHED == 0x01)
         )
     )
+
+def speedrun_hits(min: int, seconds: int):
+    return ((min * 60) + seconds) * FRAMERATE
