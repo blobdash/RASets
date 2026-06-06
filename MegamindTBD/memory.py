@@ -8,11 +8,22 @@ class Memory:
     [32-bit] Ingame + Current Status
     0xffffffff = Not Ingame
     0xfffffffe = Loading (in/out of level)
-    Anything else is level ID :
-    3-7 = Downtown 1 to 5
-    8 = Museum
-    9-13 = Underground 1 to 5
-    14-18 = Waterfront 1 to 5
+    0x03 = Downtown 1
+    0x04 = Downtown 2
+    0x05 = Downtown 3
+    0x06 = Downtown 4
+    0x07 = Downtown 5
+    0x08 = Museum
+    0x09 = Underground 1
+    0x0a = Underground 2
+    0x0b = Underground 3
+    0x0c = Underground 4
+    0x0d = Underground 5
+    0x0e = Waterfront 1
+    0x0f = Waterfront 2
+    0x10 = Waterfront 3
+    0x11 = Waterfront 4
+    0x12 = Waterfront 5
     """
 
     ROOT = dword(0x08a000)
@@ -20,9 +31,9 @@ class Memory:
     [32-bit Pointer] Root (null when not ingame)
     +0x64: [32-bit Pointer]
     ++0x00: [32-bit Pointer] Player Struct
-    +++0x48 [32-bit Pointer] ???
-    ++++0x138 [32-bit Pointer] ???
-    +++++0x4 [32-bit] Kills during level
+    +++0x48: [32-bit Pointer]
+    ++++0x138: [32-bit Pointer]
+    +++++0x4: [32-bit] Kills during level
     +++0xa8: [32-bit] Position X
     +++0xac: [32-bit] Position Z
     +++0xb0: [32-bit] Position Y
@@ -37,39 +48,46 @@ class Memory:
     ++++++0x50: [32-bit] Blaster Level
     ++++++0x54: [16-bit] Blaster EXP
     ++++++0x70: [8-bit] Blaster Unlocked
+    ++++++0x71: [8-bit] Blaster In Hand
     +++++0x20: [32-bit Pointer] Lasso
     ++++++0x48: [32-bit] Lasso Ammo
     ++++++0x4c: [32-bit] Lasso Max Ammo
     ++++++0x50: [32-bit] Lasso Level
     ++++++0x54: [16-bit] Lasso EXP
     ++++++0x70: [8-bit] Lasso Unlocked
+    ++++++0x71: [8-bit] Lasso In Hand
     +++++0x08: [32-bit Pointer] Fusion Bouncer
     ++++++0x48: [32-bit] FB Ammo
     ++++++0x4c: [32-bit] FB Max Ammo
     ++++++0x50: [32-bit] FB Level
     ++++++0x54: [16-bit] FB EXP
     ++++++0x70: [8-bit] FB Unlocked
+    ++++++0x71: [8-bit] FB In Hand
     +++++0x10: [32-bit Pointer] Expand-O-Matic
     ++++++0x48: [32-bit] EOM Ammo
     ++++++0x4c: [32-bit] EOM Max Ammo
     ++++++0x50: [32-bit] EOM Level
     ++++++0x54: [16-bit] EOM EXP
     ++++++0x70: [8-bit] EOM Unlocked
+    ++++++0x71: [8-bit] EOM In Hand
     +++++0x18: [32-bit Pointer] Doom Barrage
     ++++++0x48: [32-bit] DB Ammo
     ++++++0x4c: [32-bit] DB Max Ammo
     ++++++0x50: [32-bit] DB Level
     ++++++0x54: [16-bit] DB EXP
     ++++++0x70: [8-bit] DB Unlocked
+    ++++++0x71: [8-bit] DB In Hand
     """
 
     MENU_STATE = dword(0x08a5f4)
     """
     [32-bit Pointer] Menu State
-    +0xAC: [32-bit pointer]
-    ++0x140: [32-bit pointer]
-    +++0xF4: [32-bit] Current Scene ID
-    --- 0x01-0x03 = Loading
+    +0xAC = [32-bit pointer]
+    ++0x140 = [32-bit pointer]
+    +++0xF4 = [32-bit] Current Scene ID
+    --- 0x01 = Loading
+    --- 0x02 = Loading
+    --- 0x03 = Loading
     --- 0xffffffff = Loading
     --- 0x04 = Start Screen
     --- 0x0a = Profiile Menu
