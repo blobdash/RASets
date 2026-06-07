@@ -267,7 +267,7 @@ achievements = OrderedDict({
         title="""Mass Goon Extinction""",
         description="""Defeat 1,500 goons""",
         points=5,
-        badge="00000",
+        badge="698037",
     ),
     612842: Achievement(
         id=612842,
@@ -330,21 +330,21 @@ achievements = OrderedDict({
         title="""Fast Sweep in the Neighbourhood""",
         description="""Clear every Downtown levels in any order in under 25 minutes (reset by entering another section or going to the title screen)""",
         points=10,
-        badge="00000",
+        badge="698038",
     ),
     614640: Achievement(
         id=614640,
         title="""Funky and Fast""",
         description="""Clear every Underground levels in any order in under 37 minutes (reset by entering another section or going to the title screen)""",
         points=10,
-        badge="00000",
+        badge="698039",
     ),
     614641: Achievement(
         id=614641,
         title="""No Time for Fishing""",
         description="""Clear every Waterfront levels in any order in under 40 minutes (reset by entering another section or going to the title screen)""",
         points=10,
-        badge="00000",
+        badge="698040",
     ),
     614638: Achievement(
         id=614638,
