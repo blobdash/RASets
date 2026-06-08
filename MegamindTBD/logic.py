@@ -174,6 +174,14 @@ def generate_section_tt_lb(range: range, lb: Leaderboard):
             (Memory.END_SCREEN_REACHED == 0x01) &
             (Memory.INGAME_CURRENT_STATUS == i)).with_hits(1)
         )
+    resetif_sub_conditions = []
+    for i in range:
+        resetif_sub_conditions.append(
+            (Memory.END_SCREEN_REACHED == 0x01) &
+            (delta(Memory.INGAME_CURRENT_STATUS) == i) &
+            add_hits(Memory.INGAME_CURRENT_STATUS == 0xfffffffe).with_hits(1)
+        )
+        
     lb.set_submit(group(
         sub_conditions,
         # reset if player loads a level not in this section
@@ -182,6 +190,12 @@ def generate_section_tt_lb(range: range, lb: Leaderboard):
         # reset if player is on title screen
         reset_if((ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> delta(dword(0xf4)) == 0x0a) &
             (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> ptr(0x140) >> dword(0xf4) == 0x04)
+        ),
+        # add hit for each completed level, the toolkit just doesn't reset hits after a successful submit.
+        # resets when player comes back to main menu and has cleared all levels since leaderboard start
+        resetif_sub_conditions,
+        reset_if(
+            always_false().with_hits(5)
         )
     ))
     lb.set_value(
