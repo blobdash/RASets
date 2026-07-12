@@ -17,30 +17,16 @@ Lookup:Level
 0x12=Waterfront 5
 
 Lookup:MenuScene
-0x0=Loading...
-0x1=Loading...
-0x2=Loading...
-0x3=Loading...
+0x0,0x1,0x2,0x3,0xffffffff=Loading...
 0x4=Staring at the title screen
-0x6=Selecting a save file
-0x7=Selecting a save file
-0x8=Selecting a save file
-0xa=Selecting a save file
-0xc=Selecting a save file
-0xe=Tweaking some settings
-0x10=Tweaking some settings
-0x12=Admiring the film images
+0xa,0xc,0x6,0x7,0x8=Selecting a save file
+0x10,0xe,0x1e=Tweaking some settings
+0x12,0x18=Admiring the film images
 0x16=Looking at goals
-0x18=Admiring the film images
-0x1a=In the Main Menu
-0x1c=In the Main Menu
-0x1d=In the Main Menu
-0x1e=Tweaking some settings
+0x1c,0x1d,0x1a=In the Main Menu
 0x20=Reading the credits
-0x22=Choosing a level
-0x26=Choosing a level
-0xffffffff=Loading...
-*=In the backrooms
+0x26,0x22=Choosing a level
+*=In the Main Menu
 
 Display:
 ?O:0xX83154=4294967294_I:0xW8a5f4_I:0xW00ac_0xX0140=0?Loading...

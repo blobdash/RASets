@@ -566,13 +566,13 @@ class MegamindSet(AchievementSet):
     @achievement(614640)
     def underground_section_speedrun(self, ach: Achievement):
         ach.add_core(
-            generate_section_tt_ach(range(Levels.UNDERGROUND_1, Levels.UNDERGROUND_5 + 1), 37, 0)
+            generate_section_tt_ach(range(Levels.UNDERGROUND_1, Levels.UNDERGROUND_5 + 1), 34, 0)
         )
 
     @achievement(614641)
     def waterfront_section_speedrun(self, ach: Achievement):
         ach.add_core(
-            generate_section_tt_ach(range(Levels.WATERFRONT_1, Levels.WATERFRONT_5 + 1), 40, 0)
+            generate_section_tt_ach(range(Levels.WATERFRONT_1, Levels.WATERFRONT_5 + 1), 35, 0)
         )
 
 if __name__=="__main__":

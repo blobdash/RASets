@@ -42,7 +42,7 @@ class MegamindRichPresence(RichPresence):
             (0x12, 0x18): 'Admiring the film images',
             0x20: 'Reading the credits',
             (0x10, 0x0e, 0x1e): 'Tweaking some settings',
-        }, default='In the backrooms')
+        }, default='In the Main Menu')
         self.add_display((Memory.INGAME_CURRENT_STATUS == 0xfffffffe) | (ptr(Memory.MENU_STATE.address) >> ptr(0xac) >> dword(0x140) == 0), 'Loading...')
         self.add_display(
                 (Memory.INGAME_CURRENT_STATUS == 0xffffffff) &
