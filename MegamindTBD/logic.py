@@ -127,8 +127,8 @@ def on_first_clear(mem: MemoryValue) :
 def weapon_unlock(weapon_offset: int):
     return (
         (Memory.ROOT != 0) &
-        ((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x00) >> ptr(0x2E8) >> ptr(0x1C) >> ptr(weapon_offset) >> delta(dword(0x70))) == 0) &
-        ((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x00) >> ptr(0x2E8) >> ptr(0x1C) >> ptr(weapon_offset) >> dword(0x70) == 1))
+        ((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x00) >> ptr(0x2E8) >> ptr(0x1C) >> ptr(weapon_offset) >> delta(byte(0x70))) == 0) &
+        ((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x00) >> ptr(0x2E8) >> ptr(0x1C) >> ptr(weapon_offset) >> byte(0x70) == 1))
     )
 
 def generate_single_tt_lb(levelid: int, lb: Leaderboard):
@@ -240,20 +240,16 @@ def track_kills_alt(quantity: int):
     )
 
 def get_megas_for_level(level: MemoryValue):
-    return (group(
-        (add_source(bit0(level.address))),
-        (add_source(bit1(level.address))),
-        (add_source(bit2(level.address))),
-        (add_source(bit3(level.address))) 
-    ))
+    return group(
+        ((add_source(bitcount(level.address)))),
+        ((sub_source(bit4(level.address))))
+    )
 
 def get_megas_deltas_for_level(level: MemoryValue):
-    return (group(
-        (add_source(delta(bit0(level.address)))),
-        (add_source(delta(bit1(level.address)))),
-        (add_source(delta(bit2(level.address)))),
-        (add_source(delta(bit3(level.address)))) 
-    ))
+    return group(
+        add_source(delta(bitcount(level.address))),
+        sub_source(delta(bit4(level.address)))
+    )
 
 def nohit_boss(level: int, box: BOUNDING_BOX):
     return group(
