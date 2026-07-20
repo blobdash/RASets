@@ -3,6 +3,11 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class Memory:
+    SET_LOGIC_IS_AVAILABLE_ON_HTTPS_GITHUB = byte(0x000000)
+    """
+    [Notes] [8-bit] Set logic is available on https://github.com/blobdash/RASets/tree/master/MegamindTBD
+    """
+
     INGAME_CURRENT_STATUS = dword(0x083154)
     """
     [32-bit] Ingame + Current Status
@@ -85,24 +90,24 @@ class Memory:
     +0xAC = [32-bit pointer]
     ++0x140 = [32-bit pointer]
     +++0xF4 = [32-bit] Current Scene ID
-    --- 0x01 = Loading
-    --- 0x02 = Loading
-    --- 0x03 = Loading
-    --- 0xffffffff = Loading
-    --- 0x04 = Start Screen
-    --- 0x0a = Profiile Menu
-    --- 0x0c = Slot Select (same for Load/New)
-    --- 0x1c = Main Menu
-    --- 0x1d = Main Menu after refusing prompt
-    --- 0x1a = Prompt to quit to Profile Menu
-    --- 0x26 = Level Select
-    --- 0x16 = Goals
-    --- 0x12 = Extras
-    --- 0x18 = Extras > Films
-    --- 0x20 = Credits
-    --- 0x10 = Options
-    --- 0x0e = Options > Sound
-    --- 0x1e = Options > Controls
+    ... 0x01 = Loading
+    ... 0x02 = Loading
+    ... 0x03 = Loading
+    ... 0xffffffff = Loading
+    ... 0x04 = Start Screen
+    ... 0x0a = Profiile Menu
+    ... 0x0c = Slot Select (same for Load/New)
+    ... 0x1c = Main Menu
+    ... 0x1d = Main Menu after refusing prompt
+    ... 0x1a = Prompt to quit to Profile Menu
+    ... 0x26 = Level Select
+    ... 0x16 = Goals
+    ... 0x12 = Extras
+    ... 0x18 = Extras > Films
+    ... 0x20 = Credits
+    ... 0x10 = Options
+    ... 0x0e = Options > Sound
+    ... 0x1e = Options > Controls
     """
 
     LAST_USED_WEAPON = dword(0x386310)
@@ -126,299 +131,299 @@ class Memory:
 
     DOWNTOWN_1_COLLECTIBLES = byte(0x398558)
     """
-    [8-bit BitCount] Downtown 1 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Downtown 1 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     DOWNTOWN_1_STATE = byte(0x39855a)
     """
-    [8-bit BitCount] Downtown 1 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Downtown 1 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     DOWNTOWN_2_COLLECTIBLES = byte(0x39855b)
     """
-    [8-bit BitCount] Downtown 2 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Downtown 2 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     DOWNTOWN_2_STATE = byte(0x39855d)
     """
-    [8-bit BitCount] Downtown 2 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Downtown 2 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     DOWNTOWN_3_COLLECTIBLES = byte(0x39855e)
     """
-    [8-bit BitCount] Downtown 3 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Downtown 3 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     DOWNTOWN_3_STATE = byte(0x398560)
     """
-    [8-bit BitCount] Downtown 3 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Downtown 3 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     DOWNTOWN_4_COLLECTIBLES = byte(0x398561)
     """
-    [8-bit BitCount] Downtown 4 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Downtown 4 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     DOWNTOWN_4_STATE = byte(0x398563)
     """
-    [8-bit BitCount] Downtown 4 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Downtown 4 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     DOWNTOWN_5_COLLECTIBLES = byte(0x398564)
     """
-    [8-bit BitCount] Downtown 5 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Downtown 5 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     DOWNTOWN_5_STATE = byte(0x398566)
     """
-    [8-bit BitCount] Downtown 5 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Downtown 5 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     UNDERGROUND_1_COLLECTIBLES = byte(0x398567)
     """
-    [8-bit BitCount] Underground 1 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Underground 1 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     UNDERGROUND_1_STATE = byte(0x398569)
     """
-    [8-bit BitCount] Underground 1 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Underground 1 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     UNDERGROUND_2_COLLECTIBLES = byte(0x39856a)
     """
-    [8-bit BitCount] Underground 2 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Underground 2 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     UNDERGROUND_2_STATE = byte(0x39856c)
     """
-    [8-bit BitCount] Underground 2 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Underground 2 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     UNDERGROUND_3_COLLECTIBLES = byte(0x39856d)
     """
-    [8-bit BitCount] Underground 3 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Underground 3 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     UNDERGROUND_3_STATE = byte(0x39856f)
     """
-    [8-bit BitCount] Underground 3 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Underground 3 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     UNDERGROUND_4_COLLECTIBLES = byte(0x398570)
     """
-    [8-bit BitCount] Underground 4 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Underground 4 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     UNDERGROUND_4_STATE = byte(0x398572)
     """
-    [8-bit BitCount] Underground 4 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Underground 4 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     UNDERGROUND_5_COLLECTIBLES = byte(0x398573)
     """
-    [8-bit BitCount] Underground 5 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Underground 5 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     UNDERGROUND_5_STATE = byte(0x398575)
     """
-    [8-bit BitCount] Underground 5 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Underground 5 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     WATERFRONT_1_COLLECTIBLES = byte(0x398576)
     """
-    [8-bit BitCount] Waterfront 1 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Waterfront 1 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     WATERFRONT_1_STATE = byte(0x398578)
     """
-    [8-bit BitCount] Waterfront 1 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Waterfront 1 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     WATERFRONT_2_COLLECTIBLES = byte(0x398579)
     """
-    [8-bit BitCount] Waterfront 2 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Waterfront 2 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     WATERFRONT_2_STATE = byte(0x39857b)
     """
-    [8-bit BitCount] Waterfront 2 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Waterfront 2 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     WATERFRONT_3_COLLECTIBLES = byte(0x39857c)
     """
-    [8-bit BitCount] Waterfront 3 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Waterfront 3 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     WATERFRONT_3_STATE = byte(0x39857e)
     """
-    [8-bit BitCount] Waterfront 3 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Waterfront 3 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     WATERFRONT_4_COLLECTIBLES = byte(0x39857f)
     """
-    [8-bit BitCount] Waterfront 4 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Waterfront 4 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     WATERFRONT_4_STATE = byte(0x398581)
     """
-    [8-bit BitCount] Waterfront 4 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Waterfront 4 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     WATERFRONT_5_COLLECTIBLES = byte(0x398582)
     """
-    [8-bit BitCount] Waterfront 5 Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Waterfront 5 Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     WATERFRONT_5_STATE = byte(0x398584)
     """
-    [8-bit BitCount] Waterfront 5 State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Waterfront 5 State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     MUSEUM_COLLECTIBLES = byte(0x398585)
     """
-    [8-bit BitCount] Museum Collectibles
-    bit0 = M
-    bit1 = E
-    bit2 = G
-    bit3 = A
-    bit4 = Photo
+    [8-bit] [Bitfield] Museum Collectibles
+    Bit0 = M
+    Bit1 = E
+    Bit2 = G
+    Bit3 = A
+    Bit4 = Photo
     """
 
     MUSEUM_STATE = byte(0x398587)
     """
-    [8-bit BitCount] Museum State
-    bit0 = Unlocked
-    bit4 = Cleared
+    [8-bit] [Bitfield] Museum State
+    Bit0 = Unlocked
+    Bit4 = Cleared
     """
 
     ACHIEVEMENTS = byte(0x3985a6)
     """
-    [8-bit BitCount] Achievements (Page 1)
-    bit0 = 50 Goons Defeated
-    bit1 = The Electric Lasso
-    bit2 = Weapon Upgrade
-    bit3 = Rooftop Hero
-    bit4 = 200 Goons Defeated
-    bit5 = Untouchable
-    bit6 = Goon Balloons
-    bit7 = Mega Popper
+    [8-bit] [Bitfield] Achievements (Page 1)
+    Bit0 = 50 Goons Defeated
+    Bit1 = The Electric Lasso
+    Bit2 = Weapon Upgrade
+    Bit3 = Rooftop Hero
+    Bit4 = 200 Goons Defeated
+    Bit5 = Untouchable
+    Bit6 = Goon Balloons
+    Bit7 = Mega Popper
     """
 
     ACHIEVEMENTS_1 = byte(0x3985a7)
     """
-    [8-bit BitCount] Achievements (Page 2)
-    bit0 = 500 Goons Defeated
-    bit1 = MEGA Explorer
+    [8-bit] [Bitfield] Achievements (Page 2)
+    Bit0 = 500 Goons Defeated
+    Bit1 = MEGA Explorer
     """
 
-    TOTAL_ENNEMY_KILLS = word(0x3985a8)
+    TOTAL_ENEMY_KILLS = word(0x3985a8)
     """
-    [16-bit] Total Ennemy Kills (written on level finish)
+    [16-bit] Total Enemy Kills (written on level finish)
     """
 
     PAUSED_STATE = byte(0x39a2f4)
