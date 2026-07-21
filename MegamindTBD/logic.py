@@ -272,8 +272,10 @@ def nohit_boss(level: int, box: BOUNDING_BOX):
             pause_if((ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x0) >> dword(0x1b8) == 1) & box.getConditionsInBox()).with_hits(1)
         ),
         (
+            delta(Memory.END_SCREEN_REACHED) == 0x00
+        ),
+        (
             # trigger if end screen goes from 0 to 1
-            trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
             trigger(Memory.END_SCREEN_REACHED == 0x01)
         )
     )

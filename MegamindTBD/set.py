@@ -286,8 +286,10 @@ class MegamindSet(AchievementSet):
                 reset_if(Memory.INGAME_CURRENT_STATUS >= 0xfffffffe)
             ),
             (
+                delta(Memory.END_SCREEN_REACHED) == 0x00
+            ),
+            (
                 # trigger if end screen goes from 0 to 1
-                trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
                 trigger(Memory.END_SCREEN_REACHED == 0x01)
             )
         ])
@@ -445,8 +447,10 @@ class MegamindSet(AchievementSet):
                 reset_if(Memory.INGAME_CURRENT_STATUS >= 0xfffffffe)
             ),
             (
+                delta(Memory.END_SCREEN_REACHED) == 0x00
+            ),
+            (
                 # trigger if end screen goes from 0 to 1
-                trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
                 trigger(Memory.END_SCREEN_REACHED == 0x01)
             )
         ])
@@ -509,8 +513,8 @@ class MegamindSet(AchievementSet):
             # resetif exited level
             reset_if(Memory.INGAME_CURRENT_STATUS >= 0xfffffffe),
             # trigger on level exit
+            delta(Memory.END_SCREEN_REACHED) == 0x00,
             (
-                trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
                 trigger(Memory.END_SCREEN_REACHED == 0x01)
             )
         ))
@@ -538,7 +542,7 @@ class MegamindSet(AchievementSet):
             # resetif exited level
             reset_if(Memory.INGAME_CURRENT_STATUS >= 0xfffffffe),
             # trigger if end screen goes from 0 to 1
-            trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
+            delta(Memory.END_SCREEN_REACHED) == 0x00,
             trigger(Memory.END_SCREEN_REACHED == 0x01)
         ))
     
@@ -553,7 +557,7 @@ class MegamindSet(AchievementSet):
             # resetif timer expired
             reset_if((Memory.PAUSED_STATE == 0x00) & (Memory.INGAME_CURRENT_STATUS < 0xfffffffe).with_hits(speedrun_hits(5, 30))),
             # trigger if end screen goes from 0 to 1
-            trigger(delta(Memory.END_SCREEN_REACHED) == 0x00) &
+            delta(Memory.END_SCREEN_REACHED) == 0x00,
             trigger(Memory.END_SCREEN_REACHED == 0x01)
         ))
     
