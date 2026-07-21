@@ -31,13 +31,13 @@ class Memory:
     0x12 = Waterfront 5
     """
 
-    ROOT = dword(0x08a000)
+    ROOT = tbyte(0x08a000)
     """
-    [32-bit Pointer] Root (null when not ingame)
-    +0x64: [32-bit Pointer]
-    ++0x00: [32-bit Pointer] Player Struct
-    +++0x48: [32-bit Pointer]
-    ++++0x138: [32-bit Pointer]
+    [24-bit Pointer] Root (null when not ingame)
+    +0x64: [24-bit Pointer]
+    ++0x00: [24-bit Pointer] Player Struct
+    +++0x48: [24-bit Pointer]
+    ++++0x138: [24-bit Pointer]
     +++++0x4: [32-bit] Kills during level
     +++0xa8: [32-bit] Position X
     +++0xac: [32-bit] Position Z
@@ -45,37 +45,37 @@ class Memory:
     +++0x10C: [32-bit] Health
     +++0x110: [32-bit] Health Max
     +++0x1b8: [32-bit] Invincibilty Flag
-    +++0x2E8: [32-bit Pointer] Inv
-    ++++0x1C: [32-bit Pointer] Weapons
-    +++++0x00: [32-bit Pointer] Blaster
+    +++0x2E8: [24-bit Pointer] Inv
+    ++++0x1C: [24-bit Pointer] Weapons
+    +++++0x00: [24-bit Pointer] Blaster
     ++++++0x48: [32-bit] Blaster Ammo
     ++++++0x4c: [32-bit] Blaster Max Ammo
     ++++++0x50: [32-bit] Blaster Level
     ++++++0x54: [16-bit] Blaster EXP
     ++++++0x70: [8-bit] Blaster Unlocked
     ++++++0x71: [8-bit] Blaster In Hand
-    +++++0x20: [32-bit Pointer] Lasso
+    +++++0x20: [24-bit Pointer] Lasso
     ++++++0x48: [32-bit] Lasso Ammo
     ++++++0x4c: [32-bit] Lasso Max Ammo
     ++++++0x50: [32-bit] Lasso Level
     ++++++0x54: [16-bit] Lasso EXP
     ++++++0x70: [8-bit] Lasso Unlocked
     ++++++0x71: [8-bit] Lasso In Hand
-    +++++0x08: [32-bit Pointer] Fusion Bouncer
+    +++++0x08: [24-bit Pointer] Fusion Bouncer
     ++++++0x48: [32-bit] FB Ammo
     ++++++0x4c: [32-bit] FB Max Ammo
     ++++++0x50: [32-bit] FB Level
     ++++++0x54: [16-bit] FB EXP
     ++++++0x70: [8-bit] FB Unlocked
     ++++++0x71: [8-bit] FB In Hand
-    +++++0x10: [32-bit Pointer] Expand-O-Matic
+    +++++0x10: [24-bit Pointer] Expand-O-Matic
     ++++++0x48: [32-bit] EOM Ammo
     ++++++0x4c: [32-bit] EOM Max Ammo
     ++++++0x50: [32-bit] EOM Level
     ++++++0x54: [16-bit] EOM EXP
     ++++++0x70: [8-bit] EOM Unlocked
     ++++++0x71: [8-bit] EOM In Hand
-    +++++0x18: [32-bit Pointer] Doom Barrage
+    +++++0x18: [24-bit Pointer] Doom Barrage
     ++++++0x48: [32-bit] DB Ammo
     ++++++0x4c: [32-bit] DB Max Ammo
     ++++++0x50: [32-bit] DB Level
@@ -84,11 +84,11 @@ class Memory:
     ++++++0x71: [8-bit] DB In Hand
     """
 
-    MENU_STATE = dword(0x08a5f4)
+    MENU_STATE = tbyte(0x08a5f4)
     """
-    [32-bit Pointer] Menu State
-    +0xAC = [32-bit pointer]
-    ++0x140 = [32-bit pointer]
+    [24-bit Pointer] Menu State
+    +0xAC = [24-bit Pointer]
+    ++0x140 = [24-bit Pointer]
     +++0xF4 = [32-bit] Current Scene ID
     ... 0x01 = Loading
     ... 0x02 = Loading
