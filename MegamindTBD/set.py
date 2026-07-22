@@ -300,12 +300,6 @@ class MegamindSet(AchievementSet):
         ach.add_core(
             track_kills(1500)
         )
-        ach.add_alt(
-            track_kills_alt(1500)
-        )
-        ach.add_alt(
-            (always_true())
-        )
     
     @achievement(612924)
     def all_ingame_achievements(self, ach: Achievement):

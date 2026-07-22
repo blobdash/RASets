@@ -227,16 +227,11 @@ def generate_section_tt_ach(range: range, minutes: int, seconds: int):
     )
 
 def track_kills(quantity: int):
-    return (
-        (Memory.INGAME_CURRENT_STATUS < 0xfffffffe) &
-        (Memory.END_SCREEN_REACHED == 0x00) &
-        (Memory.TOTAL_ENEMY_KILLS + (ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x00) >> ptr(0x48) >> ptr(0x138) >> delta(dword(0x4))) < quantity) &
-        (Memory.TOTAL_ENEMY_KILLS + (ptr(Memory.ROOT.address) >> ptr(0x64) >> ptr(0x00) >> ptr(0x48) >> ptr(0x138) >> dword(0x4)) >= quantity)
-    )
-
-def track_kills_alt(quantity: int):
-    return (
-        measured(Memory.TOTAL_ENEMY_KILLS == quantity)
+    return group(
+        (Memory.INGAME_CURRENT_STATUS < 0xfffffffe),
+        (Memory.END_SCREEN_REACHED == 0x01),
+        (delta(Memory.TOTAL_ENEMY_KILLS) < quantity),
+        measured(condition=Memory.TOTAL_ENEMY_KILLS >= quantity)
     )
 
 def get_megas_for_level(level: MemoryValue):
