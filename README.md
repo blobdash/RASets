@@ -4,6 +4,10 @@
 
 [Set Plan](https://docs.google.com/spreadsheets/d/1R4s_ZE9VoLTEUGHUf8Ee-Op9_F1HHBV2PFldtenUOXs/edit)
 
+## [Moon](https://retroachievements.org/game/9969)
+
+[Set Plan](https://docs.google.com/spreadsheets/d/1_b4t79kFwnr79sIXErL_YYF7DOSWeQwEfRRFOmwHAgU/edit)
+
 ## Credits
 
 [PyCheevos](https://github.com/CarlosNatanael/PyCheevos)
