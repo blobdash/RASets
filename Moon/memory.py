@@ -8,6 +8,30 @@ class Memory:
     [Notes] [8-bit] Set logic is available on https://github.com/blobdash/RASets/tree/master/Moon
     """
 
+    CURRENT_EPISODE = byte(0x1495bc)
+    """
+    [8-bit] Current Episode
+    // When on main menu and not on level select, gets set to current adventure mode progress
+    0x08 = E00
+    0x14 = E01
+    0x20 = E02
+    0x2c = E03
+    0x38 = E04
+    0x44 = E05
+    0x50 = E06
+    0x5c = E07
+    0x68 = E08
+    0x74 = E09
+    0x80 = E10
+    0x8c = E11
+    0x98 = E12
+    0xa4 = E13
+    0xb0 = E14
+    0xbc = E15
+    0xc8 = E16
+    0xd4 = E17
+    """
+
     CURRENT_DIFFICULTY = dword(0x14fec8)
     """
     [32-bit] Current Difficulty
@@ -16,14 +40,66 @@ class Memory:
     0x02 = Veteran
     """
 
+    INPUTS = byte(0x151616)
+    """
+    [8-bit] [Bitfield] Inputs
+    // gets shifted back by 32-bit when in options, otherwise static
+    Bit0 = A
+    Bit1 = B
+    Bit2 = Select
+    Bit5 = Dpad Left
+    Bit4 = Dpad Right
+    Bit6 = Dpad Up
+    Bit7 = Dpad Down
+    """
+
+    INPUTS_1 = byte(0x151617)
+    """
+    [8-bit] [Bitfield] Inputs
+    // gets shifted back by 32-bit when in options, otherwise static
+    Bit0 = R
+    Bit1 = L
+    Bit2 = X
+    Bit3 = Y
+    Bit4 = Touch
+    """
+
     GAME_STATE = tbyte(0x151660)
     """
     [24-bit Pointer] Game State
-    +0x04: [24-bit pointer] 
+    +0x04: [24-bit Pointer] 
     ++0x01: [8-bit] [Bitfield] Terminals Read
     ++0x04: [32-bit] Total Shots
     ++0x08: [32-bit] Total Hit Shots
     ++0x0C: [32-bit] Current Time
+    ++0x30: [32-bit] Timed Events Seconds Remaining
+    ++0x34: [32-bit] Timed Events Seconds Framecounter
+    +0x190: [24-bit Pointer]
+    ++0x30: [32-bit] Current Menu State 
+    // Only usable when not ingame
+    ... 0x04 = Options
+    ... 0x18 = Delete All Data Prompt
+    ... 0x2e = Title Screen
+    ... 0x56 = Quick Play Level Select
+    """
+
+    PLAYER_X = dword(0x16a534)
+    """
+    [32-bit] Player X
+    // likely value from map display, lacking Z axis
+    """
+
+    PLAYER_Y = dword(0x16a538)
+    """
+    [32-bit] Player Y
+    // likely value from map display, lacking Z axis
+    """
+
+    CURRENT_GAMEMODE = byte(0x207287)
+    """
+    [8-bit] Current Gamemode
+    0x00 = Adventure Mode
+    0x01 = Quick Play
     """
 
     CURRENT_AREA_ID = (0x2aa758)
@@ -41,10 +117,23 @@ class Memory:
     [11 bytes ASCII] Last Entrance ID
     """
 
-    HEALTH_HOST = word(0x2aa770)
+    HEALTH_HOST = byte(0x2aa770)
     """
-    [16-bit] Health Host
-    0x3c = Max
+    [8-bit] Health Host
+    0x3c = Max (no upgrades)
+    0x32 = Max (1st upgrade)
+    0x28 = Max (2nd)
+    0x1e = Max (3rd)
+    0x14 = Max (4th)
+    0x0a = Max (5th)
+    0x00 = Max (6th)
+    0x64 = Dead
+    """
+
+    HEALTH_LOLA_RR10 = byte(0x2aa771)
+    """
+    [8-bit] Health LOLA-RR10
+    0x19 = Max
     0x64 = Dead
     """
 
@@ -179,14 +268,106 @@ class Memory:
     Bit5 = Upgrade 6
     """
 
-    BIT5 = byte(0x2ab03b)
+    LEVEL_EVENTS_E00_PROLOGUE = byte(0x2ab058)
     """
-    [8-bit] [Bitfield]
-    Bit5 = Timed Section Active
+    [8-bit] [Bitfield] Level Events E00 Prologue
+    Bit0 = Tried to leave without picking up SAR
+    Bit1 = After Health Pack Pickup Event
+    Bit2 = Captain Blake Examined
+    Bit4 = Tried to go to the wrong door
     """
 
-    TIMED_SECTIONS_SECONDS_REMAINING = dword(0x2ab068)
+    LEVEL_EVENTS_E01_PSSI = byte(0x2ab0f0)
     """
-    [32-bit] Timed Sections - Seconds Remaining
+    [8-bit] [Bitfield] Level Events E01 PSSI
+    Bit0 = Picked Up Canister
+    Bit1 = Examined Pvt. Elias Warner
+    Bit2 = Got 1st Map Half
+    Bit3 = Dialogue after 1st Map Half Discovery
+    Bit4 = Muon Pistol Unlock Event
+    Bit5 = Picked Up Red Key
+    Bit6 = Dialogue after Red Key Pickup
+    Bit7 = Got 2nd Map Half
+    """
+
+    LEVEL_EVENTS_E01_PSSI_2 = byte(0x2ab0f1)
+    """
+    [8-bit] [Bitfield] Level Events E01 PSSI #2
+    Bit0 = Dialogue after 2nd Map Half Discovery
+    Bit4 = 
+    Bit5 =
+    """
+
+    LAST_LOADED_MOVIE_CUTSCENE_ID = (0x2f05e0)
+    """
+    [11 bytes ASCII] Last Loaded Movie Cutscene ID
+    // all possible values
+    ambush
+    breveal
+    breveal01
+    breveal02
+    breveal03
+    breveal04
+    briefing = Before taking SAR (E00)
+    briefing2
+    buggy
+    buggyele01
+    buggyele02
+    buggyele03
+    buggyexit
+    chaser
+    comdish
+    depart = Outro Cutscene after defeating Matrix Progenitor (E15)
+    dooropen1
+    edeath1
+    edeath2
+    edeath3
+    elevator01 = Going inside PSS I (E00/E01)
+    elevator02 = PSS I Level Intro (E01)
+    elevator03 = Going outwards from PSS I (E01/E03)
+    elevator04
+    elevator05
+    ereveal1
+    explosives
+    fin = Outro Cutscene after beating Overlord (E17)
+    gdeath01 = Guardian 1 Death Cutscene (E02)
+    gdeath02 = Guardian 2 Death Cutscene (E09)
+    gdeath03 = Guardian 3 Death Cutscene (E13)
+    greveal01 = Guardian 1 Intro Cutscene (E02)
+    greveal02 = Guardian 2 Intro Cutscene (E09)
+    greveal03 = Guardian 3 Intro Cutscene (E13)
+    health = First health pickup (E00)
+    idoor
+    intro = Game intro (E00)
+    ldeath = Matrix Progenitor Death Cutscene (E15)
+    lreveal = Matrix Progenitor Intro Cutscene (E15)
+    mdeath
+    mreveal
+    oreveal = Overlord Intro Cutscene (E17)
+    rdeath
+    redkeyopen
+    rreveal
+    sdeath = Sanctus Vector Death Cutscene (E05)
+    spidertank
+    sreveal = Sanctus Vector Intro Cutscene (E05)
+    """
+
+    QUICK_PLAY_LEVEL_SELECT_INDEX = byte(0x2f0b76)
+    """
+    [8-bit] Quick Play Level Select Index
+    0x00 = 1st entry
+    0x01 = 2nd entry
+    0xff = Not in Quick Play
+    // paginated : see 0x002f0b7a for page index
+    // stays allocated during quick play, gets set to 0xff if out of level select/exited to main menu
+    """
+
+    QUICK_PLAY_LEVEL_SELECT_PAGE_INDEX = byte(0x2f0b7a)
+    """
+    [8-bit] Quick Play Level Select Page Index
+    0x01 = Page 1
+    0x02 = Page 2
+    0x03 = Page 3
+    // gets reset to 0x01 if out of quick play, check if selected index = 0xff first
     """
 
