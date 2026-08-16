@@ -1,0 +1,18 @@
+1.0
+Moon
+631253:"0xH1495bc=8_d0xH2f03cc=0_0xH2f03cc=7_0x2aa758=12385_0xW2aa75b=3158064_0xH207287=0":"This Is Just the Beginning":"Enter the PSS I in Adventure Mode":::progression:blobdash:1:::::00000
+631254:"0xH1495bc=32_d0xH2f03cc=0_0xH2f03cc=7_0x2aa758=12385_0xW2aa75b=3486256_0xH207287=0":"Four Arms Were Not Enough":"Defeat the first Guardian in the PSS I in Adventure Mode":::progression:blobdash:5:::::00000
+631255:"0xH1495bc=44_d0xH2f03cc=0_0xH2f03cc=7_0x2aa758=12641_0xW2aa75b=3158064_0xH207287=0":"Taking the Buggy for a Spin":"Successfully make your way through to PSS II in Adventure Mode":::progression:blobdash:2:::::00000
+631256:"0xH1495bc=68_d0xH2f03cc=0_0xH2f03cc=7_0x2aa758=12641_0xW2aa75b=3551536_0xH207287=0":"Cat-and-Mouse Game":"Defeat Sanctus Vector in the PSS II in Adventure Mode":::progression:blobdash:10:::::00000
+631257:"0xH1495bc=92_d0xH2f03cc=0_0xH2f03cc=7_0x2aa758=30052_0xW2aa75b=3307885_0xH207287=0":"Close Encounters of the Third Kind":"Fight your way through the Non-ETO Transport Vessel in Adventure Mode":::progression:blobdash:3:::::00000
+631258:"0xH1495bc=116_d0xH2f03cc=0_0xH2f03cc=7_0x2aa758=12897_0xW2aa75b=3289648_0xH207287=0":"Taking Out the Trash":"Defeat the second Guardian in the Waste Disposal in Adventure Mode":::progression:blobdash:5:::::00000
+631259:"0xH1495bc=140_d0xH2f03cc=0_0xH2f03cc=7_0x2aa758=13153_0xW2aa75b=3289904_0xH207287=0":"Releasing the Adrenalin":"Defeat the Phexic Manifold in the Power Station in Adventure Mode":::progression:blobdash:5:::::00000
+631260:"0xH1495bc=164_d0xH2f03cc=0_0xH2f03cc=7_0x2aa758=13409_0xW2aa75b=3551536_0xH207287=0":"Bad Things Come in Threes":"Defeat the third and final Guardian in the Cold Process in Adventure Mode":::progression:blobdash:10:::::00000
+631261:"0xH1495bc=188_d0xH2f03cc=0_0xH2f03cc=7_0x2aa758=12641_0xW2aa75b=3617072_0xH207287=0":"Deeper in Hell":"Defeat the Matrix Progenitor in the Irradiated Stratum in Adventure Mode":::progression:blobdash:10:::::00000
+631262:"0xH1495bc=212_d0xH2f03cc=0_0xH2f03cc=7_0x2aa758=13921_0xW2aa75b=3420464_0xH207287=0":"Fly Me to the Moon":"Defeat the Overlord and beat the game in Adventure Mode":::win_condition:blobdash:25:::::00000
+631263:"0xH1495bc=20_0xH1505b0=0_0xH207287=0_d0xO2aa7a8=0_0xO2aa7a8=1":"Not a Typo":"Obtain the Muon Pistol in Adventure Mode":::progression:blobdash:2:::::00000
+631264:"0xH1495bc=56_0xH1505b0=0_0xH207287=0_d0xP2aa7a8=0_0xP2aa7a8=1":"Subatomic Particles":"Obtain the Quanta Rifle in Adventure Mode":::progression:blobdash:2:::::00000
+631265:"0xH1495bc=128_0xH1505b0=0_0xH207287=0_d0xQ2aa7a8=0_0xQ2aa7a8=1":"Otherworldly Sniper":"Obtain the Fermion Sniper in Adventure Mode":::progression:blobdash:2:::::00000
+631266:"0xH1495bc=152_0xH1505b0=0_0xH207287=0_d0xR2aa7a8=0_0xR2aa7a8=1":"Bug Spray":"Obtain the Lepton Spread in Adventure Mode":::progression:blobdash:2:::::00000
+631267:"0xH1495bc=176_0xH1505b0=0_0xH207287=0_d0xS2aa7a8=0_0xS2aa7a8=1":"Not a Rocket Launcher":"Obtain the Oxid Cannon in Adventure Mode":::progression:blobdash:2:::::00000
+631268:"0xH1495bc=176_0xH1505b0=0_0xH207287=0_d0xT2aa7a8=0_0xT2aa7a8=1":"Not a Bigger Rocket Launcher":"Obtain the Seeker Pod in Adventure Mode":::progression:blobdash:2:::::00000
