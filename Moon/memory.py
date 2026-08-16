@@ -40,6 +40,28 @@ class Memory:
     0x02 = Veteran
     """
 
+    PLAY_STATE = byte(0x1505b0)
+    """
+    [8-bit] Play State
+    0x00 = Playing
+    0x01 = In dialogue
+    0x03 = In Cutscene/Loading
+    0x02 = For one frame after cutscene
+    """
+
+    BOSS_ENTITY_DATA = tbyte(0x150db8)
+    """
+    [24-bit Pointer] Boss Entity Data?
+    +0x60: [24-bit Pointer]
+    ++0x8: [24-bit Pointer]
+    +++0x8: [24-bit Pointer]
+    ++++0xD0: [16-bit] Overlord Boss Health
+    ... 0x07de = Base Health (Rookie)
+    ... 0x0fa0 = Base Health (Normal)
+    ... 0x1770 = Base Health (Veteran)
+    ... 0x0000 = Dead
+    """
+
     INPUTS = byte(0x151616)
     """
     [8-bit] [Bitfield] Inputs
@@ -77,22 +99,24 @@ class Memory:
     +0x190: [24-bit Pointer]
     ++0x30: [32-bit] Current Menu State 
     // Only usable when not ingame
+    // Flickers back to 00 when loading a new screen
+    ... 0x00 = Loading
     ... 0x04 = Options
     ... 0x18 = Delete All Data Prompt
     ... 0x2e = Title Screen
     ... 0x56 = Quick Play Level Select
     """
 
-    PLAYER_X = dword(0x16a534)
+    MAP_DISPLAY_PLAYER_X = dword(0x16a534)
     """
-    [32-bit] Player X
-    // likely value from map display, lacking Z axis
+    [32-bit] Map Display Player X (relative coords)
+    // controlling the RAD, for example, will shift this compared to RAD movement
+    // probably not that useful, still a stable mem
     """
 
-    PLAYER_Y = dword(0x16a538)
+    MAP_DISPLAY_PLAYER_Y = dword(0x16a538)
     """
-    [32-bit] Player Y
-    // likely value from map display, lacking Z axis
+    [32-bit] Map Display Player Y (relative coords)
     """
 
     CURRENT_GAMEMODE = byte(0x207287)
@@ -268,6 +292,51 @@ class Memory:
     Bit5 = Upgrade 6
     """
 
+    LEVEL_EVENTS_E15 = byte(0x2aafd0)
+    """
+    [8-bit] [Bitfield] Level Events E15
+    Bit0 = Dialogue after Matrix Progenitor Defeated
+    """
+
+    LEVEL_EVENTS_E07_E10 = byte(0x2aaff0)
+    """
+    [8-bit] [Bitfield] Level Events E07/E10
+    // Episode 10
+    Bit0 = Dialogue on level start
+    Bit1 = Map Obtained
+    Bit2 = Map Terminal Dialogue
+    Bit3 = Obtained First Data Packet
+    Bit4 = Obtained Last Data Packet
+
+    // Episode 07
+    Bit0 = First Dialogue
+    """
+
+    LEVEL_EVENTS_E06_E08 = byte(0x2ab034)
+    """
+    [8-bit] [Bitfield] Level Events E06/E08
+    // Episode 06
+    Bit0 = First Dialogue with Unknown Source
+    Bit1 = LOLA Timed Section Completed (set after dialogue)
+    Bit3 = LOLA Timed Section Started (unset then re set on fail)
+
+    // Episode 8
+    Bit0 = First Map Terminal Dialogue
+    Bit1 = Teleporter Dialogue
+    Bit2 = Alpha Team Remains Dialogue
+    Bit3 = After last Energy Core Dialogue
+    Bit5 = Conveyor Belt Dialogue
+    Bit6 = Processing Dialogue
+    """
+
+    LEVEL_EVENTS_E03 = byte(0x2ab054)
+    """
+    [8-bit] [Bitfield] Level Events E03
+    Bit0 = Escape Sequence Started
+    Bit1 = Escape Sequence Over
+    Bit4 = Explosives obtained
+    """
+
     LEVEL_EVENTS_E00_PROLOGUE = byte(0x2ab058)
     """
     [8-bit] [Bitfield] Level Events E00 Prologue
@@ -275,6 +344,15 @@ class Memory:
     Bit1 = After Health Pack Pickup Event
     Bit2 = Captain Blake Examined
     Bit4 = Tried to go to the wrong door
+    """
+
+    LEVEL_EVENTS_E12 = byte(0x2ab090)
+    """
+    [8-bit] [Bitfield] Level Events E12
+    Bit0 = Map Obtained
+    Bit1 = Map Terminal Dialogue
+    Bit2 = Frozen Tanks Dialogue
+    Bit3 = Fluid Extractor Dialogue
     """
 
     LEVEL_EVENTS_E01_PSSI = byte(0x2ab0f0)
@@ -294,41 +372,80 @@ class Memory:
     """
     [8-bit] [Bitfield] Level Events E01 PSSI #2
     Bit0 = Dialogue after 2nd Map Half Discovery
-    Bit4 = 
-    Bit5 =
+    Bit4 = Dialogue to remind you to pick the RAD back up
+    Bit5 = Dialogue Before Picking Up RAD
+    """
+
+    LEVEL_EVENTS_E14 = byte(0x2ab104)
+    """
+    [8-bit] [Bitfield] Level Events E14
+    Bit0 = Dialogue at level start
+    Bit1 = Obtained Map
+    Bit2 = Map Terminal Dialogue
+    Bit3 = Last Power Cell Obtained
+    """
+
+    LEVEL_EVENTS_E04 = byte(0x2ab194)
+    """
+    [8-bit] [Bitfield] Level Events E04
+    Bit0 = Map Terminal Interaction (level start)
+    Bit1 = Examined Strange Terminal
+    Bit2 = Assembled both pieces, got Quanta
+    Bit3 = Obtained Right Side Missing Piece
+    Bit4 = Obtained Left Side Missing Piece
+    Bit5 = Entered lab dialogue
+    Bit6 = Placed first piece
+    Bit7 = Dialogue after entering main entrance
+    """
+
+    END_SCREEN = byte(0x2f03cc)
+    """
+    [8-bit] End Screen
+    0x07 = End Screen Reached
+    0x00 = Not reached
+    """
+
+    BOSS_HEALTH_STATIC_COPY = word(0x2f0418)
+    """
+    [16-bit] Boss Health Static Copy
+    // uneditable, only the stack originals are
+    // Not 0 when boss is dead, keeps the HP before death frame
+    // unreliable to check if boss is dead
+    0xffff = No Boss Active / End Screen Reached
     """
 
     LAST_LOADED_MOVIE_CUTSCENE_ID = (0x2f05e0)
     """
-    [11 bytes ASCII] Last Loaded Movie Cutscene ID
+    [12 bytes ASCII] Last Loaded Movie Cutscene ID
+    // 0x00 terminated; first byte set to 0x00 on level exit/exit to menu
     // all possible values
-    ambush
-    breveal
-    breveal01
-    breveal02
-    breveal03
-    breveal04
+    ambush = Waste Disposal Ambush Cutscene (E08)
+    breveal = Unused, duplicated of breveal01
+    breveal01 = North West Brute Cutescene (E10)
+    breveal02 = North East Brute Cutescene (E10)
+    breveal03 = South East Brute Cutescene (E10)
+    breveal04 = South West Brute Cutescene (E10)
     briefing = Before taking SAR (E00)
-    briefing2
-    buggy
-    buggyele01
-    buggyele02
-    buggyele03
-    buggyexit
-    chaser
-    comdish
+    briefing2 = Meeting back with A-1 to take explosives (E03)
+    buggy = Unused?
+    buggyele01 = LOLA transition after timed sequence (E06)
+    buggyele02 = LOLA transition during timed sequence (E06)
+    buggyele03 = Entered buggy after PSS II escape (E06)
+    buggyexit = In the LOLA after taking the explosives (E03)
+    chaser = Ambush Cutscene (E01)
+    comdish = After LOLA timed sequence (E06)
     depart = Outro Cutscene after defeating Matrix Progenitor (E15)
-    dooropen1
-    edeath1
-    edeath2
-    edeath3
+    dooropen1 = After ambush (E01)
+    edeath1 = Energy Core 1 destroyed in Waste Disposal (E08)
+    edeath2 = Energy Core 2 destroyed in Waste Disposal (E08)
+    edeath3 = Energy Core 3 destroyed in Waste Disposal (E08)
     elevator01 = Going inside PSS I (E00/E01)
     elevator02 = PSS I Level Intro (E01)
-    elevator03 = Going outwards from PSS I (E01/E03)
-    elevator04
-    elevator05
-    ereveal1
-    explosives
+    elevator03 = Going outwards from PSS I and II and from Power Station to Cold Process (E01/E03/E04/E06/E12)
+    elevator04 = Going inside PSS II / Waste Disposal / Cold Process to Power Station / Irradiated Stratum (E03/E08/E12/E14)
+    elevator05 = Fermion Homeworld to Power Station or Overlord (E14/E16)
+    ereveal1 = Energy Core 1 in Waste Disposal (E08)
+    explosives = Blowing up entry to PSS II (E03)
     fin = Outro Cutscene after beating Overlord (E17)
     gdeath01 = Guardian 1 Death Cutscene (E02)
     gdeath02 = Guardian 2 Death Cutscene (E09)
@@ -337,18 +454,18 @@ class Memory:
     greveal02 = Guardian 2 Intro Cutscene (E09)
     greveal03 = Guardian 3 Intro Cutscene (E13)
     health = First health pickup (E00)
-    idoor
+    idoor = Door at the end of PSS I / II / Waste Disposal / Power Station / Cold Process (E01/E04/E08/E10/E12)
     intro = Game intro (E00)
     ldeath = Matrix Progenitor Death Cutscene (E15)
     lreveal = Matrix Progenitor Intro Cutscene (E15)
-    mdeath
-    mreveal
+    mdeath = After defeating the Core in Non-ETEO Vessel (E07)
+    mreveal = Non-ETEO Transport Vessel Reveal (E06)
     oreveal = Overlord Intro Cutscene (E17)
-    rdeath
-    redkeyopen
-    rreveal
+    rdeath = Phexic Manifold Death Cutscene (E11)
+    redkeyopen = Unused? Seems related to PSS I red key unlock
+    rreveal = Phexic Manifold Intro Cutscene (E11)
     sdeath = Sanctus Vector Death Cutscene (E05)
-    spidertank
+    spidertank= Unused? Seems to be related to Fermion Homeworld
     sreveal = Sanctus Vector Intro Cutscene (E05)
     """
 
@@ -369,5 +486,15 @@ class Memory:
     0x02 = Page 2
     0x03 = Page 3
     // gets reset to 0x01 if out of quick play, check if selected index = 0xff first
+    """
+
+    GUARDIAN_I_BOSS_HEALTH = word(0x2f3000)
+    """
+    [16-bit] Guardian I Boss Health
+    // flickers during boss intro cutscene
+    0x0064 = Base Health (Rookie)
+    0x00c8 = Base Health (Normal)
+    0x012c = Base Health (Veteran)
+    0x0000 = Dead
     """
 

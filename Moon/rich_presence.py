@@ -50,8 +50,12 @@ class MoonRichPresence(RichPresence):
         # If the Game State pointer is not initialized, we are in the splash screens
         self.add_display(Memory.GAME_STATE == 0, 'Loading...')
         # First byte of the current area is always set to 00 when not ingame
-        self.add_display(byte(Memory.CURRENT_AREA_ID) == 0x00, f'@MenuState({ptr(Memory.GAME_STATE.address) >> ptr(0x190) >> measured(dword(0x30))})')
-        self.add_display(byte(Memory.CURRENT_AREA_ID) != 0x00, f'Major Kane is in @Episode({Memory.CURRENT_EPISODE}) • @Difficulty({Memory.CURRENT_DIFFICULTY})')
+        self.add_display(
+            byte(Memory.CURRENT_AREA_ID) == 0x00, 
+            f'@MenuState({ptr(Memory.GAME_STATE.address) >> ptr(0x190) >> measured(dword(0x30))})')
+        self.add_display(
+            byte(Memory.CURRENT_AREA_ID) != 0x00, 
+            f'Major Kane is in @Episode({Memory.CURRENT_EPISODE}) • @Difficulty({Memory.CURRENT_DIFFICULTY})')
         self.add_display(None, "Playing Moon")
 
 if __name__=="__main__":
