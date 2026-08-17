@@ -94,6 +94,9 @@ class Memory:
     ++0x04: [32-bit] Total Shots
     ++0x08: [32-bit] Total Hit Shots
     ++0x0C: [32-bit] Current Time
+    ++0x10: [32-bit] Playing
+    ... 0x03 = In level
+    ... 0x00 = Not in level
     ++0x30: [32-bit] Timed Events Seconds Remaining
     ++0x34: [32-bit] Timed Events Seconds Framecounter
     +0x190: [24-bit Pointer]

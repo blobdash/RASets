@@ -4,6 +4,34 @@ from pycheevos.core.constants import AchievementType, LeaderboardFormat
 from collections import OrderedDict
 
 achievements = OrderedDict({
+    631407: Achievement(
+        id=631407,
+        title="""Really Wanted to Get Out of Here""",
+        description="""Defeat the first Guardian in under 1 minute in Normal or Veteran""",
+        points=5,
+        badge="00000",
+    ),
+    631408: Achievement(
+        id=631408,
+        title="""Not Flying Off Just Yet""",
+        description="""Complete the Non-ETO Transport Vessel section and defeat the Core in under 2 minutes and 30 seconds in Normal or Veteran""",
+        points=5,
+        badge="00000",
+    ),
+    631409: Achievement(
+        id=631409,
+        title="""Merry-Go-Round""",
+        description="""Defeat the second Guardian in under 1 minute and 15 seconds in Normal or Veteran""",
+        points=10,
+        badge="00000",
+    ),
+    631410: Achievement(
+        id=631410,
+        title="""Stone Cold""",
+        description="""Defeat the third Guardian in under 2 minutes in Normal or Veteran""",
+        points=25,
+        badge="00000",
+    ),
     631253: Achievement(
         id=631253,
         title="""This Is Just the Beginning""",
@@ -135,4 +163,116 @@ achievements = OrderedDict({
 })
 
 leaderboards = OrderedDict({
+    169465: Leaderboard(
+        id=169465,
+        title="""Guardian I Normal Time Trial""",
+        description="""Defeat the first Guardian as fast as possible in Normal""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169466: Leaderboard(
+        id=169466,
+        title="""Guardian I Veteran Time Trial""",
+        description="""Defeat the first Guardian as fast as possible in Veteran""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169467: Leaderboard(
+        id=169467,
+        title="""Sanctus Vector Normal Time Trial""",
+        description="""Defeat the Sanctus Vector as fast as possible in Normal""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169468: Leaderboard(
+        id=169468,
+        title="""Sanctus Vector Veteran Time Trial""",
+        description="""Defeat the Sanctus Vector as fast as possible in Veteran""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169469: Leaderboard(
+        id=169469,
+        title="""Core Normal Time Trial""",
+        description="""Destroy the Core in the Non-ETEO Transport Vessel as fast as possible in Normal""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169470: Leaderboard(
+        id=169470,
+        title="""Core Veteran Time Trial""",
+        description="""Destroy the Core in the Non-ETEO Transport Vessel as fast as possible in Veteran""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169471: Leaderboard(
+        id=169471,
+        title="""Guardian II Time Trial""",
+        description="""Defeat the second Guardian as fast as possible in Normal""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169472: Leaderboard(
+        id=169472,
+        title="""Guardian II Veteran Time Trial""",
+        description="""Defeat the second Guardian as fast as possible in Veteran""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169473: Leaderboard(
+        id=169473,
+        title="""Phexic Manifold Normal Time Trial""",
+        description="""Defeat the Phexic Manifold as fast as possible in Normal""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169474: Leaderboard(
+        id=169474,
+        title="""Phexic Manifold Veteran Time Trial""",
+        description="""Defeat the Phexic Manifold as fast as possible in Veteran""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169475: Leaderboard(
+        id=169475,
+        title="""Guardian III Normal Time Trial""",
+        description="""Defeat the third Guardian as fast as possible in Normal""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169476: Leaderboard(
+        id=169476,
+        title="""Guardian III Veteran Time Trial""",
+        description="""Defeat the third Guardian as fast as possible in Veteran""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169477: Leaderboard(
+        id=169477,
+        title="""Matrix Progenitor Normal Time Trial""",
+        description="""Defeat the Matrix Progenitor as fast as possible in Normal""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169478: Leaderboard(
+        id=169478,
+        title="""Matrix Progenitor Veteran Time Trial""",
+        description="""Defeat the Matrix Progenitor as fast as possible in Veteran""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169479: Leaderboard(
+        id=169479,
+        title="""Overlord Normal Time Trial""",
+        description="""Defeat the Overlord as fast as possible in Normal""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
+    169480: Leaderboard(
+        id=169480,
+        title="""Overlord Veteran Time Trial""",
+        description="""Defeat the Overlord as fast as possible in Veteran""",
+        format=LeaderboardFormat.TIME,
+        lower_is_better=True,
+    ),
 })

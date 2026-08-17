@@ -88,5 +88,85 @@ class MoonSet(AchievementSet):
     def seeker_unlock(self, ach: Achievement):
         ach.add_core(Weapons.SEEKER.unlocked(Episode.EPISODE_14))
 
+    @achievement(631407)
+    def guardian1_tt(self, ach: Achievement):
+        ach.add_core(chapterTimeTrial(Episode.EPISODE_02, 1, 0))
+    
+    @achievement(631408)
+    def eteo_tt(self, ach: Achievement):
+        ach.add_core(chapterTimeTrial(Episode.EPISODE_07, 2, 30))
+    
+    @achievement(631409)
+    def guardian2_tt(self, ach: Achievement):
+        ach.add_core(chapterTimeTrial(Episode.EPISODE_09, 1, 15))
+    
+    @achievement(631410)
+    def guardian3_tt(self, ach: Achievement):
+        ach.add_core(chapterTimeTrial(Episode.EPISODE_13, 2, 0))
+    
+    @leaderboard(169465)
+    def guardian1_normal_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_02, Difficulty.NORMAL, lb)
+    
+    @leaderboard(169466)
+    def guardian1_veteran_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_02, Difficulty.VETERAN, lb)
+    
+    @leaderboard(169467)
+    def sanctusvector_normal_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_05, Difficulty.NORMAL, lb)
+    
+    @leaderboard(169468)
+    def sanctusvector_veteran_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_05, Difficulty.VETERAN, lb)
+
+    @leaderboard(169469)
+    def eteocore_normal_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_07, Difficulty.NORMAL, lb)
+    
+    @leaderboard(169470)
+    def eteocore_veteran_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_07, Difficulty.VETERAN, lb)
+
+    @leaderboard(169471)
+    def guardian2_normal_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_09, Difficulty.NORMAL, lb)
+    
+    @leaderboard(169472)
+    def guardian2_veteran_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_09, Difficulty.VETERAN, lb)
+
+    @leaderboard(169473)
+    def phexic_normal_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_11, Difficulty.NORMAL, lb)
+    
+    @leaderboard(169474)
+    def phexic_veteran_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_11, Difficulty.VETERAN, lb)
+
+    @leaderboard(169475)
+    def guardian3_normal_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_13, Difficulty.NORMAL, lb)
+    
+    @leaderboard(169476)
+    def guardian3_veteran_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_13, Difficulty.VETERAN, lb)
+
+    @leaderboard(169477)
+    def matrix_normal_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_15, Difficulty.NORMAL, lb)
+    
+    @leaderboard(169478)
+    def matrix_veteran_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_15, Difficulty.VETERAN, lb)
+
+    @leaderboard(169479)
+    def overlord_normal_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_17, Difficulty.NORMAL, lb)
+    
+    @leaderboard(169480)
+    def overlord_veteran_lb(self, lb: Leaderboard):
+        chapterTimeTrialLeaderboard(Episode.EPISODE_17, Difficulty.VETERAN, lb)
+
 if __name__=="__main__":
     MoonSet().save("output/")

@@ -5,6 +5,8 @@ from pycheevos.models.leaderboard import Leaderboard
 
 from memory import Memory
 
+FRAMERATE = 60
+
 class Episode:
   EPISODE_00 = 0x08
   EPISODE_01 = 0x14
@@ -28,7 +30,11 @@ class Episode:
 class Gamemode:
   ADVENTURE = 0x00
   QUICKPLAY = 0x01
-  
+
+class Difficulty:
+  ROOKIE = 0x00
+  NORMAL = 0x01
+  VETERAN = 0x02
 
 class Weapon:
   AMMO: MemoryValue
@@ -103,3 +109,41 @@ def clearedChapter(episode: int, map: str, subarea: str, gamemode = None, diffic
   if(difficulty is not None):
     cond.append(Memory.CURRENT_DIFFICULTY == difficulty)
   return cond
+
+def chapterTimeTrial(episode: int, minutes: int, seconds: int):
+  return group(
+    (Memory.CURRENT_EPISODE == episode),
+    (Memory.CURRENT_DIFFICULTY >= 0x01),
+    (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
+    (delta(Memory.END_SCREEN) == 0x00),
+    (trigger(Memory.END_SCREEN == 0x07)),
+    # pauseif timer is above number of frames allowed for tt
+    (pause_if(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c) > frames(minutes, seconds)))
+  )
+
+def chapterTimeTrialLeaderboard(episode: int, difficulty: int, lb: Leaderboard):
+  lb.format = LeaderboardFormat.FRAMES
+  lb.lower_is_better = True
+  lb.add_start(
+    group(
+      (Memory.CURRENT_EPISODE == episode),
+      (Memory.CURRENT_DIFFICULTY == difficulty),
+      (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
+      (delta(Memory.END_SCREEN) == 0x00),
+      (Memory.END_SCREEN == 0x07)
+    )
+  )
+  lb.add_cancel(
+    (Memory.CURRENT_EPISODE != episode) |
+    (Memory.CURRENT_DIFFICULTY != difficulty) |
+    (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x00)
+  )
+  lb.add_submit(
+    always_true()
+  )
+  lb.add_value(
+    measured(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c))
+  )
+
+def frames(min: int, seconds: int):
+  return ((min * 60) + seconds) * FRAMERATE
