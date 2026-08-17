@@ -4,34 +4,6 @@ from pycheevos.core.constants import AchievementType, LeaderboardFormat
 from collections import OrderedDict
 
 achievements = OrderedDict({
-    631407: Achievement(
-        id=631407,
-        title="""Really Wanted to Get Out of Here""",
-        description="""Defeat the first Guardian in under 1 minute in Normal or Veteran""",
-        points=5,
-        badge="00000",
-    ),
-    631408: Achievement(
-        id=631408,
-        title="""Not Flying Off Just Yet""",
-        description="""Complete the Non-ETO Transport Vessel section and defeat the Core in under 2 minutes and 30 seconds in Normal or Veteran""",
-        points=5,
-        badge="00000",
-    ),
-    631409: Achievement(
-        id=631409,
-        title="""Merry-Go-Round""",
-        description="""Defeat the second Guardian in under 1 minute and 15 seconds in Normal or Veteran""",
-        points=10,
-        badge="00000",
-    ),
-    631410: Achievement(
-        id=631410,
-        title="""Stone Cold""",
-        description="""Defeat the third Guardian in under 2 minutes in Normal or Veteran""",
-        points=25,
-        badge="00000",
-    ),
     631253: Achievement(
         id=631253,
         title="""This Is Just the Beginning""",
@@ -159,6 +131,41 @@ achievements = OrderedDict({
         points=25,
         badge="00000",
         type=AchievementType.WIN_CONDITION,
+    ),
+    631407: Achievement(
+        id=631407,
+        title="""Really Wanted to Get Out of Here""",
+        description="""Defeat the first Guardian in under 1 minute in Normal or Veteran""",
+        points=5,
+        badge="00000",
+    ),
+    631469: Achievement(
+        id=631469,
+        title="""Come Back Here!""",
+        description="""Defeat the Sanctus Vector without letting it recover health for more than 10 seconds in Normal or Veteran""",
+        points=10,
+        badge="00000",
+    ),
+    631408: Achievement(
+        id=631408,
+        title="""Not Flying Off Just Yet""",
+        description="""Complete the Non-ETO Transport Vessel section and defeat the Core in under 2 minutes and 30 seconds in Normal or Veteran""",
+        points=5,
+        badge="00000",
+    ),
+    631409: Achievement(
+        id=631409,
+        title="""Merry-Go-Round""",
+        description="""Defeat the second Guardian in under 1 minute and 15 seconds in Normal or Veteran""",
+        points=10,
+        badge="00000",
+    ),
+    631410: Achievement(
+        id=631410,
+        title="""Stone Cold""",
+        description="""Defeat the third Guardian in under 2 minutes in Normal or Veteran""",
+        points=25,
+        badge="00000",
     ),
 })
 

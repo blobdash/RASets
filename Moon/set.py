@@ -92,6 +92,10 @@ class MoonSet(AchievementSet):
     def guardian1_tt(self, ach: Achievement):
         ach.add_core(chapterTimeTrial(Episode.EPISODE_02, 1, 0))
     
+    @achievement(631469)
+    def sanctus_healchallenge(self, ach: Achievement):
+        ach.add_core(sanctus_healchallenge(10))
+    
     @achievement(631408)
     def eteo_tt(self, ach: Achievement):
         ach.add_core(chapterTimeTrial(Episode.EPISODE_07, 2, 30))
@@ -104,6 +108,8 @@ class MoonSet(AchievementSet):
     def guardian3_tt(self, ach: Achievement):
         ach.add_core(chapterTimeTrial(Episode.EPISODE_13, 2, 0))
     
+    # Leaderboards
+
     @leaderboard(169465)
     def guardian1_normal_lb(self, lb: Leaderboard):
         chapterTimeTrialLeaderboard(Episode.EPISODE_02, Difficulty.NORMAL, lb)

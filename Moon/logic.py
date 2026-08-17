@@ -145,5 +145,25 @@ def chapterTimeTrialLeaderboard(episode: int, difficulty: int, lb: Leaderboard):
     measured(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c))
   )
 
+def sanctus_healchallenge(seconds: int):
+  return group(
+    (Memory.CURRENT_EPISODE == Episode.EPISODE_05),
+    (Memory.CURRENT_DIFFICULTY >= 0x01),
+    (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
+    (delta(Memory.END_SCREEN) == 0x00),
+    (trigger(Memory.END_SCREEN == 0x07)),
+    reset_next_if(group(
+      (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> delta(dword(0x10)) == 0x03) &
+      (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x00)
+    )),
+    # only count hits when on the boss map, avoids hits during loads/room transitions
+    and_next(string_equals(Memory.CURRENT_AREA_ID, 'a1', 2, endianness='little')),
+    and_next(string_equals(Memory.CURRENT_SUBMAP_ID, '016', 3, endianness='little')),
+    # only count hits after boss health is initialized
+    and_next(Memory.BOSS_HEALTH_STATIC_COPY != 0xffff),
+    # boss regains 1hp every 20 frames, meaning 3 hp per second.
+    pause_if(delta(Memory.BOSS_HEALTH_STATIC_COPY) < Memory.BOSS_HEALTH_STATIC_COPY).with_hits(seconds*3)
+  )
+
 def frames(min: int, seconds: int):
   return ((min * 60) + seconds) * FRAMERATE
