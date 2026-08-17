@@ -118,7 +118,7 @@ def chapterTimeTrial(episode: int, minutes: int, seconds: int):
     (delta(Memory.END_SCREEN) == 0x00),
     (trigger(Memory.END_SCREEN == 0x07)),
     # pauseif timer is above number of frames allowed for tt
-    (pause_if(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c) > frames(minutes, seconds)))
+    (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c) <= frames(minutes, seconds))
   )
 
 def chapterTimeTrialLeaderboard(episode: int, difficulty: int, lb: Leaderboard):
