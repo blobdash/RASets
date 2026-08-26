@@ -160,6 +160,13 @@ achievements = OrderedDict({
         points=10,
         badge="00000",
     ),
+    633036: Achievement(
+        id=633036,
+        title="""Day at the Range""",
+        description="""Defeat the Phexic Manifold with at least 95% accuracy in Normal in Quick Play""",
+        points=10,
+        badge="00000",
+    ),
     631410: Achievement(
         id=631410,
         title="""Stone Cold""",

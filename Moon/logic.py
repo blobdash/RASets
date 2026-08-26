@@ -178,7 +178,7 @@ def sanctus_healchallenge(seconds: int):
   return group(
     (Memory.CURRENT_GAMEMODE == 0x01),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_05),
-    (Memory.CURRENT_DIFFICULTY >= 0x01),
+    (Memory.CURRENT_DIFFICULTY == 0x01),
     (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
     (delta(Memory.END_SCREEN) == 0x00),
     (trigger(Memory.END_SCREEN == 0x07)),
@@ -193,6 +193,22 @@ def sanctus_healchallenge(seconds: int):
     and_next(Memory.BOSS_HEALTH_STATIC_COPY != 0xffff),
     # boss regains 1hp every 20 frames, meaning 3 hp per second.
     (delta(Memory.BOSS_HEALTH_STATIC_COPY) < Memory.BOSS_HEALTH_STATIC_COPY).with_hits(seconds*3)
+  )
+
+def phexic_accchallenge(accuracy: int):
+  return group(
+    (Memory.CURRENT_GAMEMODE == 0x01),
+    (Memory.CURRENT_EPISODE == Episode.EPISODE_11),
+    (Memory.CURRENT_DIFFICULTY == 0x01),
+    (delta(Memory.END_SCREEN) == 0x00),
+    (Memory.END_SCREEN == 0x07),
+    # hit shots * 100
+    remember((ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> ptr(0x08)) * 100),
+    add_address(ptr(Memory.GAME_STATE.address) >> ptr(0x04)),
+    # (hit shots * 100) / total shots (toolkit rounds down, just like the game)
+    remember(recall() /  ptr(0x04)),
+    # (calculated accuracy >= req. accuracy)
+    (recall() >= accuracy)
   )
 
 def frames(min: int, seconds: int):
