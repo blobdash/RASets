@@ -112,6 +112,40 @@ class MoonSet(AchievementSet):
     def overlord_tt(self, ach: Achievement):
         ach.add_core(chapterTimeTrial(Episode.EPISODE_17, 3, 0))
     
+    @achievement(633028)
+    def pss1_veteran(self, ach: Achievement):
+        ach.add_core(clearedChapter(Episode.EPISODE_02, 'a0', '025', gamemode=Gamemode.ADVENTURE, difficulty=Difficulty.VETERAN))
+
+    @achievement(633029)
+    def pss2_veteran(self, ach: Achievement):
+        ach.add_core(clearedChapter(Episode.EPISODE_05, 'a1', '016', gamemode=Gamemode.ADVENTURE, difficulty=Difficulty.VETERAN))
+    
+    @achievement(633030)
+    def eteo_veteran(self, ach: Achievement):
+        # for some reason this boss tps you to map 'dummy2' on clear instead of the next map for the LOLA section
+        # it doesn't follow the standard map naming convention (xx_yyy) they use, so it looks weird but it works 
+        ach.add_core(clearedChapter(Episode.EPISODE_07, 'du', 'my2', gamemode=Gamemode.ADVENTURE, difficulty=Difficulty.VETERAN))
+    
+    @achievement(633031)
+    def waste_veteran(self, ach: Achievement):
+        ach.add_core(clearedChapter(Episode.EPISODE_09, 'a2', '022', gamemode=Gamemode.ADVENTURE, difficulty=Difficulty.VETERAN))
+
+    @achievement(633032)
+    def powerstation_veteran(self, ach: Achievement):
+        ach.add_core(clearedChapter(Episode.EPISODE_11, 'a3', '032', gamemode=Gamemode.ADVENTURE, difficulty=Difficulty.VETERAN))
+    
+    @achievement(633033)
+    def coldprocess_veteran(self, ach: Achievement):
+        ach.add_core(clearedChapter(Episode.EPISODE_13, 'a4', '016', gamemode=Gamemode.ADVENTURE, difficulty=Difficulty.VETERAN))
+    
+    @achievement(633034)
+    def irradiated_veteran(self, ach: Achievement):
+        ach.add_core(clearedChapter(Episode.EPISODE_15, 'a1', '017', gamemode=Gamemode.ADVENTURE, difficulty=Difficulty.VETERAN))
+    
+    @achievement(633035)
+    def overlord_veteran(self, ach: Achievement):
+        ach.add_core(clearedChapter(Episode.EPISODE_17, 'a6', '014', gamemode=Gamemode.ADVENTURE, difficulty=Difficulty.VETERAN))
+    
     # Leaderboards
 
     @leaderboard()

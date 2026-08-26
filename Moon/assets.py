@@ -174,6 +174,62 @@ achievements = OrderedDict({
         points=10,
         badge="00000",
     ),
+    633028: Achievement(
+        id=633028,
+        title="""Experimental Procedures""",
+        description="""Complete the PSS I section and defeat the first Guardian in Veteran in Adventure Mode""",
+        points=10,
+        badge="00000",
+    ),
+    633029: Achievement(
+        id=633029,
+        title="""Initial Processing""",
+        description="""Complete the PSS II section and defeat the Sanctus Vector in Veteran in Adventure Mode""",
+        points=25,
+        badge="00000",
+    ),
+    633030: Achievement(
+        id=633030,
+        title="""Rushing to the Core""",
+        description="""Complete the Non-ETO Transport Vessel section and defeat the Core in Veteran in Adventure Mode""",
+        points=10,
+        badge="00000",
+    ),
+    633031: Achievement(
+        id=633031,
+        title="""Freedom 2 Survivor""",
+        description="""Complete the Waste Disposal section and defeat the second Guardian in Veteran in Adventure Mode""",
+        points=10,
+        badge="00000",
+    ),
+    633032: Achievement(
+        id=633032,
+        title="""Brutes Extermination Protocol""",
+        description="""Complete the Power Station section and defeat the Phexic Manifold in Veteran in Adventure Mode""",
+        points=10,
+        badge="00000",
+    ),
+    633033: Achievement(
+        id=633033,
+        title="""Freezer Burn""",
+        description="""Complete the Cold Process section and defeat the third Guardian in Veteran in Adventure Mode""",
+        points=25,
+        badge="00000",
+    ),
+    633034: Achievement(
+        id=633034,
+        title="""Radioactive""",
+        description="""Complete the Irradiated Stratum section and defeat the Matrix Progenitor in Veteran in Adventure Mode""",
+        points=10,
+        badge="00000",
+    ),
+    633035: Achievement(
+        id=633035,
+        title="""Fly Me to the Moon""",
+        description="""Complete the Fermian Homeworld section and defeat the Sector Overlord in Veteran in Adventure Mode""",
+        points=50,
+        badge="00000",
+    ),
 })
 
 leaderboards = OrderedDict({
