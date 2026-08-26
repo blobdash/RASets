@@ -106,9 +106,17 @@ class MoonSet(AchievementSet):
     
     @achievement(631410)
     def guardian3_tt(self, ach: Achievement):
-        ach.add_core(chapterTimeTrial(Episode.EPISODE_13, 2, 0))
+        ach.add_core(conditions=chapterTimeTrial(Episode.EPISODE_13, 2, 0))
+    
+    @achievement(633027)
+    def overlord_tt(self, ach: Achievement):
+        ach.add_core(chapterTimeTrial(Episode.EPISODE_17, 3, 0))
     
     # Leaderboards
+
+    @leaderboard()
+    def display(self, lb: Leaderboard):
+        timer_display(lb)
 
     @leaderboard(169465)
     def guardian1_normal_lb(self, lb: Leaderboard):

@@ -1,3 +1,4 @@
+from types import NoneType
 from pycheevos.core.constants import *
 from pycheevos.core.helpers import *
 from pycheevos.core.value import MemoryValue
@@ -96,7 +97,7 @@ class Weapons:
 def ptr(value):
   return tbyte(value)
 
-def clearedChapter(episode: int, map: str, subarea: str, gamemode = None, difficulty = None):
+def clearedChapter(episode: int, map: str, subarea: str, gamemode: int | NoneType = None, difficulty: int | NoneType = None):
   cond = group(
     (Memory.CURRENT_EPISODE == episode),
     (delta(Memory.END_SCREEN) == 0x00),
@@ -112,8 +113,9 @@ def clearedChapter(episode: int, map: str, subarea: str, gamemode = None, diffic
 
 def chapterTimeTrial(episode: int, minutes: int, seconds: int):
   return group(
+    (Memory.CURRENT_GAMEMODE == 0x01),
     (Memory.CURRENT_EPISODE == episode),
-    (Memory.CURRENT_DIFFICULTY >= 0x01),
+    (Memory.CURRENT_DIFFICULTY == 0x01),
     (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
     (delta(Memory.END_SCREEN) == 0x00),
     (trigger(Memory.END_SCREEN == 0x07)),
@@ -134,9 +136,7 @@ def chapterTimeTrialLeaderboard(episode: int, difficulty: int, lb: Leaderboard):
     )
   )
   lb.add_cancel(
-    (Memory.CURRENT_EPISODE != episode) |
-    (Memory.CURRENT_DIFFICULTY != difficulty) |
-    (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x00)
+    always_false()
   )
   lb.add_submit(
     always_true()
@@ -145,8 +145,38 @@ def chapterTimeTrialLeaderboard(episode: int, difficulty: int, lb: Leaderboard):
     measured(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c))
   )
 
+def timer_display(lb: Leaderboard):
+  lb.format = LeaderboardFormat.FRAMES
+  lb.add_start(
+    group(
+      reset_if(bit2(Memory.INPUTS.address) == 0x00),
+      reset_if(bit0(Memory.INPUTS_1.address) == 0x00),
+      reset_if(bit1(Memory.INPUTS_1.address) == 0x00),
+      (bit2(Memory.INPUTS.address) == 0x01) &
+      (bit0(Memory.INPUTS_1.address) == 0x01) &
+      (bit1(Memory.INPUTS_1.address) == 0x01).with_hits(260)
+    )
+  )
+  lb.add_cancel(
+    group(
+      reset_if(bit2(Memory.INPUTS.address) == 0x00),
+      reset_if(bit0(Memory.INPUTS_1.address) == 0x00),
+      reset_if(bit1(Memory.INPUTS_1.address) == 0x00),
+      (bit2(Memory.INPUTS.address) == 0x01) &
+      (bit0(Memory.INPUTS_1.address) == 0x01) &
+      (bit1(Memory.INPUTS_1.address) == 0x01).with_hits(360)
+    )
+  )
+  lb.add_submit(
+    always_false()
+  )
+  lb.add_value(
+    measured(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c))
+  )
+
 def sanctus_healchallenge(seconds: int):
   return group(
+    (Memory.CURRENT_GAMEMODE == 0x01),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_05),
     (Memory.CURRENT_DIFFICULTY >= 0x01),
     (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
@@ -162,7 +192,7 @@ def sanctus_healchallenge(seconds: int):
     # only count hits after boss health is initialized
     and_next(Memory.BOSS_HEALTH_STATIC_COPY != 0xffff),
     # boss regains 1hp every 20 frames, meaning 3 hp per second.
-    pause_if(delta(Memory.BOSS_HEALTH_STATIC_COPY) < Memory.BOSS_HEALTH_STATIC_COPY).with_hits(seconds*3)
+    (delta(Memory.BOSS_HEALTH_STATIC_COPY) < Memory.BOSS_HEALTH_STATIC_COPY).with_hits(seconds*3)
   )
 
 def frames(min: int, seconds: int):
