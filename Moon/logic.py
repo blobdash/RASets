@@ -203,12 +203,70 @@ def phexic_accchallenge(accuracy: int):
     (delta(Memory.END_SCREEN) == 0x00),
     (Memory.END_SCREEN == 0x07),
     # hit shots * 100
-    remember((ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> ptr(0x08)) * 100),
+    remember((ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x08)) * 100),
     add_address(ptr(Memory.GAME_STATE.address) >> ptr(0x04)),
     # (hit shots * 100) / total shots (toolkit rounds down, just like the game)
-    remember(recall() /  ptr(0x04)),
+    remember(recall() /  dword(0x04)),
     # (calculated accuracy >= req. accuracy)
     (recall() >= accuracy)
+  )
+
+def pssitrial(seconds: int):
+  return group(
+    (Memory.CURRENT_EPISODE == Episode.EPISODE_03),
+    (bit0(Memory.LEVEL_EVENTS_E03.address) == 0x01),
+    (delta(bit1(Memory.LEVEL_EVENTS_E03.address)) == 0x00),
+    (trigger(bit1(Memory.LEVEL_EVENTS_E03.address) == 0x01)),
+    (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x30) >= seconds)
+  )
+
+def pssiisatellitetrial(seconds: int):
+  return group(
+    (Memory.CURRENT_EPISODE == Episode.EPISODE_06),
+    (bit3(Memory.LEVEL_EVENTS_E06_E08.address) == 0x01),
+    (delta(bit1(Memory.LEVEL_EVENTS_E06_E08.address)) == 0x00),
+    (trigger(bit1(Memory.LEVEL_EVENTS_E06_E08.address) == 0x01)),
+    (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x30) >= seconds)
+  )
+
+def pssiescape_lb(lb: Leaderboard):
+  lb.format = LeaderboardFormat.SECS
+  lb.add_start(
+    group(
+      (Memory.CURRENT_EPISODE == Episode.EPISODE_03),
+      (bit0(Memory.LEVEL_EVENTS_E03.address) == 0x01),
+      (delta(bit1(Memory.LEVEL_EVENTS_E03.address)) == 0x00),
+      (bit1(Memory.LEVEL_EVENTS_E03.address) == 0x01)
+    )
+  )
+  lb.add_cancel(
+    always_false()
+  )
+  lb.add_submit(
+    always_true()
+  )
+  lb.add_value(
+    measured(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x30))
+  )
+
+def pssiisatellite_lb(lb: Leaderboard):
+  lb.format = LeaderboardFormat.SECS
+  lb.add_start(
+    group(
+      (Memory.CURRENT_EPISODE == Episode.EPISODE_06),
+      (bit3(Memory.LEVEL_EVENTS_E06_E08.address) == 0x01),
+      (delta(bit1(Memory.LEVEL_EVENTS_E06_E08.address)) == 0x00),
+      (bit1(Memory.LEVEL_EVENTS_E06_E08.address) == 0x01)
+    )
+  )
+  lb.add_cancel(
+    always_false()
+  )
+  lb.add_submit(
+    always_true()
+  )
+  lb.add_value(
+    measured(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x30))
   )
 
 def frames(min: int, seconds: int):

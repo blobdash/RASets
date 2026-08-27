@@ -150,6 +150,14 @@ class MoonSet(AchievementSet):
     def overlord_veteran(self, ach: Achievement):
         ach.add_core(clearedChapter(Episode.EPISODE_17, 'a6', '014', gamemode=Gamemode.ADVENTURE, difficulty=Difficulty.VETERAN))
     
+    @achievement()
+    def pssiexit_trial(self, ach: Achievement):
+        ach.add_core(pssitrial(35))
+    
+    @achievement()
+    def pssiisatellite_trial(self, ach: Achievement):
+        ach.add_core(pssiisatellitetrial(60))
+    
     # Leaderboards
 
     @leaderboard(170216)
@@ -219,6 +227,14 @@ class MoonSet(AchievementSet):
     @leaderboard(169480)
     def overlord_veteran_lb(self, lb: Leaderboard):
         chapterTimeTrialLeaderboard(Episode.EPISODE_17, Difficulty.VETERAN, lb)
+    
+    @leaderboard()
+    def pssi_lb(self, lb: Leaderboard):
+        pssiescape_lb(lb)
+
+    @leaderboard()
+    def pssii_lb(self, lb: Leaderboard):
+        pssiisatellite_lb(lb)
 
 if __name__=="__main__":
     MoonSet().save("output/")
