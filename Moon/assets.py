@@ -148,6 +148,20 @@ achievements = OrderedDict({
         badge="00000",
         type=AchievementType.MISSABLE,
     ),
+    633421: Achievement(
+        id=633421,
+        title="""Tsukigami's VR Training""",
+        description="""Complete every VR Training Mission""",
+        points=5,
+        badge="00000",
+    ),
+    633422: Achievement(
+        id=633422,
+        title="""Tsukigami's VeteRan Training""",
+        description="""Complete every VR Training Mission on Veteran""",
+        points=10,
+        badge="00000",
+    ),
     631407: Achievement(
         id=631407,
         title="""Really Wanted to Get out of Here""",

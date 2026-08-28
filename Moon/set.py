@@ -164,11 +164,11 @@ class MoonSet(AchievementSet):
     def all_ammo_upgrades(self, ach: Achievement):
         ach.add_core(all_ammo())
     
-    @achievement()
+    @achievement(633421)
     def bonus_stages(self, ach: Achievement):
         ach.add_core(vr_training())
     
-    @achievement()
+    @achievement(633422)
     def bonus_stages_veteran(self, ach: Achievement):
         ach.add_core(vr_training_veteran())
     
