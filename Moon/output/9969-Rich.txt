@@ -1,3 +1,54 @@
+Lookup:MenuState
+0x4=Adjusting some settings
+0x18=Deleting the save data?!
+0x2e=On the title screen
+0x56=Selecting a level in Quick Play
+*=Loading...
+
+Lookup:Episode
+0x4=training with Tsuke
+0x8=in the Prologue
+0x10=training with Tsuke
+0x14=in the PSS I
+0x1c=training with Tsuke
+0x20=fighting the first Guardian
+0x2c=escaping the PSS I
+0x38=in the PSS II
+0x44=fighting the Sanctus Vector
+0x50=escaping the PSS II
+0x5c=in the Non-ETEO Transport Vessel
+0x68=in the Waste Disposal
+0x74=fighting the second Guardian
+0x80=in the Power Station
+0x8c=fighting the Phexic Manifold
+0x98=in the Cold Process
+0xa4=fighting the third Guardian
+0xb0=in the Irradiated Stratum
+0xbc=fighting the Matrix Progenitor
+0xc8=in the Fermian Homeworld
+0xd4=fighting the Overlord
+0xe0=training with Tsuke
+0xec=training with Tsuke
+0xf8=training with Tsuke
+
+Lookup:Difficulty
+0x0=Rookie
+0x1=Normal
+0x2=Veteran
+
+Lookup:Gamemode
+0x0=Quick Play
+0x1=Quick Play
+0x2=Quick Play
+0x3=Quick Play
+0x4=Quick Play
+0x5=Quick Play
+0x6=Quick Play
+0x7=Quick Play
+0xff=Adventure Mode
+
 Display:
-?0xW151660=0?Uninitialized Game State
-Current Map : @ASCIIChar(0xH2aa758)@ASCIIChar(0xH2aa759)@ASCIIChar(0xH2aa75a)@ASCIIChar(0xH2aa75b)@ASCIIChar(0xH2aa75c)@ASCIIChar(0xH2aa75d)@ASCIIChar(0xH2aa75e) • Cutscene : @ASCIIChar(0xH2f05e0)@ASCIIChar(0xH2f05e1)@ASCIIChar(0xH2f05e2)@ASCIIChar(0xH2f05e3)@ASCIIChar(0xH2f05e4)@ASCIIChar(0xH2f05e5)@ASCIIChar(0xH2f05e6)@ASCIIChar(0xH2f05e7)@ASCIIChar(0xH2f05e8)@ASCIIChar(0xH2f05e9)@ASCIIChar(0xH2f05ea)@ASCIIChar(0xH2f05eb) • Event flags : @Number(I:0xW151660_I:0xW0004_M:0xT0020)@Number(I:0xW151660_I:0xW0004_M:0xS0020)@Number(I:0xW151660_I:0xW0004_M:0xR0020)@Number(I:0xW151660_I:0xW0004_M:0xQ0020)@Number(I:0xW151660_I:0xW0004_M:0xP0020)@Number(I:0xW151660_I:0xW0004_M:0xO0020)@Number(I:0xW151660_I:0xW0004_M:0xN0020)@Number(I:0xW151660_I:0xW0004_M:0xM0020)-@Number(I:0xW151660_I:0xW0004_M:0xT0021)@Number(I:0xW151660_I:0xW0004_M:0xS0021)@Number(I:0xW151660_I:0xW0004_M:0xR0021)@Number(I:0xW151660_I:0xW0004_M:0xQ0021)@Number(I:0xW151660_I:0xW0004_M:0xP0021)@Number(I:0xW151660_I:0xW0004_M:0xO0021)@Number(I:0xW151660_I:0xW0004_M:0xN0021)@Number(I:0xW151660_I:0xW0004_M:0xM0021)
+?0xW151660=0?Loading...
+?0xH2aa758=0?@MenuState(I:0xW151660_I:0xW0190_M:0xX0030)
+?0xH2aa758!=0?Major Kane is @Episode(0xH1495bc) • @Number(100-0xH2aa770)❤️ @Difficulty(0xX14fec8) • @Gamemode(0xH2f0b76)
+Playing Moon
