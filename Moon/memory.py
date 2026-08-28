@@ -30,6 +30,12 @@ class Memory:
     0xbc = E15
     0xc8 = E16
     0xd4 = E17
+    0xe0 = VR 1
+    0xec = VR 2
+    0xf8 = VR 3
+    0x04 = VR 4
+    0x1c = VR 5
+    0x10 = VR 6
     """
 
     CURRENT_DIFFICULTY = dword(0x14fec8)
@@ -90,7 +96,16 @@ class Memory:
     """
     [24-bit Pointer] Game State
     +0x04: [24-bit Pointer] 
-    ++0x01: [8-bit] [Bitfield] Terminals Read
+    ++0x01: [8-bit] [Bitfield] Terminals Read for Merits
+    ... Bit3 = Terminal 1
+    ... Bit4 = Terminal 2
+    ... Bit5 = Terminal 3
+    ... Bit6 = Terminal 4
+    ... Bit7 = Terminal 5
+    ++0x02 [8-bit] [Bitfield] Merits
+    ... Bit0 = Terminal 6
+    ... Bit1 = Terminal 7
+    ... Bit2 = Terminal 8
     ++0x04: [32-bit] Total Shots
     ++0x08: [32-bit] Total Hit Shots
     ++0x0C: [32-bit] Current Time
@@ -110,6 +125,21 @@ class Memory:
     ... 0x56 = Quick Play Level Select
     """
 
+    PLAYER_X_POSITION = dword(0x151b80)
+    """
+    [32-bit] Player X Position
+    """
+
+    PLAYER_Z_POSITION = dword(0x151b84)
+    """
+    [32-bit] Player Z Position
+    """
+
+    PLAYER_Y_POSITION = dword(0x151b88)
+    """
+    [32-bit] Player Y Position
+    """
+
     MAP_DISPLAY_PLAYER_X = dword(0x16a534)
     """
     [32-bit] Map Display Player X (relative coords)
@@ -127,6 +157,375 @@ class Memory:
     [8-bit] Current Gamemode
     0x00 = Adventure Mode
     0x01 = Quick Play
+    """
+
+    SAVE_DATA_FOR_ROOKIE_PROLOGUE = dword(0x2aa5b8)
+    """
+    [32-bit] Save Data for Rookie Prologue
+    // A Note on Save Data
+    // first 8 bits are merits if the level has any
+    // next 12 bits are the minutes
+    // next 5 bits is the amount of seconds, divided by 2
+    // next 7 bits are the accuracy
+    // example : 0xff00d2c2
+    // has all merits, a time of 13:05 and an accuracy of 66%
+    // realistically this shouldn't ever be used except to check if a level has been completed (neq 0x00)
+    // number of seconds cannot go beyond 31 due to this (2^5 = 32) just like on the end screen
+    """
+
+    SAVE_DATA_FOR_NORMAL_PROLOGUE = dword(0x2aa5bc)
+    """
+    [32-bit] Save Data for Normal Prologue
+    """
+
+    SAVE_DATA_FOR_VETERAN_PROLOGUE = dword(0x2aa5c0)
+    """
+    [32-bit] Save Data for Veteran Prologue
+    """
+
+    SAVE_DATA_FOR_ROOKIE_PSS_I = dword(0x2aa5c4)
+    """
+    [32-bit] Save Data for Rookie PSS I
+    """
+
+    SAVE_DATA_FOR_NORMAL_PSS_I = dword(0x2aa5c8)
+    """
+    [32-bit] Save Data for Normal PSS I
+    """
+
+    SAVE_DATA_FOR_VETERAN_PSS_I = dword(0x2aa5cc)
+    """
+    [32-bit] Save Data for Veteran PSS I
+    """
+
+    SAVE_DATA_FOR_ROOKIE_GUARDIAN_I = dword(0x2aa5d0)
+    """
+    [32-bit] Save Data for Rookie Guardian I
+    """
+
+    SAVE_DATA_FOR_NORMAL_GUARDIAN_I = dword(0x2aa5d4)
+    """
+    [32-bit] Save Data for Normal Guardian I
+    """
+
+    SAVE_DATA_FOR_VETERAN_GUARDIAN_I = dword(0x2aa5d8)
+    """
+    [32-bit] Save Data for Veteran Guardian I
+    """
+
+    SAVE_DATA_FOR_ROOKIE_PSS_I_ESCAPE = dword(0x2aa5dc)
+    """
+    [32-bit] Save Data for Rookie PSS I Escape
+    """
+
+    SAVE_DATA_FOR_NORMAL_PSS_I_ESCAPE = dword(0x2aa5e0)
+    """
+    [32-bit] Save Data for Normal PSS I Escape
+    """
+
+    SAVE_DATA_FOR_VETERAN_PSS_I_ESCAPE = dword(0x2aa5e4)
+    """
+    [32-bit] Save Data for Veteran PSS I Escape
+    """
+
+    SAVE_DATA_FOR_ROOKIE_PSS_II = dword(0x2aa5e8)
+    """
+    [32-bit] Save Data for Rookie PSS II
+    """
+
+    SAVE_DATA_FOR_NORMAL_PSS_II = dword(0x2aa5ec)
+    """
+    [32-bit] Save Data for Normal PSS II
+    """
+
+    SAVE_DATA_FOR_VETERAN_PSS_II = dword(0x2aa5f0)
+    """
+    [32-bit] Save Data for Veteran PSS II
+    """
+
+    SAVE_DATA_FOR_ROOKIE_SANCTUS_VECTOR = dword(0x2aa5f4)
+    """
+    [32-bit] Save Data for Rookie Sanctus Vector
+    """
+
+    SAVE_DATA_FOR_NORMAL_SANCTUS_VECTOR = dword(0x2aa5f8)
+    """
+    [32-bit] Save Data for Normal Sanctus Vector
+    """
+
+    SAVE_DATA_FOR_VETERAN_SANCTUS_VECTOR = dword(0x2aa5fc)
+    """
+    [32-bit] Save Data for Veteran Sanctus Vector
+    """
+
+    SAVE_DATA_FOR_ROOKIE_EXIT_PSS_II = dword(0x2aa600)
+    """
+    [32-bit] Save Data for Rookie Exit PSS II
+    """
+
+    SAVE_DATA_FOR_NORMAL_EXIT_PSS_II = dword(0x2aa604)
+    """
+    [32-bit] Save Data for Normal Exit PSS II
+    """
+
+    SAVE_DATA_FOR_VETERAN_EXIT_PSS_II = dword(0x2aa608)
+    """
+    [32-bit] Save Data for Veteran Exit PSS II
+    """
+
+    SAVE_DATA_FOR_ROOKIE_NON_ETEO_TRANSPORT_VESSEL = dword(0x2aa60c)
+    """
+    [32-bit] Save Data for Rookie Non-ETEO Transport Vessel
+    """
+
+    SAVE_DATA_FOR_NORMAL_NON_ETEO_TRANSPORT_VESSEL = dword(0x2aa610)
+    """
+    [32-bit] Save Data for Normal Non-ETEO Transport Vessel
+    """
+
+    SAVE_DATA_FOR_VETERAN_NON_ETEO_TRANSPORT_VESSEL = dword(0x2aa614)
+    """
+    [32-bit] Save Data for Veteran Non-ETEO Transport Vessel
+    """
+
+    SAVE_DATA_FOR_ROOKIE_WASTE_DISPOSAL = dword(0x2aa618)
+    """
+    [32-bit] Save Data for Rookie Waste Disposal
+    """
+
+    SAVE_DATA_FOR_NORMAL_WASTE_DISPOSAL = dword(0x2aa61c)
+    """
+    [32-bit] Save Data for Normal Waste Disposal
+    """
+
+    SAVE_DATA_FOR_VETERAN_WASTE_DISPOSAL = dword(0x2aa620)
+    """
+    [32-bit] Save Data for Veteran Waste Disposal
+    """
+
+    SAVE_DATA_FOR_ROOKIE_GUARDIAN_II = dword(0x2aa624)
+    """
+    [32-bit] Save Data for Rookie Guardian II
+    """
+
+    SAVE_DATA_FOR_NORMAL_GUARDIAN_II = dword(0x2aa628)
+    """
+    [32-bit] Save Data for Normal Guardian II
+    """
+
+    SAVE_DATA_FOR_VETERAN_GUARDIAN_II = dword(0x2aa62c)
+    """
+    [32-bit] Save Data for Veteran Guardian II
+    """
+
+    SAVE_DATA_FOR_ROOKIE_POWER_STATION = dword(0x2aa630)
+    """
+    [32-bit] Save Data for Rookie Power Station
+    """
+
+    SAVE_DATA_FOR_NORMAL_POWER_STATION = dword(0x2aa634)
+    """
+    [32-bit] Save Data for Normal Power Station
+    """
+
+    SAVE_DATA_FOR_VETERAN_POWER_STATION = dword(0x2aa638)
+    """
+    [32-bit] Save Data for Veteran Power Station
+    """
+
+    SAVE_DATA_FOR_ROOKIE_PHEXIC_MANIFOLD = dword(0x2aa63c)
+    """
+    [32-bit] Save Data for Rookie Phexic Manifold
+    """
+
+    SAVE_DATA_FOR_NORMAL_PHEXIC_MANIFOLD = dword(0x2aa640)
+    """
+    [32-bit] Save Data for Normal Phexic Manifold
+    """
+
+    SAVE_DATA_FOR_VETERAN_PHEXIC_MANIFOLD = dword(0x2aa644)
+    """
+    [32-bit] Save Data for Veteran Phexic Manifold
+    """
+
+    SAVE_DATA_FOR_ROOKIE_COLD_PROCESS = dword(0x2aa648)
+    """
+    [32-bit] Save Data for Rookie Cold Process
+    """
+
+    SAVE_DATA_FOR_NORMAL_COLD_PROCESS = dword(0x2aa64c)
+    """
+    [32-bit] Save Data for Normal Cold Process
+    """
+
+    SAVE_DATA_FOR_VETERAN_COLD_PROCESS = dword(0x2aa650)
+    """
+    [32-bit] Save Data for Veteran Cold Process
+    """
+
+    SAVE_DATA_FOR_ROOKIE_GUARDIAN_III = dword(0x2aa654)
+    """
+    [32-bit] Save Data for Rookie Guardian III
+    """
+
+    SAVE_DATA_FOR_NORMAL_GUARDIAN_III = dword(0x2aa658)
+    """
+    [32-bit] Save Data for Normal Guardian III
+    """
+
+    SAVE_DATA_FOR_VETERAN_GUARDIAN_III = dword(0x2aa65c)
+    """
+    [32-bit] Save Data for Veteran Guardian III
+    """
+
+    SAVE_DATA_FOR_ROOKIE_IRRADIATED_STRATUM = dword(0x2aa660)
+    """
+    [32-bit] Save Data for Rookie Irradiated Stratum
+    """
+
+    SAVE_DATA_FOR_NORMAL_IRRADIATED_STRATUM = dword(0x2aa664)
+    """
+    [32-bit] Save Data for Normal Irradiated Stratum
+    """
+
+    SAVE_DATA_FOR_VETERAN_IRRADIATED_STRATUM = dword(0x2aa668)
+    """
+    [32-bit] Save Data for Veteran Irradiated Stratum
+    """
+
+    SAVE_DATA_FOR_ROOKIE_MATRIX_PROGENITOR = dword(0x2aa66c)
+    """
+    [32-bit] Save Data for Rookie Matrix Progenitor
+    """
+
+    SAVE_DATA_FOR_NORMAL_MATRIX_PROGENITOR = dword(0x2aa670)
+    """
+    [32-bit] Save Data for Normal Matrix Progenitor
+    """
+
+    SAVE_DATA_FOR_VETERAN_MATRIX_PROGENITOR = dword(0x2aa674)
+    """
+    [32-bit] Save Data for Veteran Matrix Progenitor
+    """
+
+    SAVE_DATA_FOR_ROOKIE_FERMIAN_HOMEWORLD = dword(0x2aa678)
+    """
+    [32-bit] Save Data for Rookie Fermian Homeworld
+    """
+
+    SAVE_DATA_FOR_NORMAL_FERMIAN_HOMEWORLD = dword(0x2aa67c)
+    """
+    [32-bit] Save Data for Normal Fermian Homeworld
+    """
+
+    SAVE_DATA_FOR_VETERAN_FERMIAN_HOMEWORLD = dword(0x2aa680)
+    """
+    [32-bit] Save Data for Veteran Fermian Homeworld
+    """
+
+    SAVE_DATA_FOR_ROOKIE_OVERLORD = dword(0x2aa684)
+    """
+    [32-bit] Save Data for Rookie Overlord
+    """
+
+    SAVE_DATA_FOR_NORMAL_OVERLORD = dword(0x2aa688)
+    """
+    [32-bit] Save Data for Normal Overlord
+    """
+
+    SAVE_DATA_FOR_VETERAN_OVERLORD = dword(0x2aa68c)
+    """
+    [32-bit] Save Data for Veteran Overlord
+    """
+
+    SAVE_DATA_FOR_ROOKIE_VR_TRAINING_1 = dword(0x2aa690)
+    """
+    [32-bit] Save Data for Rookie VR Training 1
+    """
+
+    SAVE_DATA_FOR_NORMAL_VR_TRAINING_1 = dword(0x2aa694)
+    """
+    [32-bit] Save Data for Normal VR Training 1
+    """
+
+    SAVE_DATA_FOR_VETERAN_VR_TRAINING_1 = dword(0x2aa698)
+    """
+    [32-bit] Save Data for Veteran VR Training 1
+    """
+
+    SAVE_DATA_FOR_ROOKIE_VR_TRAINING_2 = dword(0x2aa69c)
+    """
+    [32-bit] Save Data for Rookie VR Training 2
+    """
+
+    SAVE_DATA_FOR_NORMAL_VR_TRAINING_2 = dword(0x2aa6a0)
+    """
+    [32-bit] Save Data for Normal VR Training 2
+    """
+
+    SAVE_DATA_FOR_VETERAN_VR_TRAINING_2 = dword(0x2aa6a4)
+    """
+    [32-bit] Save Data for Veteran VR Training 2
+    """
+
+    SAVE_DATA_FOR_ROOKIE_VR_TRAINING_3 = dword(0x2aa6a8)
+    """
+    [32-bit] Save Data for Rookie VR Training 3
+    """
+
+    SAVE_DATA_FOR_NORMAL_VR_TRAINING_3 = dword(0x2aa6ac)
+    """
+    [32-bit] Save Data for Normal VR Training 3
+    """
+
+    SAVE_DATA_FOR_VETERAN_VR_TRAINING_3 = dword(0x2aa6b0)
+    """
+    [32-bit] Save Data for Veteran VR Training 3
+    """
+
+    SAVE_DATA_FOR_ROOKIE_VR_TRAINING_4 = dword(0x2aa6b4)
+    """
+    [32-bit] Save Data for Rookie VR Training 4
+    """
+
+    SAVE_DATA_FOR_NORMAL_VR_TRAINING_4 = dword(0x2aa6b8)
+    """
+    [32-bit] Save Data for Normal VR Training 4
+    """
+
+    SAVE_DATA_FOR_VETERAN_VR_TRAINING_4 = dword(0x2aa6bc)
+    """
+    [32-bit] Save Data for Veteran VR Training 4
+    """
+
+    SAVE_DATA_FOR_ROOKIE_VR_TRAINING_5 = dword(0x2aa6c0)
+    """
+    [32-bit] Save Data for Rookie VR Training 5
+    """
+
+    SAVE_DATA_FOR_NORMAL_VR_TRAINING_5 = dword(0x2aa6c4)
+    """
+    [32-bit] Save Data for Normal VR Training 5
+    """
+
+    SAVE_DATA_FOR_VETERAN_VR_TRAINING_5 = dword(0x2aa6c8)
+    """
+    [32-bit] Save Data for Veteran VR Training 5
+    """
+
+    SAVE_DATA_FOR_ROOKIE_VR_TRAINING_6 = dword(0x2aa6cc)
+    """
+    [32-bit] Save Data for Rookie VR Training 6
+    """
+
+    SAVE_DATA_FOR_NORMAL_VR_TRAINING_6 = dword(0x2aa6d0)
+    """
+    [32-bit] Save Data for Normal VR Training 6
+    """
+
+    SAVE_DATA_FOR_VETERAN_VR_TRAINING_6 = dword(0x2aa6d4)
+    """
+    [32-bit] Save Data for Veteran VR Training 6
     """
 
     CURRENT_AREA_ID = (0x2aa758)
@@ -293,6 +692,17 @@ class Memory:
     Bit3 = Upgrade 4
     Bit4 = Upgrade 5
     Bit5 = Upgrade 6
+    """
+
+    ALIEN_ARTIFACTS = byte(0x2aa7ae)
+    """
+    [8-bit] [Bitfield] Alien Artifacts
+    Bit2 = Artifact 1 E01
+    Bit3 = Artifact 2 E01
+    Bit4 = Artifact 3 E01
+    Bit5 = Artifact 1 E04
+    Bit6 = Artifact 2 E04
+    Bit7 = Artifact 3 E04
     """
 
     LEVEL_EVENTS_E15 = byte(0x2aafd0)

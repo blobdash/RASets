@@ -377,14 +377,14 @@ leaderboards = OrderedDict({
         id=170264,
         title="""PSS I Escape Time Trial""",
         description="""Reach the exit of the PSS I as fast as possible""",
-        format=LeaderboardFormat.TIMESECS,
+        format=LeaderboardFormat.SECS,
         lower_is_better=False,
     ),
     170265: Leaderboard(
         id=170265,
         title="""Satellite Time Trial""",
         description="""Reach the satellite after exiting the PSS II as fast as possible""",
-        format=LeaderboardFormat.TIMESECS,
+        format=LeaderboardFormat.SECS,
         lower_is_better=False,
     ),
 })

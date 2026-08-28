@@ -9,6 +9,8 @@ JINJA_ENV = Environment(
 )
 
 def generate_assets(game_id, achievements, leaderboards, source_name):
+    for lb in leaderboards:
+        lb['format'] = importer.FORMAT_MAPPING.get(lb['format'], 'VALUE')
     with open("assets.py", "w", encoding="utf-8") as file:
         template = JINJA_ENV.get_template("assets.jinja")
         file.write(template.render(achievements=achievements, leaderboards=leaderboards))
