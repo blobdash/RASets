@@ -694,6 +694,15 @@ class Memory:
     Bit5 = Upgrade 6
     """
 
+    AMMO_CLIP_UPGRADES = byte(0x2aa7aa)
+    """
+    [8-bit] [Bitfield] Ammo Clip Upgrades
+    Bit0 = Upgrade 1
+    Bit1 = Upgrade 2
+    Bit2 = Upgrade 3
+    Bit3 = Upgrade 4
+    """
+
     ALIEN_ARTIFACTS = byte(0x2aa7ae)
     """
     [8-bit] [Bitfield] Alien Artifacts

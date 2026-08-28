@@ -51,7 +51,7 @@ class Weapon:
     return group(
       (Memory.CURRENT_EPISODE == episode),
       (Memory.PLAY_STATE == 0x00),
-      (Memory.CURRENT_GAMEMODE == 0x00),
+      adventure_mode(),
       delta(self.UNLOCKED) == 0,
       self.UNLOCKED == 1
     )
@@ -97,23 +97,28 @@ class Weapons:
 def ptr(value):
   return tbyte(value)
 
+def adventure_mode():
+  return (Memory.QUICK_PLAY_LEVEL_SELECT_INDEX == 0xff)
+
+def quick_play():
+  return (Memory.QUICK_PLAY_LEVEL_SELECT_INDEX != 0xff)
+
 def clearedChapter(episode: int, map: str, subarea: str, gamemode: int | NoneType = None, difficulty: int | NoneType = None):
   cond = group(
     (Memory.CURRENT_EPISODE == episode),
     (delta(Memory.END_SCREEN) == 0x00),
     (Memory.END_SCREEN == 0x07),
     (string_equals(Memory.CURRENT_AREA_ID, map, 2, endianness='little')),
-    (string_equals(Memory.CURRENT_SUBMAP_ID, subarea, 3, endianness='little'))
+    (string_equals(Memory.CURRENT_SUBMAP_ID, subarea, 3, endianness='little')),
+    adventure_mode()
   )
-  if(gamemode is not None):
-    cond.append((Memory.CURRENT_GAMEMODE == gamemode))
   if(difficulty is not None):
     cond.append(Memory.CURRENT_DIFFICULTY == difficulty)
   return cond
 
 def chapterTimeTrial(episode: int, minutes: int, seconds: int):
   return group(
-    (Memory.CURRENT_GAMEMODE == 0x01),
+    quick_play(),
     (Memory.CURRENT_EPISODE == episode),
     (Memory.CURRENT_DIFFICULTY == 0x01),
     (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
@@ -176,7 +181,7 @@ def timer_display(lb: Leaderboard):
 
 def sanctus_healchallenge(seconds: int):
   return group(
-    (Memory.CURRENT_GAMEMODE == 0x01),
+    quick_play(),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_05),
     (Memory.CURRENT_DIFFICULTY == 0x01),
     (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
@@ -197,7 +202,7 @@ def sanctus_healchallenge(seconds: int):
 
 def phexic_accchallenge(accuracy: int):
   return group(
-    (Memory.CURRENT_GAMEMODE == 0x01),
+    quick_play(),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_11),
     (Memory.CURRENT_DIFFICULTY == 0x01),
     (delta(Memory.END_SCREEN) == 0x00),
@@ -267,6 +272,26 @@ def pssiisatellite_lb(lb: Leaderboard):
   )
   lb.add_value(
     measured(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x30))
+  )
+
+def all_hp():
+  return group(
+    adventure_mode(),
+    (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
+    (string_equals(Memory.CURRENT_AREA_ID, 'a5', 2, endianness='little')),
+    (string_equals(Memory.CURRENT_SUBMAP_ID, '016', 3, endianness='little')),
+    (delta(bitcount(Memory.HEALTH_UPGRADES.address)) == 5),
+    (bitcount(Memory.HEALTH_UPGRADES.address) == 6)
+  )
+
+def all_ammo():
+  return group(
+    adventure_mode(),
+    (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
+    (string_equals(Memory.CURRENT_AREA_ID, 'a1', 2, endianness='little')),
+    (string_equals(Memory.CURRENT_SUBMAP_ID, '017', 3, endianness='little')),
+    (delta(bitcount(Memory.AMMO_CLIP_UPGRADES.address)) == 3),
+    (bitcount(Memory.AMMO_CLIP_UPGRADES.address) == 4)
   )
 
 def frames(min: int, seconds: int):
