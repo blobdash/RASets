@@ -24,45 +24,43 @@ class MoonSet(AchievementSet):
     
     @achievement(631253)
     def prologue_clear(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_00, 'a0', '000'))
+        ach.add_core(clearedChapter(Episode.EPISODE_00))
     
     @achievement(631254)
     def pss1_clear(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_02, 'a0', '025'))
+        ach.add_core(clearedChapter(Episode.EPISODE_02))
     
     @achievement(631255)
     def pss2_enter(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_03, 'a1', '000'))
+        ach.add_core(clearedChapter(Episode.EPISODE_03))
     
     @achievement(631256)
     def pss2_clear(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_05, 'a1', '016'))
+        ach.add_core(clearedChapter(Episode.EPISODE_05))
     
     @achievement(631257)
     def eteo_clear(self, ach: Achievement):
-        # for some reason this boss tps you to map 'dummy2' on clear instead of the next map for the LOLA section
-        # it doesn't follow the standard map naming convention (xx_yyy) they use, so it looks weird but it works 
-        ach.add_core(clearedChapter(Episode.EPISODE_07, 'du', 'my2'))
+        ach.add_core(clearedChapter(Episode.EPISODE_07))
     
     @achievement(631258)
     def waste_clear(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_09, 'a2', '022'))
+        ach.add_core(clearedChapter(Episode.EPISODE_09))
 
     @achievement(631259)
     def powerstation_clear(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_11, 'a3', '032'))
+        ach.add_core(clearedChapter(Episode.EPISODE_11))
     
     @achievement(631260)
     def coldprocess_clear(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_13, 'a4', '016'))
+        ach.add_core(clearedChapter(Episode.EPISODE_13))
     
     @achievement(631261)
     def irradiated_clear(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_15, 'a1', '017'))
+        ach.add_core(clearedChapter(Episode.EPISODE_15))
     
     @achievement(631262)
     def overlord_clear(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_17, 'a6', '014'))
+        ach.add_core(clearedChapter(Episode.EPISODE_17))
 
     @achievement(631263)
     def muon_unlock(self, ach: Achievement):
@@ -118,37 +116,37 @@ class MoonSet(AchievementSet):
     
     @achievement(633028)
     def pss1_veteran(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_02, 'a0', '025', difficulty=Difficulty.VETERAN))
+        ach.add_core(clearedChapter(Episode.EPISODE_02, difficulty=Difficulty.VETERAN))
 
     @achievement(633029)
     def pss2_veteran(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_05, 'a1', '016', difficulty=Difficulty.VETERAN))
+        ach.add_core(clearedChapter(Episode.EPISODE_05, difficulty=Difficulty.VETERAN))
     
     @achievement(633030)
     def eteo_veteran(self, ach: Achievement):
         # for some reason this boss tps you to map 'dummy2' on clear instead of the next map for the LOLA section
         # it doesn't follow the standard map naming convention (xx_yyy) they use, so it looks weird but it works 
-        ach.add_core(clearedChapter(Episode.EPISODE_07, 'du', 'my2', difficulty=Difficulty.VETERAN))
+        ach.add_core(clearedChapter(Episode.EPISODE_07, difficulty=Difficulty.VETERAN))
     
     @achievement(633031)
     def waste_veteran(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_09, 'a2', '022', difficulty=Difficulty.VETERAN))
+        ach.add_core(clearedChapter(Episode.EPISODE_09, difficulty=Difficulty.VETERAN))
 
     @achievement(633032)
     def powerstation_veteran(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_11, 'a3', '032', difficulty=Difficulty.VETERAN))
+        ach.add_core(clearedChapter(Episode.EPISODE_11, difficulty=Difficulty.VETERAN))
     
     @achievement(633033)
     def coldprocess_veteran(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_13, 'a4', '016', difficulty=Difficulty.VETERAN))
+        ach.add_core(clearedChapter(Episode.EPISODE_13, difficulty=Difficulty.VETERAN))
     
     @achievement(633034)
     def irradiated_veteran(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_15, 'a1', '017', difficulty=Difficulty.VETERAN))
+        ach.add_core(clearedChapter(Episode.EPISODE_15, difficulty=Difficulty.VETERAN))
     
     @achievement(633035)
     def overlord_veteran(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_17, 'a6', '014', difficulty=Difficulty.VETERAN))
+        ach.add_core(clearedChapter(Episode.EPISODE_17, difficulty=Difficulty.VETERAN))
     
     @achievement(633132)
     def pssiexit_trial(self, ach: Achievement):

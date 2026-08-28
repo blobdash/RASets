@@ -49,6 +49,6 @@ Lookup:Gamemode
 
 Display:
 ?0xW151660=0?Loading...
-?0xH2aa758=0?@MenuState(I:0xW151660_I:0xW0190_M:0xX0030)
-?0xH2aa758!=0?Major Kane is @Episode(0xH1495bc) • @Number(100-0xH2aa770)❤️ @Difficulty(0xX14fec8) • @Gamemode(0xH2f0b76)
+?0xW2f0660=0?@MenuState(I:0xW151660_I:0xW0190_M:0xX0030)
+?0xW2f0660!=0?Major Kane is @Episode(0xH1495bc) • @Number(100-0xH2aa770)❤️ @Difficulty(0xX14fec8) • @Gamemode(0xH2f0b76)
 Playing Moon

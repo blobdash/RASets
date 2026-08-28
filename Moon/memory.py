@@ -165,7 +165,7 @@ class Memory:
     // A Note on Save Data
     // first 8 bits are merits if the level has any
     // next 12 bits are the minutes
-    // next 5 bits is the amount of seconds, divided by 2
+    // next 5 bits is the amount of seconds
     // next 7 bits are the accuracy
     // example : 0xff00d2c2
     // has all merits, a time of 13:05 and an accuracy of 66%
@@ -822,9 +822,10 @@ class Memory:
 
     END_SCREEN = byte(0x2f03cc)
     """
-    [8-bit] End Screen
-    0x07 = End Screen Reached
-    0x00 = Not reached
+    [8-bit] [Bitfield] End Screen
+    Bit0 = Saving
+    Bit1 = Saved
+    Bit2 = End Screen Active
     """
 
     BOSS_HEALTH_STATIC_COPY = word(0x2f0418)
@@ -834,6 +835,13 @@ class Memory:
     // Not 0 when boss is dead, keeps the HP before death frame
     // unreliable to check if boss is dead
     0xffff = No Boss Active / End Screen Reached
+    """
+
+    PLAYER_HEALTH_COPY = byte(0x2f042f)
+    """
+    [8-bit] Player Health Copy
+    // stays at last health on death
+    // copy, not editable
     """
 
     LAST_LOADED_MOVIE_CUTSCENE_ID = (0x2f05e0)
@@ -889,6 +897,13 @@ class Memory:
     sdeath = Sanctus Vector Death Cutscene (E05)
     spidertank= Unused? Seems to be related to Fermion Homeworld
     sreveal = Sanctus Vector Intro Cutscene (E05)
+    """
+
+    POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT = tbyte(0x2f0660)
+    """
+    [24-bit Pointer] Pointer to last accessed dialogue script
+    // set to 0x00 when not ingame
+    // written to whenever something happens on the touchscreen
     """
 
     QUICK_PLAY_LEVEL_SELECT_INDEX = byte(0x2f0b76)

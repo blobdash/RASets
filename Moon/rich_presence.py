@@ -55,10 +55,10 @@ class MoonRichPresence(RichPresence):
         self.add_display(Memory.GAME_STATE == 0, 'Loading...')
         # First byte of the current area is always set to 00 when not ingame
         self.add_display(
-            byte(Memory.CURRENT_AREA_ID) == 0x00, 
+            is_not_ingame(), 
             f'@MenuState({ptr(Memory.GAME_STATE.address) >> ptr(0x190) >> measured(dword(0x30))})')
         self.add_display(
-            byte(Memory.CURRENT_AREA_ID) != 0x00, 
+            is_ingame(),
             f'Major Kane is @Episode({Memory.CURRENT_EPISODE}) • @Number({Condition(0x64, '-', Memory.HEALTH_HOST)})❤️ @Difficulty({Memory.CURRENT_DIFFICULTY}) • @Gamemode({Memory.QUICK_PLAY_LEVEL_SELECT_INDEX})')
         self.add_display(None, "Playing Moon")
 

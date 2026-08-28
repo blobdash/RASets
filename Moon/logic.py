@@ -28,6 +28,155 @@ class Episode:
   EPISODE_16 = 0xc8
   EPISODE_17 = 0xd4
 
+class SaveData:
+  ROOKIESLOT: MemoryValue
+  NORMALSLOT: MemoryValue
+  VETERANSLOT: MemoryValue
+  
+  def __init__(self, rookieslot: MemoryValue, normalslot: MemoryValue, veteranslot: MemoryValue):
+    self.ROOKIESLOT = rookieslot
+    self.NORMALSLOT = normalslot
+    self.VETERANSLOT = veteranslot
+
+  def firstClear(self):
+    return group(
+      (and_next(delta(self.ROOKIESLOT) == 0)), or_next(self.ROOKIESLOT != 0),
+      (and_next(delta(self.NORMALSLOT) == 0)), or_next(self.NORMALSLOT != 0),
+      (and_next(delta(self.VETERANSLOT) == 0)), self.VETERANSLOT != 0,
+    )
+  
+  def firstClearDifficulty(self, difficulty: int):
+    match difficulty:
+      case 0:
+        return ((delta(self.ROOKIESLOT) == 0) & (self.ROOKIESLOT != 0))
+      case 1:
+        return ((delta(self.NORMALSLOT) == 0) & (self.NORMALSLOT != 0))
+      case 2:
+        return ((delta(self.VETERANSLOT) == 0) & (self.VETERANSLOT != 0))
+
+class EpisodeSaveData:
+  EPISODE_00 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_PROLOGUE, 
+    Memory.SAVE_DATA_FOR_NORMAL_PROLOGUE, 
+    Memory.SAVE_DATA_FOR_VETERAN_PROLOGUE
+  )
+  EPISODE_01 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_PSS_I, 
+    Memory.SAVE_DATA_FOR_NORMAL_PSS_I, 
+    Memory.SAVE_DATA_FOR_VETERAN_PSS_I
+  )
+  EPISODE_02 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_GUARDIAN_I, 
+    Memory.SAVE_DATA_FOR_NORMAL_GUARDIAN_I, 
+    Memory.SAVE_DATA_FOR_VETERAN_GUARDIAN_I
+  )
+  EPISODE_03 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_PSS_I_ESCAPE, 
+    Memory.SAVE_DATA_FOR_NORMAL_PSS_I_ESCAPE, 
+    Memory.SAVE_DATA_FOR_VETERAN_PSS_I_ESCAPE
+  )
+  EPISODE_04 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_PSS_II, 
+    Memory.SAVE_DATA_FOR_NORMAL_PSS_II, 
+    Memory.SAVE_DATA_FOR_VETERAN_PSS_II
+  )
+  EPISODE_05 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_SANCTUS_VECTOR, 
+    Memory.SAVE_DATA_FOR_NORMAL_SANCTUS_VECTOR, 
+    Memory.SAVE_DATA_FOR_VETERAN_SANCTUS_VECTOR
+  )
+  EPISODE_06 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_EXIT_PSS_II, 
+    Memory.SAVE_DATA_FOR_NORMAL_EXIT_PSS_II, 
+    Memory.SAVE_DATA_FOR_VETERAN_EXIT_PSS_II
+  )
+  EPISODE_07 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_NON_ETEO_TRANSPORT_VESSEL, 
+    Memory.SAVE_DATA_FOR_NORMAL_NON_ETEO_TRANSPORT_VESSEL, 
+    Memory.SAVE_DATA_FOR_VETERAN_NON_ETEO_TRANSPORT_VESSEL
+  )
+  EPISODE_08 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_WASTE_DISPOSAL, 
+    Memory.SAVE_DATA_FOR_NORMAL_WASTE_DISPOSAL, 
+    Memory.SAVE_DATA_FOR_VETERAN_WASTE_DISPOSAL
+  )
+  EPISODE_09 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_GUARDIAN_II, 
+    Memory.SAVE_DATA_FOR_NORMAL_GUARDIAN_II, 
+    Memory.SAVE_DATA_FOR_VETERAN_GUARDIAN_II
+  )
+  EPISODE_10 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_POWER_STATION, 
+    Memory.SAVE_DATA_FOR_NORMAL_POWER_STATION, 
+    Memory.SAVE_DATA_FOR_VETERAN_POWER_STATION
+  )
+  EPISODE_11 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_PHEXIC_MANIFOLD,
+    Memory.SAVE_DATA_FOR_NORMAL_PHEXIC_MANIFOLD, 
+    Memory.SAVE_DATA_FOR_VETERAN_PHEXIC_MANIFOLD
+  )
+  EPISODE_12 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_COLD_PROCESS, 
+    Memory.SAVE_DATA_FOR_NORMAL_COLD_PROCESS, 
+    Memory.SAVE_DATA_FOR_VETERAN_COLD_PROCESS
+  )
+  EPISODE_13 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_GUARDIAN_III, 
+    Memory.SAVE_DATA_FOR_NORMAL_GUARDIAN_III, 
+    Memory.SAVE_DATA_FOR_VETERAN_GUARDIAN_III
+  )
+  EPISODE_14 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_IRRADIATED_STRATUM, 
+    Memory.SAVE_DATA_FOR_NORMAL_IRRADIATED_STRATUM, 
+    Memory.SAVE_DATA_FOR_VETERAN_IRRADIATED_STRATUM
+  )
+  EPISODE_15 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_MATRIX_PROGENITOR, 
+    Memory.SAVE_DATA_FOR_NORMAL_MATRIX_PROGENITOR, 
+    Memory.SAVE_DATA_FOR_VETERAN_MATRIX_PROGENITOR
+  )
+  EPISODE_16 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_FERMIAN_HOMEWORLD, 
+    Memory.SAVE_DATA_FOR_NORMAL_FERMIAN_HOMEWORLD, 
+    Memory.SAVE_DATA_FOR_VETERAN_FERMIAN_HOMEWORLD
+  )
+  EPISODE_17 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_OVERLORD, 
+    Memory.SAVE_DATA_FOR_NORMAL_OVERLORD, 
+    Memory.SAVE_DATA_FOR_VETERAN_OVERLORD
+  )
+  VR_1 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_VR_TRAINING_1, 
+    Memory.SAVE_DATA_FOR_NORMAL_VR_TRAINING_1, 
+    Memory.SAVE_DATA_FOR_VETERAN_VR_TRAINING_1
+  )
+  VR_2 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_VR_TRAINING_2, 
+    Memory.SAVE_DATA_FOR_NORMAL_VR_TRAINING_2, 
+    Memory.SAVE_DATA_FOR_VETERAN_VR_TRAINING_2
+  )
+  VR_3 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_VR_TRAINING_3, 
+    Memory.SAVE_DATA_FOR_NORMAL_VR_TRAINING_3, 
+    Memory.SAVE_DATA_FOR_VETERAN_VR_TRAINING_3
+  )
+  VR_4 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_VR_TRAINING_4, 
+    Memory.SAVE_DATA_FOR_NORMAL_VR_TRAINING_4, 
+    Memory.SAVE_DATA_FOR_VETERAN_VR_TRAINING_4
+  )
+  VR_5 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_VR_TRAINING_5, 
+    Memory.SAVE_DATA_FOR_NORMAL_VR_TRAINING_5, 
+    Memory.SAVE_DATA_FOR_VETERAN_VR_TRAINING_5
+  )
+  VR_6 = SaveData(
+    Memory.SAVE_DATA_FOR_ROOKIE_VR_TRAINING_6, 
+    Memory.SAVE_DATA_FOR_NORMAL_VR_TRAINING_6, 
+    Memory.SAVE_DATA_FOR_VETERAN_VR_TRAINING_6
+  )
+  
+
 class Gamemode:
   ADVENTURE = 0x00
   QUICKPLAY = 0x01
@@ -103,13 +252,29 @@ def adventure_mode():
 def quick_play():
   return (Memory.QUICK_PLAY_LEVEL_SELECT_INDEX != 0xff)
 
-def clearedChapter(episode: int, map: str, subarea: str, gamemode: int | NoneType = None, difficulty: int | NoneType = None):
+def enter_end_screen():
+  return group(
+    (delta(bit2(Memory.END_SCREEN.address)) == 0x00),
+    (bit2(Memory.END_SCREEN.address) == 0x01),
+  )
+
+def enter_end_screen_trigger():
+  return group(
+    (delta(bit2(Memory.END_SCREEN.address)) == 0x00),
+    (trigger(bit2(Memory.END_SCREEN.address) == 0x01)),
+  )
+
+def is_ingame():
+  return (Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT != 0)
+
+def is_not_ingame():
+  return (Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT == 0)
+
+def clearedChapter(episode: int, difficulty: int | NoneType = None):
   cond = group(
+    is_ingame(),
     (Memory.CURRENT_EPISODE == episode),
-    (delta(Memory.END_SCREEN) == 0x00),
-    (Memory.END_SCREEN == 0x07),
-    (string_equals(Memory.CURRENT_AREA_ID, map, 2, endianness='little')),
-    (string_equals(Memory.CURRENT_SUBMAP_ID, subarea, 3, endianness='little')),
+    enter_end_screen(),
     adventure_mode()
   )
   if(difficulty is not None):
@@ -118,13 +283,13 @@ def clearedChapter(episode: int, map: str, subarea: str, gamemode: int | NoneTyp
 
 def chapterTimeTrial(episode: int, minutes: int, seconds: int):
   return group(
+    is_ingame(),
     quick_play(),
     (Memory.CURRENT_EPISODE == episode),
     (Memory.CURRENT_DIFFICULTY == 0x01),
     (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
-    (delta(Memory.END_SCREEN) == 0x00),
-    (trigger(Memory.END_SCREEN == 0x07)),
-    # pauseif timer is above number of frames allowed for tt
+    enter_end_screen_trigger(),
+    # timer is above number of frames allowed for tt
     (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c) <= frames(minutes, seconds))
   )
 
@@ -133,11 +298,11 @@ def chapterTimeTrialLeaderboard(episode: int, difficulty: int, lb: Leaderboard):
   lb.lower_is_better = True
   lb.add_start(
     group(
+      is_ingame(),
       (Memory.CURRENT_EPISODE == episode),
       (Memory.CURRENT_DIFFICULTY == difficulty),
       (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
-      (delta(Memory.END_SCREEN) == 0x00),
-      (Memory.END_SCREEN == 0x07)
+      enter_end_screen()
     )
   )
   lb.add_cancel(
@@ -181,12 +346,11 @@ def timer_display(lb: Leaderboard):
 
 def sanctus_healchallenge(seconds: int):
   return group(
+    is_ingame(),
     quick_play(),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_05),
     (Memory.CURRENT_DIFFICULTY == 0x01),
-    (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
-    (delta(Memory.END_SCREEN) == 0x00),
-    (trigger(Memory.END_SCREEN == 0x07)),
+    enter_end_screen(),
     reset_next_if(group(
       (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> delta(dword(0x10)) == 0x03) &
       (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x00)
@@ -202,11 +366,11 @@ def sanctus_healchallenge(seconds: int):
 
 def phexic_accchallenge(accuracy: int):
   return group(
+    is_ingame(),
     quick_play(),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_11),
     (Memory.CURRENT_DIFFICULTY == 0x01),
-    (delta(Memory.END_SCREEN) == 0x00),
-    (Memory.END_SCREEN == 0x07),
+    enter_end_screen_trigger(),
     # hit shots * 100
     remember((ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x08)) * 100),
     add_address(ptr(Memory.GAME_STATE.address) >> ptr(0x04)),
@@ -218,6 +382,7 @@ def phexic_accchallenge(accuracy: int):
 
 def pssitrial(seconds: int):
   return group(
+    is_ingame(),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_03),
     (bit0(Memory.LEVEL_EVENTS_E03.address) == 0x01),
     (delta(bit1(Memory.LEVEL_EVENTS_E03.address)) == 0x00),
@@ -227,6 +392,7 @@ def pssitrial(seconds: int):
 
 def pssiisatellitetrial(seconds: int):
   return group(
+    is_ingame(),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_06),
     (bit3(Memory.LEVEL_EVENTS_E06_E08.address) == 0x01),
     (delta(bit1(Memory.LEVEL_EVENTS_E06_E08.address)) == 0x00),
@@ -238,6 +404,7 @@ def pssiescape_lb(lb: Leaderboard):
   lb.format = LeaderboardFormat.SECS
   lb.add_start(
     group(
+      is_ingame(),
       (Memory.CURRENT_EPISODE == Episode.EPISODE_03),
       (bit0(Memory.LEVEL_EVENTS_E03.address) == 0x01),
       (delta(bit1(Memory.LEVEL_EVENTS_E03.address)) == 0x00),
@@ -258,6 +425,7 @@ def pssiisatellite_lb(lb: Leaderboard):
   lb.format = LeaderboardFormat.SECS
   lb.add_start(
     group(
+      is_ingame(),
       (Memory.CURRENT_EPISODE == Episode.EPISODE_06),
       (bit3(Memory.LEVEL_EVENTS_E06_E08.address) == 0x01),
       (delta(bit1(Memory.LEVEL_EVENTS_E06_E08.address)) == 0x00),
@@ -276,6 +444,7 @@ def pssiisatellite_lb(lb: Leaderboard):
 
 def all_hp():
   return group(
+    is_ingame(),
     adventure_mode(),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a5', 2, endianness='little')),
@@ -286,6 +455,7 @@ def all_hp():
 
 def all_ammo():
   return group(
+    is_ingame(),
     adventure_mode(),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a1', 2, endianness='little')),
