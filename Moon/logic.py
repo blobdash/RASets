@@ -1,3 +1,4 @@
+from pycheevos.core.condition import ConditionList
 from types import NoneType
 from pycheevos.core.constants import *
 from pycheevos.core.helpers import *
@@ -27,6 +28,12 @@ class Episode:
   EPISODE_15 = 0xbc
   EPISODE_16 = 0xc8
   EPISODE_17 = 0xd4
+  VR_1 = 0xe0
+  VR_2 = 0xec
+  VR_3 = 0xf8
+  VR_4 = 0x04
+  VR_5 = 0x10
+  VR_6 = 0x1c
 
 class SaveData:
   ROOKIESLOT: MemoryValue
@@ -265,7 +272,10 @@ def enter_end_screen_trigger():
   )
 
 def is_ingame():
-  return (Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT != 0)
+  return group(
+    Memory.GAME_STATE != 0x00,
+    Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT != 0
+  )
 
 def is_not_ingame():
   return (Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT == 0)
@@ -444,24 +454,74 @@ def pssiisatellite_lb(lb: Leaderboard):
 
 def all_hp():
   return group(
-    is_ingame(),
-    adventure_mode(),
+    measured_if(Memory.GAME_STATE != 0x00),
+    measured_if(Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT != 0),
+    measured_if(adventure_mode()),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a5', 2, endianness='little')),
     (string_equals(Memory.CURRENT_SUBMAP_ID, '016', 3, endianness='little')),
     (delta(bitcount(Memory.HEALTH_UPGRADES.address)) == 5),
-    (bitcount(Memory.HEALTH_UPGRADES.address) == 6)
+    measured(bitcount(Memory.HEALTH_UPGRADES.address) == 6)
   )
 
 def all_ammo():
   return group(
-    is_ingame(),
-    adventure_mode(),
+    measured_if(Memory.GAME_STATE != 0x00),
+    measured_if(Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT != 0),
+    measured_if(adventure_mode()),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a1', 2, endianness='little')),
     (string_equals(Memory.CURRENT_SUBMAP_ID, '017', 3, endianness='little')),
     (delta(bitcount(Memory.AMMO_CLIP_UPGRADES.address)) == 3),
-    (bitcount(Memory.AMMO_CLIP_UPGRADES.address) == 4)
+    measured(bitcount(Memory.AMMO_CLIP_UPGRADES.address) == 4)
+  )
+
+def vr_training():
+  return group(
+    is_ingame(),
+    enter_end_screen(),
+    or_next(Memory.CURRENT_EPISODE == Episode.VR_1),
+    or_next(Memory.CURRENT_EPISODE == Episode.VR_2),
+    or_next(Memory.CURRENT_EPISODE == Episode.VR_3),
+    or_next(Memory.CURRENT_EPISODE == Episode.VR_4),
+    or_next(Memory.CURRENT_EPISODE == Episode.VR_5),
+    (Memory.CURRENT_EPISODE == Episode.VR_6),
+    or_next(EpisodeSaveData.VR_1.ROOKIESLOT != 0),
+    or_next(EpisodeSaveData.VR_1.NORMALSLOT != 0),
+    and_next(EpisodeSaveData.VR_1.VETERANSLOT != 0),
+    or_next(EpisodeSaveData.VR_2.ROOKIESLOT != 0),
+    or_next(EpisodeSaveData.VR_2.NORMALSLOT != 0),
+    and_next(EpisodeSaveData.VR_2.VETERANSLOT != 0),
+    or_next(EpisodeSaveData.VR_3.ROOKIESLOT != 0),
+    or_next(EpisodeSaveData.VR_3.NORMALSLOT != 0),
+    and_next(EpisodeSaveData.VR_3.VETERANSLOT != 0),
+    or_next(EpisodeSaveData.VR_4.ROOKIESLOT != 0),
+    or_next(EpisodeSaveData.VR_4.NORMALSLOT != 0),
+    and_next(EpisodeSaveData.VR_4.VETERANSLOT != 0),
+    or_next(EpisodeSaveData.VR_5.ROOKIESLOT != 0),
+    or_next(EpisodeSaveData.VR_5.NORMALSLOT != 0),
+    and_next(EpisodeSaveData.VR_5.VETERANSLOT != 0),
+    or_next(EpisodeSaveData.VR_6.ROOKIESLOT != 0),
+    or_next(EpisodeSaveData.VR_6.NORMALSLOT != 0),
+    EpisodeSaveData.VR_6.VETERANSLOT != 0,
+  )
+
+def vr_training_veteran():
+  return group(
+    is_ingame(),
+    enter_end_screen(),
+    or_next(Memory.CURRENT_EPISODE == Episode.VR_1),
+    or_next(Memory.CURRENT_EPISODE == Episode.VR_2),
+    or_next(Memory.CURRENT_EPISODE == Episode.VR_3),
+    or_next(Memory.CURRENT_EPISODE == Episode.VR_4),
+    or_next(Memory.CURRENT_EPISODE == Episode.VR_5),
+    (Memory.CURRENT_EPISODE == Episode.VR_6),
+    and_next(EpisodeSaveData.VR_1.VETERANSLOT != 0),
+    and_next(EpisodeSaveData.VR_2.VETERANSLOT != 0),
+    and_next(EpisodeSaveData.VR_3.VETERANSLOT != 0),
+    and_next(EpisodeSaveData.VR_4.VETERANSLOT != 0),
+    and_next(EpisodeSaveData.VR_5.VETERANSLOT != 0),
+    EpisodeSaveData.VR_6.VETERANSLOT != 0,
   )
 
 def frames(min: int, seconds: int):

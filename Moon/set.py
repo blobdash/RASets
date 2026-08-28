@@ -164,6 +164,14 @@ class MoonSet(AchievementSet):
     def all_ammo_upgrades(self, ach: Achievement):
         ach.add_core(all_ammo())
     
+    @achievement()
+    def bonus_stages(self, ach: Achievement):
+        ach.add_core(vr_training())
+    
+    @achievement()
+    def bonus_stages_veteran(self, ach: Achievement):
+        ach.add_core(vr_training_veteran())
+    
     # Leaderboards
 
     @leaderboard(170216)
