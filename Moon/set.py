@@ -172,6 +172,54 @@ class MoonSet(AchievementSet):
     def bonus_stages_veteran(self, ach: Achievement):
         ach.add_core(vr_training_veteran())
     
+    @achievement(633751)
+    def artifacts_e01(self, ach: Achievement):
+        ach.add_core(artifacts(Episode.EPISODE_01))
+    
+    @achievement(633752)
+    def artifacts_e04(self, ach: Achievement):
+        ach.add_core(artifacts(Episode.EPISODE_04))
+    
+    @achievement(633753)
+    def artifacts_e08(self, ach: Achievement):
+        ach.add_core(artifacts(Episode.EPISODE_08))
+    
+    @achievement(633754)
+    def artifacts_e10(self, ach: Achievement):
+        ach.add_core(artifacts(Episode.EPISODE_10))
+    
+    @achievement(633755)
+    def artifacts_e12(self, ach: Achievement):
+        ach.add_core(artifacts(Episode.EPISODE_12))
+    
+    @achievement(633756)
+    def artifacts_e14(self, ach: Achievement):
+        ach.add_core(artifacts(Episode.EPISODE_14))
+
+    @achievement(633757)
+    def merits_e01(self, ach: Achievement):
+        ach.add_core(merits(Episode.EPISODE_01))
+    
+    @achievement(633758)
+    def merits_e04(self, ach: Achievement):
+        ach.add_core(merits(Episode.EPISODE_04))
+    
+    @achievement(633759)
+    def merits_e08(self, ach: Achievement):
+        ach.add_core(merits(Episode.EPISODE_08))
+    
+    @achievement(633760)
+    def merits_e10(self, ach: Achievement):
+        ach.add_core(merits(Episode.EPISODE_10))
+    
+    @achievement(633761)
+    def merits_e12(self, ach: Achievement):
+        ach.add_core(merits(Episode.EPISODE_12))
+    
+    @achievement(633762)
+    def merits_e14(self, ach: Achievement):
+        ach.add_core(merits(Episode.EPISODE_14))
+    
     # Leaderboards
 
     @leaderboard(170216)

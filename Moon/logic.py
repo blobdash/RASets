@@ -274,11 +274,11 @@ def enter_end_screen_trigger():
 def is_ingame():
   return group(
     Memory.GAME_STATE != 0x00,
-    Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT != 0
+    Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT != 0
   )
 
 def is_not_ingame():
-  return (Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT == 0)
+  return (Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT == 0)
 
 def clearedChapter(episode: int, difficulty: int | NoneType = None):
   cond = group(
@@ -455,7 +455,7 @@ def pssiisatellite_lb(lb: Leaderboard):
 def all_hp():
   return group(
     measured_if(Memory.GAME_STATE != 0x00),
-    measured_if(Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT != 0),
+    measured_if(Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT != 0),
     measured_if(adventure_mode()),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a5', 2, endianness='little')),
@@ -467,7 +467,7 @@ def all_hp():
 def all_ammo():
   return group(
     measured_if(Memory.GAME_STATE != 0x00),
-    measured_if(Memory.POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT != 0),
+    measured_if(Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT != 0),
     measured_if(adventure_mode()),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a1', 2, endianness='little')),
@@ -522,6 +522,81 @@ def vr_training_veteran():
     and_next(EpisodeSaveData.VR_4.VETERANSLOT != 0),
     and_next(EpisodeSaveData.VR_5.VETERANSLOT != 0),
     EpisodeSaveData.VR_6.VETERANSLOT != 0,
+  )
+
+def artifacts(episode: int):
+  cond = group(
+    measured_if(Memory.GAME_STATE != 0x00),
+    measured_if(Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT != 0),
+    measured_if(Memory.CURRENT_EPISODE == episode),
+    enter_end_screen()
+  )
+  match episode:
+    case Episode.EPISODE_01:
+      return group(
+        cond,
+        add_source(bit2(Memory.ALIEN_ARTIFACTS.address)),
+        add_source(bit3(Memory.ALIEN_ARTIFACTS.address)),
+        add_source(bit4(Memory.ALIEN_ARTIFACTS.address)),
+        measured(value(0x00) == 3)
+      )
+    case Episode.EPISODE_04:
+      return group(
+        cond,
+        add_source(bit5(Memory.ALIEN_ARTIFACTS.address)),
+        add_source(bit6(Memory.ALIEN_ARTIFACTS.address)),
+        add_source(bit7(Memory.ALIEN_ARTIFACTS.address)),
+        measured(value(0x00) == 3)
+      )
+    case Episode.EPISODE_08:
+      return group(
+        cond,
+        add_source(bit0(Memory.ALIEN_ARTIFACTS_2.address)),
+        add_source(bit1(Memory.ALIEN_ARTIFACTS_2.address)),
+        add_source(bit2(Memory.ALIEN_ARTIFACTS_2.address)),
+        measured(value(0x00) == 3)
+      )
+    case Episode.EPISODE_10:
+      return group(
+        cond,
+        add_source(bit3(Memory.ALIEN_ARTIFACTS_2.address)),
+        add_source(bit4(Memory.ALIEN_ARTIFACTS_2.address)),
+        add_source(bit5(Memory.ALIEN_ARTIFACTS_2.address)),
+        measured(value(0x00) == 3)
+      )
+    case Episode.EPISODE_12:
+      return group(
+        cond,
+        add_source(bit6(Memory.ALIEN_ARTIFACTS_2.address)),
+        add_source(bit7(Memory.ALIEN_ARTIFACTS_2.address)),
+        add_source(bit0(Memory.ALIEN_ARTIFACTS_3.address)),
+        measured(value(0x00) == 3)
+      )
+    case Episode.EPISODE_14:
+      return group(
+        cond,
+        add_source(bit1(Memory.ALIEN_ARTIFACTS_3.address)),
+        add_source(bit2(Memory.ALIEN_ARTIFACTS_3.address)),
+        add_source(bit3(Memory.ALIEN_ARTIFACTS_3.address)),
+        measured(value(0x00) == 3)
+      )
+  return cond
+
+def merits(episode: int):
+  return group(
+    measured_if(Memory.GAME_STATE != 0x00),
+    measured_if(Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT != 0),
+    measured_if(Memory.CURRENT_EPISODE == episode),
+    enter_end_screen(),
+    add_source(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> bit3(0x01)),
+    add_source(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> bit4(0x01)),
+    add_source(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> bit5(0x01)),
+    add_source(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> bit6(0x01)),
+    add_source(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> bit7(0x01)),
+    add_source(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> bit0(0x02)),
+    add_source(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> bit1(0x02)),
+    add_source(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> bit2(0x02)),
+    measured(value(0x00) == 8)
   )
 
 def frames(min: int, seconds: int):

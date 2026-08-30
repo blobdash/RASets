@@ -34,8 +34,8 @@ class Memory:
     0xec = VR 2
     0xf8 = VR 3
     0x04 = VR 4
-    0x1c = VR 5
-    0x10 = VR 6
+    0x10 = VR 5
+    0x1c = VR 6
     """
 
     CURRENT_DIFFICULTY = dword(0x14fec8)
@@ -53,19 +53,6 @@ class Memory:
     0x01 = In dialogue
     0x03 = In Cutscene/Loading
     0x02 = For one frame after cutscene
-    """
-
-    BOSS_ENTITY_DATA = tbyte(0x150db8)
-    """
-    [24-bit Pointer] Boss Entity Data?
-    +0x60: [24-bit Pointer]
-    ++0x8: [24-bit Pointer]
-    +++0x8: [24-bit Pointer]
-    ++++0xD0: [16-bit] Overlord Boss Health
-    ... 0x07de = Base Health (Rookie)
-    ... 0x0fa0 = Base Health (Normal)
-    ... 0x1770 = Base Health (Veteran)
-    ... 0x0000 = Dead
     """
 
     INPUTS = byte(0x151616)
@@ -150,13 +137,6 @@ class Memory:
     MAP_DISPLAY_PLAYER_Y = dword(0x16a538)
     """
     [32-bit] Map Display Player Y (relative coords)
-    """
-
-    CURRENT_GAMEMODE = byte(0x207287)
-    """
-    [8-bit] Current Gamemode
-    0x00 = Adventure Mode
-    0x01 = Quick Play
     """
 
     SAVE_DATA_FOR_ROOKIE_PROLOGUE = dword(0x2aa5b8)
@@ -714,6 +694,28 @@ class Memory:
     Bit7 = Artifact 3 E04
     """
 
+    ALIEN_ARTIFACTS_2 = byte(0x2aa7af)
+    """
+    [8-bit] [Bitfield] Alien Artifacts 2
+    Bit0 = Artifact 1 E08
+    Bit1 = Artifact 2 E08
+    Bit2 = Artifact 3 E08
+    Bit3 = Artifact 1 E10
+    Bit4 = Artifact 2 E10
+    Bit5 = Artifact 3 E10
+    Bit6 = Artifact 1 E12
+    Bit7 = Artifact 2 E12
+    """
+
+    ALIEN_ARTIFACTS_3 = byte(0x2aa7b0)
+    """
+    [8-bit] [Bitfield] Alien Artifacts 3
+    Bit0 = Artifact 3 E12
+    Bit1 = Artifact 1 E14
+    Bit2 = Artifact 2 E14
+    Bit3 = Artifact 3 E14
+    """
+
     LEVEL_EVENTS_E15 = byte(0x2aafd0)
     """
     [8-bit] [Bitfield] Level Events E15
@@ -899,9 +901,9 @@ class Memory:
     sreveal = Sanctus Vector Intro Cutscene (E05)
     """
 
-    POINTER_TO_LAST_ACCESSED_DIALOGUE_SCRIPT = tbyte(0x2f0660)
+    POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT = tbyte(0x2f0660)
     """
-    [24-bit Pointer] Pointer to last accessed dialogue script
+    [24-bit Pointer] Pointer to last accessed ingame UI script
     // set to 0x00 when not ingame
     // written to whenever something happens on the touchscreen
     """
