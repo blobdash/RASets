@@ -263,7 +263,7 @@ achievements = OrderedDict({
     631469: Achievement(
         id=631469,
         title="""Come Back Here!""",
-        description="""Defeat the Sanctus Vector without letting it recover health for more than 15 seconds in Normal in Quick Play""",
+        description="""Defeat the Sanctus Vector without letting it recover health for more than 10 seconds in Normal in Quick Play""",
         points=10,
         badge="00000",
     ),
@@ -426,7 +426,7 @@ leaderboards = OrderedDict({
     ),
     169471: Leaderboard(
         id=169471,
-        title="""Guardian II Time Trial""",
+        title="""Guardian II Normal Time Trial""",
         description="""Defeat the second Guardian as fast as possible in Normal""",
         format=LeaderboardFormat.FRAMES,
         lower_is_better=True,

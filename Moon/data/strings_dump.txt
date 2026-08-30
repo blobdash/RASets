@@ -1,0 +1,2229 @@
+{200}{245}Nice setup they have here.
+{245}{305}Looks like they put all that|funding to good use.
+{315}{390}Major, we have a transmission|coming in from General Lambert.
+{390}{435}Put her on the main screen.
+{450}{540}Good morning gentlemen.|Good to see you made it in one piece.
+{545}{590}Has your team been deployed?
+{590}{670}Yes ma'am!  They should be arriving|at the hatch shortly.
+{680}{760}Good.  As you know, a crew there|uncovered what looks like
+{760}{830}an access point into a larger structure.
+{831}{946}The markings on this 'hatch' are similar|to those found in the Roswell wreckage.
+{955}{1015}Personnel were ordered to hold fast,
+{1015}{1110}and your team was dispatched immediately|to investigate.
+{1120}{1160}The team has arrived at target.
+{1180}{1250}Pipe their helmet cam feeds to the|secondary monitors.
+{1280}{1360}Sir, Alpha Team has set up a perimeter|around the dig site,
+{1360}{1405}Awaiting further...
+{1423}{1453}What happened?
+{1460}{1526}There was a massive power surge|from the hatch sir,
+{1526}{1566}it's disrupted the signal.
+{1583}{1660}We've lost contact with the team|AND General Lambert!
+{1680}{1735}Boost the signal!|Get them back!
+{1740}{1795}I can't sir,| there's too much interference!
+{1803}{1875}Stay here Tsuke,|I'm going out there!
+RIGHT HANDED
+LEFT HANDED
+Shoot
+Move
+Stylus Look / AimMOON
+
+CREATED BY RENEGADE KID
+
+Game Director and Producer
+JOOLS WATSHAM
+
+Art Director
+GREGG HARGROVE
+
+Technical Director
+BOB IVES
+
+Designers
+JOOLS WATSHAM
+PATRIC STARR
+
+Artists
+GREGG HARGROVE
+NOAH LI
+ULYSSES GAMES LLC
+JOOLS WATSHAM
+
+Programmers
+BOB IVES
+ANDREW BROWN
+
+Music
+GARETH VILDAY
+
+Sound Effects
+JOOLS WATSHAM
+
+Voice Acting
+CHRIS BROWER
+SUZANNA WATSHAM
+GREGG HARGOVE
+
+Very Special Thanks
+SUZANNA, SAMMY & SPENCER
+PAT HARGROVE
+ARANCHA MOYA
+BRANDON SHEFFIELD
+
+
+Published by
+GAMEBRIDGE
+
+Project Manager
+LOGAN GUNASINGHAM
+
+INTERCHANNEL INC., TOKYO
+
+Producer
+MASSIMO GUARINI
+
+Executive Producers
+HIDEO OISHI
+KENICHI YAMASHITA
+TAKASHI IKEDA
+
+Localisation and Testing
+UNIVERSALLY SPEAKING
+
+
+PRODUCED BY MASTIFF
+
+President
+BILL SWARTZ
+
+Vice President, Japan
+MIKA HAYASHI
+
+Producer
+TOM GAUBATZ
+
+Accounting
+CHARLES VAN
+
+PR
+MICHAEL MEYERS
+
+
+MASTIFF MOON TEAM
+
+Producer
+TOM GAUBATZ
+
+Script and Story Development
+THE ENEMY
+
+Additional Writing
+BRANDON SHEFFIELD
+TOM GAUBATZ
+BILL SWARTZ
+
+Game Design Consultant
+JOHANNES ROBBINS
+
+Additional Level Designs
+JOHANNES ROBBINS
+TOM GAUBATZ
+
+Manual
+OFF BASE PRODUCTIONS
+
+Public Relations
+MICHAEL MEYERS PUBLIC RELATIONS
+MICHAEL MEYERS
+DAVID BRUNO
+
+Advertising
+MEDIA JUICE STUDIOS
+
+Testing
+iBETA QUALITY ASSURANCE
+
+Testers
+JERROD C.
+ANDY S.
+MAX D.
+RYAN S.
+
+Special Thanks
+BRANDON SHEFFIELD
+JON HEINER
+MIEKO MOCHIZUKI
+TREVOR STRICKER
+
+
+THANKS FOR PLAYING!
+Delete Data
+Options
+SELECT EPISODE
+....
+ROOKIE
+NORMAL
+VETERAN
+Best Time:
+Shot Accuracy:
+Extra Merits:
+Difficulty:
+DELETE ALL DATA?
+ARE YOU SURE?
+Yes
+No
+L
+R
+Initializing data
+Checking backup data.
+PROLOGUE
+EPISODE 01
+EPISODE 02
+EPISODE 03
+EPISODE 04
+EPISODE 05
+EPISODE 06
+EPISODE 07
+EPISODE 08
+EPISODE 09
+EPISODE 10
+EPISODE 11
+EPISODE 12
+EPISODE 13
+EPISODE 14
+EPISODE 15
+EPISODE 16
+EPISODE 17
+EPISODE 18
+EPISODE 19
+EPISODE 20
+EPISODE 21
+EPISODE 22
+EPISODE 23
+Choose Difficulty Setting and Touch Episode to Start.
+ 
+Episode Now Available in Quick Play Mode.
+Continue
+COMPLETE
+TimeSUPER ASSAULT RIFLE
+
+It's a SAR; state-of-the-art weaponry.
+No need to collect ammo for this bad boy!
+REMOTE ACCESS DROID
+
+The Remote Access Droid (RAD) is an alien
+probe device. It can be controlled by the host remotely.
+MUON PISTOL
+
+The Muon Pistol is an alien weapon of unknown
+power.
+QUANTA RIFLE
+
+The Quanta Rifle is an alien weapon of unknown 
+power.
+FERMION SNIPER
+
+The Fermion Sniper is an alien weapon of
+unknown power.
+LEPTON SPREAD
+
+The Lepton Spread is an alien weapon of unknown 
+power.
+OXID CANNON
+
+The Oxid Cannon is an alien weapon of unknown 
+power.
+SEEKER POD
+
+The Seeker Pod is an alien weapon of unknown 
+power.
+MAX HEALTH INCREASE
+
+Your Health Meter just increased its
+maximum capacity.
+MAX HEALTH INCREASE
+
+Your Health Meter just increased its
+maximum capacity.
+MAX HEALTH INCREASE
+
+Your Health Meter just increased its
+maximum capacity.
+MAX HEALTH INCREASE
+
+Your Health Meter just increased its
+maximum capacity.
+MAX HEALTH INCREASE
+
+Your Health Meter just increased its
+maximum capacity.
+MAX HEALTH INCREASE
+
+Your Health Meter just increased its
+maximum capacity.
+AMMO CLIP INCREASE
+
+The Muon Pistol's clip size increased.
+
+AMMO CLIP INCREASE
+
+The Quanta Rifle's clip size increased.
+
+AMMO CLIP INCREASE
+
+The Fermion Sniper's clip size increased.
+
+AMMO CLIP INCREASE
+
+The Lepton Spread's clip size increased.
+
+AMMO CLIP INCREASE
+
+The Oxid Cannon's clip size increased.
+
+AMMO CLIP INCREASE
+
+The Seeker Pod's clip size increased.
+
+MISSING PIECE
+
+One of the missing pieces.
+
+MISSING PIECE
+
+One of the missing pieces.
+
+CANISTER
+
+A peculiar canister, with a strange liquid inside.
+
+EXPLOSIVES
+
+High powered explosives.
+
+RED KEY
+
+A key to a lower stratum.
+
+DATA PACKET
+
+This must be one of the data packets I need.
+
+ALIEN ARTIFACT SET 1
+
+Alien Artifact 1 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 1
+
+Alien Artifact 2 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 1
+
+Alien Artifact 3 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 2
+
+Alien Artifact 1 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 2
+
+Alien Artifact 2 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 2
+
+Alien Artifact 3 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 3
+
+Alien Artifact 1 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 3
+
+Alien Artifact 2 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 3
+
+Alien Artifact 3 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 4
+
+Alien Artifact 1 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 4
+
+Alien Artifact 2 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 4
+
+Alien Artifact 3 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 5
+
+Alien Artifact 1 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 5
+
+Alien Artifact 2 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 5
+
+Alien Artifact 3 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 6
+
+Alien Artifact 1 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 6
+
+Alien Artifact 2 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+ALIEN ARTIFACT SET 6
+
+Alien Artifact 3 of 3.
+Collect all Alien Artifacts to unlock hidden episodes.
+DEBRIS FROM HOSTILE
+
+This object was discarded from the
+destroyed hostile.
+This is a terminal.
+This terminal seems to be functioning.
+These are canisters.
+These canisters have a strange liquid inside them.
+This is where a cool puzzle will be displayed.
+This looks like a door of some kind.
+Looks like another map terminal.
+A uniquely strange terminal.
+Pvt. Elias Warner.
+It's a strange looking terminal.
+This is the same type of terminal as before.
+Captain Blake.
+It's a strange looking terminal in the boss room.
+This is the control panel for the Communications Dish.
+Another map terminal.
+It looks like some kind of teleporter.
+Another map terminal.
+Another map terminal.
+Another map terminal.
+The first Power Cell.
+The second Power Cell.
+The third Power Cell.
+The Quanta Rifle.
+SYSTEM LOG MDAT-0001: SECURITY
+
+The security system consists of an automated
+network of robotic sentries. These sentries will
+eliminate any threats encountered outside of the
+specimen containment apparatus, or within it, if
+the actions of a subject are deemed to be a threat.
+
+
+
+SYSTEM LOG MDAT-0002: MAINTENANCE
+
+The security system is overseen by a series of
+military-grade Guardian Defense Sentries.
+Each is equipped with advanced artificial
+intelligence and has been hardwired into the
+facility to govern portions of the production
+process and its underlying systems, making the
+GD Series invaluable to ongoing operations.
+
+SYSTEM LOG MDAT-0003: HARVESTING
+
+Subjects are extracted at a rate of 100
+individuals per Earth rotation. Subjects are
+transferred directly to the facility's holding
+tanks via a precision particle beam that
+deconstructs the subject and reconstructs it
+on site. Success rate is 99.999%.
+
+
+SYSTEM LOG MDAT-0004: INITIAL PROCESSING
+
+The subject is first stripped of clothing and
+accoutrements then purged of hair and non-living
+dermis. The subject is then equipped with a
+Sensory Stimulator and placed in amniotic fluid.
+Following initial processing, the subject is
+transferred to cold storage.
+
+
+SYSTEM LOG MDAT-0005: COLD STORAGE
+
+Temperature is decreased, lowering the
+subject's resistance to foreign elements. The
+duo-isotope is then introduced into the tank
+and slowly absorbed into the subject's body
+through the lungs. Subject may experience
+physical distress at this stage.
+
+
+SYSTEM LOG MDAT-0006: EUPHORIC IMPRINTING
+
+Euphoric imprinting is initiated once the subject
+has ingested the duo-isotope. Using the Sensory
+Stimulator, the subject is first cleansed of
+previous mental printing, causing it to revert to
+an infantile state, then inundated with sensations
+designed to increase serotonin production.
+
+
+SYSTEM LOG MDAT-0007: EXTRACTION PHASE 1
+
+Serotonin is drained from the subject's brain
+through an extraction spine. The Sensory
+Stimulator then produces negative sensations,
+increasing adrenaline synthesis. Ferritin is
+extracted from the liver, causing shock and
+loss of neural function in 60% of cases.
+
+
+SYSTEM LOG MDAT-0008: EXTRACTION PHASE 2
+
+The adrenal glands are drained at the peak of
+adrenaline production. Extraction destroys
+the internal organs, and the mortality rate
+at this stage is 1,000 per 1,000. The remains
+are dried, crushed, and processed for use
+in cosmetics and other products.
+
+SYSTEM LOG MDAT-0009: PSYCHOTROPIC VIRUS
+
+Serotonin, adrenaline, and ferritin are irradiated,
+combined and flash-fused. Heightened pH levels
+catalyze a toxic change in the adrenaline. The
+resulting compound is infused with molecular oxygen,
+causing the ferritin to oxidize. The mixture becomes
+a blue-colored liquid viral suspension. This is
+the psychotropic virus in its pure form.
+
+HISTORY MDAT-0001: THE MOON
+
+Due to its location and its uninhabitable
+environment, the Moon provides an ideal location
+for the main processing center. The facility
+operates entirely below the crust and is
+protected from scanning devices, minimizing
+the risk of detection by any means but direct
+physical excavation.
+
+HISTORY MDAT-0002: MEDICINAL PURPOSES
+
+Subjects are placed under physiological and
+psychological stress, leading to accelerated
+endocrine production and chemical yield.
+Chemical extracts form the basis for
+products such as aphrodisiacs, pyschotropic
+drugs and military-grade psychostimulants.
+
+
+HISTORY MDAT-0003: THE FACILITIES
+In order to maximize chemical output, subjects are
+kept in states of mental and physical duress, such
+as pain, fear and anxiety, throughout the
+extraction process. Staff in other facilities have
+occasionally reported experiencing emotional
+stress and depression, even when not aware of
+any conscious empathy with the subjects. To limit
+the risk of these emotional factors affecting
+production yield, all high-value extraction
+facilities are now unmanned and automated.HISTORY MDAT-0004: IMPROVING OUTPUT
+
+Over time, varying experimental procedures
+have been administered in an effort to
+maximize chemical yield. Subjects have
+occasionally exhibited accelerated
+physical evolution, specifically in the
+endocrine system.
+
+
+HISTORY MDAT-0005: ETHICAL CONTROVERSY
+
+Some argue that the subjects are sentient
+creatures and not suitable for harvesting.
+Opponents insist that their bestial nature
+makes them little more than natural resources,
+and that the benefits gained from their use
+far outweigh any ethical concerns.
+
+
+HISTORY MDAT-0006: THE PLANET EARTH
+
+Cultivation began during the prehistory of
+the species. Living in small, isolated
+groups, preoccupied with hunting and foraging,
+lacking any advanced technological knowledge,
+and tending to superstition, the early humans
+were easily cultivated and harvested.
+
+
+HISTORY MDAT-0007: SELECTION PROCESS
+
+Individuals and small groups in remote areas
+are ideal for harvesting.  Occasionally
+atmospheric conditions may interfere with
+the process, resulting in subjects
+rematerializing on Earth, sometimes in
+locations far from the origin of transfer.
+
+
+HISTORY MDAT-0008: MANIPULATION
+
+Since the earliest stages of their evolution,
+subversive strategies have been used to control
+the species' cultural development. One
+tactic has been to introduce contrasting
+theologies to the Earth, throwing the
+population into factionalism and infighting.
+
+
+HISTORY MDAT-0009: THREATS TO OPERATION
+
+Unlike species harvested elsewhere, humans
+have rapidly developed primitive space
+travel and energy weapons technology. This
+has necessitated the implementation of
+advanced security procedures to ensure the
+ongoing viability of harvesting operations.
+
+
+HISTORY MDAT-0010: EXTERNAL PRESSURES
+
+Information regarding harvest and extraction
+procedures has leaked to mainstream media,
+resulting in public outcry and interference
+from law enforcement. In response, the
+security at each facility has been augmented
+by military-grade Guardian Defense Sentries.
+
+
+HISTORY MDAT-0011: CONTACT
+
+One century ago, a group of activists traveled
+to Earth in order to make contact with the
+subject species. Their vessel became unstable
+and crashed in the southwestern North American
+continent, and the probability that its crew
+survived the incident is negligible.
+
+
+HISTORY MDAT-0012: HUMAN TECHNOLOGY
+
+The development of human technology, especially
+in the areas of physics and engineering, has
+progressed at an unexpectedly brisk pace.
+Some believe that humans were able to recover
+enough material from the crash to understand
+and draw on our technology.
+
+
+VIRAL STATUS MDAT-001: INGREDIENTS
+
+The suspension's components in their unprocessed
+forms are lethal, and the host organisms are
+themselves classified as a Class X viral vector.
+The subjects and their habitat are protected
+solely for possible application in the
+development of further pharmaceutical products.
+
+
+VIRAL STATUS MDAT-002: CHARACTERISTICS
+
+The suspension contains a highly potent
+viral agent that causes intense extrasensory
+experiences when ingested, and can seriously
+damage the health of the user if taken in
+large doses (See: Side-Effects). Despite
+this, use of the suspension is widespread,
+and a high percentage of the population is at
+present in a state of addiction or withdrawal.
+VIRAL STATUS MDAT-003: SIDE EFFECTS
+
+Exposure to this agent causes a paralytic
+overload of euphoric feelings, resulting in a
+blissful coma-like state. The duration of the
+coma is directly proportional to the dosage.
+Acute overuse invariably results in death.
+For these reasons, the suspension is a
+controlled substance and its production
+is prohibited by law (See: Ingredients).
+VIRAL STATUS MDAT-004: LEGAL STATUS
+
+Legal statutes expressly forbid the sale of
+pharmaceutical agents produced from non-
+consenting advanced humanoids. However,
+the incredible effectiveness of such products
+continues to fuel an overwhelming demand,
+and they are easily available through a
+vibrant black market.
+
+VIRAL STATUS MDAT-005: LEGALIZATION
+
+Critics claim anti-cruelty measures would be
+served by legalizing the products, subjecting
+production to public audit, and offering
+economic incentives for humane treatment.
+This is opposed both by criminal elements who
+depend on the black market for income and by
+conservative political groups that view the
+existence of such products as a moral outrage.
+VIRAL STATUS MDAT-006: POLITICAL CONCERNS
+
+Production has increased despite legal
+challenges and attention from regulatory
+agencies. The Sector Overlord maintains
+that the substance has valuable medical
+and military applications, using these
+needs as political capital to divert
+attention from our other operations.
+(See: Additional Information)
+VIRAL STATUS MDAT-007: ADDITIONAL INFO.
+The current Sector Overlord took control of viral 
+and medicinal production upon taking the reins of 
+power. Although he maintains a private militia 
+equal to that of many small nations, he was able 
+to gain control over the organization without the 
+use of force by political maneuvering alone. His 
+military strength and political shrewdness, 
+combined with sheer ruthlessness, have helped 
+him to survive several attempted coups.
+VIRAL STATUS MDAT-007: ADDITIONAL INFO
+
+Though illegal, the virus is reportedly
+popular among the higher political circles.
+It is rumored that the Sector Overlord
+supplies politicians with the virus in
+order to curry favor and keep law
+enforcement agencies away from his operations.
+
+
+SCIENCE LOG MDAT-0001: PROF. A. MATTEUS 
+
+I'm excited to begin further investigations
+of this newly discovered facility. I must
+admit that it is quite disconcerting to now
+be totally separated from everyone on the
+surface in Alpha Base. Still, I feel quite
+privileged to have been accepted for this
+assignment.
+
+SCIENCE LOG MDAT-0002: PROF. A. MATTEUS 
+
+At first I couldn't understand any of the
+data, but then it became clear to me.
+I've uploaded my decryption algorithm
+directly into their mainframe. At least
+whoever they send in next won't have to
+worry about translating these records
+like I did.
+
+SCIENCE LOG MDAT-0003: PROF. A. MATTEUS 
+
+I have completed my survey of the first
+stratum of the structure. All the
+equipment I have seen so far is fully
+functional, but there are no signs of
+life or use. Could the structure be
+fully automated? I will follow the
+strongest signals of electrical
+activity and see where they lead me.
+SCIENCE LOG MDAT-0004: PROF. A. MATTEUS 
+
+It appears that the site was not left
+unguarded. I have encountered several
+automated defense units whose intentions
+toward me were clearly hostile. I used
+my low-yield ion pulse to defend myself,
+but I must wonder if more formidable
+security systems lie ahead.
+
+SCIENCE LOG MDAT-0005: PROF. A. MATTEUS 
+
+I'm continuing to upload my personal log
+so that some record will remain of me
+and what I've discovered. I should say,
+what I wish I hadn't discovered. None of
+us could have realized what the research
+at Alpha Base would lead to.
+
+
+SCIENCE LOG MDAT-0006: PROF. A. MATTEUS 
+
+It's hard to tell how long I've been
+down here now. I'm continuing to gather
+information, but my rations are running
+low and it's becoming more difficult to
+stay focused. I spend more time evading
+the security system than I do exploring.
+I wonder if I will ever return to the
+surface...
+SCIENCE LOG MDAT-0007: PROF. A. MATTEUS
+
+If anyone is reading these records, I
+apologize for their fractured nature.
+It's becoming more difficult to maintain
+my sanity after what I've already
+discovered here, and I fear that worse
+is yet to come.
+
+
+SCIENCE LOG MDAT-0008: PROF. A. MATTEUS
+
+When I first heard their screams, I
+couldn't believe it. How could this
+possibly be happening here, on our Moon?
+
+
+
+
+
+SCIENCE LOG MDAT-0009: PROF. A. MATTEUS
+
+If I understand what I have read, they
+may shortly be arriving here themselves.
+What have we started by entering this
+facility? Our curiosity may have doomed
+us all. I never should have accepted this
+assignment!
+
+
+SCIENCE LOG MDAT-0010: PROF. A. MATTEUS
+
+Are humans really being subjected to
+this process? I suppose I should not be
+surprised. The history of human
+science is full of those who have done
+the same. Did we imagine it would be
+any different out here?
+
+
+SCIENCE LOG MDAT-0011: PROF. A. MATTEUS
+
+I had to get away from the tanks. The looks
+in their eyes were more than I could bear.
+I wanted to let them know they were not alone,
+to show that at least there was someone
+there with them at the end. But...
+it was too much.
+
+
+SCIENCE LOG MDAT-0012: PROF. A. MATTEUS
+
+I wonder now if this isn't some kind of
+punishment for us. How many experiments
+did we perform, assuring ourselves that
+our subjects weren't really capable of
+experiencing pain or fear? It's ironic.
+Why didn't we ever stop to think that
+someone might feel the same way about us?
+
+SCIENCE LOG MDAT-0013: PROF. A. MATTEUS
+
+I was careless. I lost my scanning
+equipment somewhere above and I cannot
+go back for it now. I am defenseless
+without my ion pulse emitter. I will
+not make it out alive. They must have known
+this would happen. I was expendable.
+Damn you, Generalâ¦d32g0 U@   
+u=0m    *D4(N*p    %F&P!h9p    8h$
+INCOMING TRANSMISSION MDAT-0001
+SOURCE: Command Center
+
+Production is grossly behind schedule and
+lost yield must be reclaimed through
+accelerated processing. Scan and cull any
+substandard or diseased specimens. Increase
+trauma to subjects in order to maximize potency
+of extracts and improve product output.
+
+INCOMING TRANSMISSION MDAT-0002
+SOURCE: Command Center
+
+The last regular inspection revealed signs
+of damage to the restraining apparatus.
+To reduce subject resistance at this stage,
+use security automata to apply direct
+physical trauma to all subjects prior to
+processing. Attempt to weaken the skeletal
+infrastructure without causing damage that
+will threaten the subject's chemical yield.INCOMING TRANSMISSIONS MDAT-0003
+SOURCE: Command Center
+
+In response to recent human activity on the
+surface, three new GD Series models will be
+deployed. The GD Series has been optimized
+for this environment and programmed to eliminate
+breaches to the system. If any interference
+is suspected or additional defensive
+measures are required, notify immediately.
+INCOMING TRANSMISSIONS MDAT-0004
+SOURCE: Command Center
+
+Status report! Contact with several sectors
+has ceased and sensors indicate that multiple
+security systems are off-line. Interference
+with production will not be tolerated and
+failure to contain this situation will be
+punished by deactivation.
+
+INCOMING TRANSMISSIONS MDAT-0005
+SOURCE: Command Center
+
+Sensors indicate the deactivation of GD Series
+units 1, 2, and 3. All active defense automata
+are to re-prioritize to locate and neutralize
+the human intruder. Any organic life forms or
+other foreign agents are to be eliminated with
+extreme prejudice.
+
+INCOMING TRANSMISSIONS MDAT-0006
+SOURCE: Command Center
+
+A strike force has been dispatched to execute
+a full clean. The facility will be destroyed
+and all signs of it eliminated. Since the
+intruder can be expected to have contacted
+others, Earth is no longer a viable site for
+harvesting. Its inhabitants will be wiped out
+to preserve the secrecy of other operations.
+{1}{1}29.970
+{283}{373}- log entry zero two -|Major Edward Kane.
+{390}{448}We've known that we're not alone.
+{450}{522}In some ways, I wish we didn't.
+{533}{640}After centuries of human suffering,|it is finally over.
+{655}{750}Something tells me this is just the beginning.
+{760}{806}End Log.
+Back
+Delete Data
+Options
+GAME MODE
+DIFFICULTY
+DIFFICULTY:
+ADVENTURE
+QUICK PLAY
+CONTINUE
+NEW ADVENTURE
+ROOKIE
+NORMAL
+VETERAN
+DELETE ALL DATA?
+ARE YOU SURE?
+Yes
+No
+Checking backup data.
+You will lose all saved progress.Resume
+Examine
+Open
+Take
+Use
+Enter
+Exit
+Comlink
+Map
+Mission
+Options
+Page
+Next|
+OK
+...SAVING PROGRESS...
+Loading
+Could not read the data. Turn off
+the power, and reinsert the DS Card.
+ 
+The data could not be written. Turn power 
+off, and remove and reinsert the DS Card.
+ 
+Backup data is corrupted.
+The MOON data is corrupted and will be deleted.
+Press any button to continue.
+ 
+Backup data is corrupted.  Attempting to recover
+saved progress.  Press any button to continue.
+ 
+Default options restored. 
+Press any button.
+Saving.  Do not touch the Game Card 
+or turn the power OFF.
+HEALTH
+SHIELD
+9MM AMMO
+SHOTGUN AMMO
+REVOLVER AMMO
+SNIPER AMMO
+HEALTH FULL
+9MM AMMO FULL
+SHOTGUN AMMO FULL
+REVOLVER AMMO FULL
+SNIPER AMMO FULL
+SUPER ASSAULT RIFLE
+REMOTE ACCESS DROID
+MUON PISTOL
+QUANTA RIFLE
+FERMION SNIPER
+LEPTON SPREAD
+OXID CANNON
+SEEKER PODS
+LOLA-RR10
+CHECKPOINT
+MAJOR KANE
+GENERAL LAMBERT
+CAPTAIN TSUKIGAMI
+PRIVATE BURTON
+UNKNOWN SOURCE
+NEW OBJECTIVE
+OBJECTIVE COMPLETE
+UNKNOWN OBJECTIVE
+A secret training mission will be 
+unlocked upon completion of this episode.
+....
+NO MAP DATA
+SKIP >
+HOST HEALTH
+RAD HEALTH
+PROGRESS SAVED
+HEALTH RESTORED
+NAVIGATIONAL
+DATABASE OFFLINESlide Stylus on Touch Screen to look around.
+Slide Stylus on Touch Screen to look around.
+Press +Control Pad to move.
+Quickly double-tap Up on +Control Pad
+and hold to run.
+Tap Map icon on Touch Screen
+to view Map.
+Press L Button to shoot.
+Touch weapon icon on Touch Screen
+and select Remote Search Droid.
+Touch and hold the Weapon Icon.
+Slide stylus to Super Assault Rifle icon 
+to switch control to Major Kane.
+Press UP on the +Control Pad 
+to accelerate.
+Slide the stylus on the Touch Screen 
+to aim cursor and steer vehicle. 
+Press the L Button to shoot.
+Examine the Save Device in front
+of you to save your progress.
+Slide Stylus on Touch Screen to look around.
+Slide Stylus on Touch Screen to look around.
+Press A, B, X, or Y Button to move.
+Quickly double-tap X Button and hold to run.
+Tap Map icon on Touch Screen
+to view Map.
+Press R Button to shoot.
+Touch weapon icon on Touch Screen
+and select Remote Search Droid.
+Touch and hold the Weapon Icon.
+Slide stylus to Super Assault Rifle icon 
+to switch control to Major Kane.
+Press X Button to accelerate.
+Slide the stylus on the Touch Screen 
+to aim cursor and steer vehicle. 
+Press the R Button to shoot.Examine the Save Device in front
+of you to save your progress.
+{1}{1}29.970
+{444}{486}June Fourth, Twenty-Fifty-Eight
+{489}{539}- log entry zero one -
+{539}{587}Major Edward Kane.
+{599}{674}Ever since Roswell,|we've known we're not alone.
+{683}{803}Now, more than a century later,|they've found this 'hatch' on the Moon.
+{824}{893}Is this going to be our next giant leap?
+{899}{989}If so, just what are we jumping into?
+{989}{1034}We're about to find out.
+{1043}{1073}End Log.
+{2627}{2707}Sergeant Blake,|Get the team to the transport.
+{2707}{2832}Proceed to the hatch-site. Maintain|uplink, but observe radio silence.
+{2832}{2862}Yes, sir!
+{2900}{2971}Welcome to the Moon, Major Kane,|Captain Tsukigami.
+{2975}{3010}I'm Lieutenant Stevens.
+{3010}{3090}I hope our cargo ship wasn't too|uncomfortable for you.
+{3092}{3187}We've ridden worse.|What's the situation, Lieutenant?
+{3188}{3249}General Lambert will give you a full rundown.
+{3251}{3340}But we've set up our briefing room|for you to use as a command center.
+{3350}{3478}Map data should be uploaded to your|personal navigation devices any minute now.
+{3478}{3538}Yes, mine's been updated.
+{3539}{3571}Thank you Lieutenant.
+{3575}{3665}Grab your gear Tsuke,|I'll meet you there.
+NO MAPETEO (US) MISSION REPORT:
+Major Edward Kane
+CURRENT OBJECTIVE:It's locked.This door is stuck. 
+CONTROL TYPE
+Y AXIS INVERT
+SUBTITLES
+RUMBLE
+BRIGHTNESS
+SOUND EFFECTS
+MUSIC
+TYPE 1
+TYPE 2
+OFF
+ON
+OFF
+ON
+OFF
+ON
+NORMAL
+BRIGHT
+BRIGHTER
+NORMAL
+QUIET
+OFF
+Quit
+QUIT THE GAME?
+RESTART FROM LAST SAVE POINT?
+ARE YOU SURE?
+Exit Game
+Continue
+Last Save
+Cancel
+Yes
+NoSAVE PROGRESS?
+Yes
+No
+
+Major, collect your weapon. We don't know what
+you may encounter.
+
+Major! Report your status immediately!
+
+What happened to me? I must've passed out...
+it feels like I've been asleep for hours.
+
+The device released a vapor that penetrated your
+suit. Your vitals fluctuated wildly, but they've
+stabilized. More than stabilized, they look like a
+20-year-old world-class athlete's. How do you
+feel?
+
+Actually... great. What was that stuff?
+
+I can't say anything except that it's incredibly
+complex. We won't be sure what it's doing to
+you until we can run a full analysis, so keep an
+eye out for larger samples.
+
+Roger that. Kane out.
+
+I'm too late, Tsuke. Blake, Collinsworth, Riley
+and Truckston are dead. Warner, Silas, and
+Burton are MIA.
+
+Three soldiers MIA? Is there any indication of
+where they might've gone?
+
+There are signs of a struggle near the hatch
+entrance. My guess is that they were forcefully
+abducted. By what, I don't know.
+
+They can't have been taken far. You might be
+able to find them if you act quickly.
+
+Proceed through the hatch and enter the
+subterranean structure. Figure out what we're
+dealing with, and recover your people. We'll
+mourn the dead later.
+
+Your mission is reconnaissance, and if you find
+signs of your men, you are authorized to engage
+the enemy to extract them. Do not take any
+unnecessary risks and do not fire unless fired
+upon.
+
+We cannot risk unwarranted damage to the
+structure or its contents.
+
+Roger that, General.
+
+There are some symbols here that look familiar.
+
+Great! Let's crack the code Moon God!
+
+This is the wrong direction, Major. 
+Proceed to the hatch.
+
+There are some symbols here that look familiar.
+
+Great! Let's crack the code Moon God!
+
+OK. Let's see if we get anything here. Hm, it does
+not look... hang on! I think we have a connection.
+We're receiving an encrypted data stream, this is
+fascinating!
+
+Whatever you say Tsuke.
+
+I don't how Major, but we're getting something...
+
+Is that an alarm? We need to move fast.
+Let's get one of those canisters back to the
+surface so we can analyze it. Be careful Major.
+
+Roger that, General!
+
+Check out that cool looking duct on the left.
+
+Yeah Tsuke, get the Remote Search Droid ready - BRB!
+
+Check out that cool looking duct on the left.
+
+Yeah Tsuke, get the Remote Search Droid ready - BRB!
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+This looks like the substance dropped by the
+robot at the entry point.
+
+The canister must be used to maintain it in
+liquid form. Use your suit's Universal Cognitive
+Adapter to analyze the contents.
+
+Performing scan now. Whatever it is, this place
+is filled with cases and cases of it.
+
+Strange... the liquid appears to be a mix of
+endorphins and viral agents suspended in an
+amniotic fluid. I don't yet understand it fully, but
+based on its composition it should be extremely
+toxic.
+
+Toxic? All I know is that I feel great...
+
+I know, Major. This just doesn't add up. What's
+even stranger is that most of the components are
+being recognized by our medical database.
+
+What are you saying?
+
+The components are terrestrial in origin.
+
+Terrestrial...?
+
+I found Warner... I repeat, I've located Warner.
+
+What's her condition?
+
+She's dead...
+But by the looks of it, she didn't go down without
+a fight.
+
+What about Silas and Burton?
+
+No sign of them. 
+I'm pressing on.
+Kane out.
+
+Use your UCA interface to access this terminal.
+
+What? Why should that work? This isn't exactly
+standard equipment, Tsuke.
+
+Kane, everyone knows that most of our
+communications technology came from Roswell.
+
+What do you know, it worked...
+Are there any other mission-critical fun facts that
+I should know?
+
+Major, you've been given all the intel we believe
+is relevant to this mission.
+
+Stay focused, gentlemen.
+
+General, Major... the data is coming in now. It
+seems to be a map of the facility. An area
+several kilometers to your southeast appears to
+have been marked.
+
+
+
+Understood. Major, you are to move to the
+marked area on the map and report. Exercise
+extreme caution. We don't know what lies at
+that location but it is our best chance to learn
+more about this structure.
+
+Lambert out.
+
+Tsuke, I've discovered an alien weapon. I've
+never seen a weapon like this before.
+
+This is a handgun, but you've only encountered
+automated security sentries. They don't use
+anything like this.
+
+Good. Then they won't mind if I take it.  There's
+still one question, though... whose hand was
+supposed to hold this weapon?
+
+We're receiving more map data, Major.
+The marker that was at your location has
+just moved to a point several kilometers to
+the west.
+
+
+It looks like we're on the right track.
+
+Be careful Major.
+
+Always, Tsuke.
+
+Major Kane, report your status.
+
+I have succeeded in infiltrating the second level
+of the structure and have arrived at the point
+indicated on the map. It's another computer
+terminal. Accessing data.
+
+
+It's just more map data, with another marker
+farther on.
+
+This doesn't feel right. Tsuke, where is this data
+coming from?
+
+I can't identify the source, it's highly complex.
+Each new terminal may simply automatically
+update your map data based on your position
+and progress within the facility. What are you
+suggesting?
+
+The trip here almost got me killed, and Warner
+wasn't so lucky. It feels like I'm walking into a
+trap.
+
+Be that as it may, this information is our only clue
+to understanding the nature of this structure, not
+to mention your only hope of finding your men.
+Get to that location, Major.
+
+Understood.
+
+This is a strange looking door. Perhaps we can
+access it. It looks like there's a port in the lower
+region of the door. See if your UCA can connect
+to it.
+
+Roger that Tsuke.
+
+OK. Let's see if we get anything here. Hm, it does
+not look... hang on! I think we have a connection.
+We're receiving an encrypted data stream, this is
+fascinating!
+
+Whatever you say Tsuke.
+
+I don't how Major, but we're getting something...
+
+This is the wrong direction, Major. 
+Proceed to the hatch.
+
+The Remote Access Droid could be very helpful,
+Major. You should retrieve it just in case you
+find other uses for it.
+
+Tsuke... I found something that looks like it'll be
+up your alley.
+
+Very interesting. It's some kind of robotic probe,
+but highly advanced. You should be able to link
+to it directly through your UCA and guide it via
+remote control.
+
+It looks to be equipped with an ion pulse, too...
+it may come in handy for temporarily shutting
+down force fields and stunning security robots.
+
+You got all that from a basic scan? What have
+they been teaching you at ETEO Research and
+Development?
+
+Captain Tsukigami's research history is not 
+relevant to your mission objectives, Major. You 
+can probably use this device to explore some of 
+those smaller tunnel areas.
+
+Ahem... roger that, General.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+This is the wrong direction, Major. 
+Proceed to the hatch.
+
+Power source located, tested, and operable.
+
+OK, that's great. I'll be there soon, Major. 
+The moons surface is a little more severe 
+than I thought; I'm taking it slow.
+
+OK, Major. There's no need to wait for 
+the Captain. Make your way to the hatch. 
+Map data will be uploaded shortly.
+
+
+Yes, this terminal is functional, Kane. Perhaps
+I can access it. I'm activating your onboard WDI
+now.
+
+Be careful, Captain. We don't know what we're
+dealing with here.
+
+Roger that, General.
+
+Got anything yet, Tsuke?
+
+Yes, this looks like a sub-network. I can only
+access what seems to be a minor power system.
+I'm going to upload an initiate routine. OK, let's
+see if this does anything.
+
+Let's get one of those canisters back to the
+surface for analysis, Major. This could provide
+some vital information. Return to Beta Station.
+
+Roger that, General. I'm on my way.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+Kane, my scanners are picking up a massive
+electromagnetic disturbance. It's shorting out all
+electronic devices in the sector!
+
+Major! There are energy spikes all over the board!
+I want you out of there on the...
+
+There's too much interference, Major. We've lost
+the General's signal, and mine is breaking up as
+well. Kane, if these energy spikes affect the
+terminal's reactor core...
+
+Cut to the chase, Tsuke. How long before I'm
+toast?
+
+I'm uploading a timer to your UCA display. At the
+current rate, you've got ninety seconds to get
+out of there.
+
+Good job, Major!
+
+That was too close, Tsuke.
+
+Yes, I am relieved you made it. I have moved
+my equipment into the garage. It seems
+more secure in here.
+
+OK, Tsuke. I'm on my way.
+
+Collect the explosives before heading out, Major.
+
+Check your radar for the location of  the
+second hatch, Major.
+
+Alpha-1 to Command. Do you copy?
+
+Major...
+You made it?
+
+Roger that, General.
+
+You hit the jackpot with that last terminal. We
+extracted a tremendous amount of information
+from it. That area you explored was only a
+small section of a much larger series of
+subterranean installations.
+
+How large?
+
+We're still processing the data. It seems to stretch
+for several miles beneath the Moon's surface.
+
+Maybe that's where Burton and the others are.
+
+Major, you're not just out there to find your men.
+You will focus on performing reconnaissance in
+accordance with your primary mission. Don't
+forget that.
+
+Understood. What's the next objective?
+
+There's an entry point to the next section of the
+structure nearby. Unfortunately, the hatch is buried
+under several layers of rock. You'll need some of
+Alpha Team's explosives to clear away the rock
+and expose the hatch.
+
+Pick up the explosives, then use the LOLA-RR10
+to reach the hatch location. Once you've
+successfully exposed the entryway, enter the
+structure and continue reconnoitering the area.
+
+The LOLA-RR10 unit is in the garage at your
+present location. Enter the vehicle and move out.
+
+Roger that, General.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+There are two locations marked on the map.
+
+General, the last area with these markings was an
+extremely powerful security robot, and
+destroying it triggered an electromagnetic storm
+that could have killed everyone in the entire
+sector.
+
+Given that my men are still out there, I'm not sure
+that a direct approach is the best tactic.
+
+Major, you've proven yourself capable of dealing
+with hostile fire. We have reason to believe that
+these coordinates will offer valuable intel. As for
+your men, we have no reason to believe that
+they're here or that they're even alive.
+
+Our best hope of finding them is to learn what we
+can about this structure. You have your orders.
+
+... Understood. Kane out.
+
+You see this, Captain? I don't know what to make
+of it.
+
+I hate to say it, Major, but neither do I.
+
+You're my tech officer, Tsuke. Give me something
+to go on here.
+
+Hmm, possibly a multi-key security system.
+Judging by its layout, it's missing two components.
+Remember the two locations marked on your
+map? I don't think that's a coincidence.
+
+Neither do I. I'm heading to the first location now.
+Kane out.
+
+I'm assembling the pieces now.
+
+That's no key panel!
+
+No, it's not. If I didn't know better, I'd say it's
+a...
+
+A rifle! Of course! It's just like the quantium-ion
+weapons that were discovered at...
+
+Captain!
+
+Ahem, sorry, General. Never mind that, Major,
+but I can tell you that this type of particle weapon
+should prove extremely powerful.
+
+Affirmative. 
+Tell me if you see anything else you recognize...
+Before I'm on the receiving end of it.
+
+Maybe you were on to something, Tsuke. Do
+you think this is a piece to that device?
+
+Definitely. Find the other piece and then return
+to the central terminal to assemble them.
+
+This must be the second piece, Captain.
+
+Affirmative. Now you can take the components
+back to the central room.
+
+I'm already moving.
+
+Captain, I've just entered a lab area and there are
+hundreds of those canisters down here.
+
+Major, I have some disturbing news. We've
+processed the data you gathered. The liquid is
+made up of chemicals directly extracted from
+humans. Heart, lungs, pituitary gland... almost
+every major organ.
+
+That stuff I've been taking is made from...
+humans? How many people did it take to produce
+all of these?
+
+Command to Alpha-1! Priority alert! The Freedom 2
+is under attack by unidentified craft! Repeat, we
+are under attack! Be alert and return to safe zone!
+
+General Lambert?!
+...
+Tsuke, I've lost contact with the General. Are you
+still reading me?
+
+I copy you, but something is seriously wrong. The
+signal from the space station has been completely
+cut off. I'll try to raise the General, but you're
+going to have to keep moving forward until I
+figure this out.
+
+I placed the first piece.
+
+Great, now go find the other.
+
+... Does anyone read me? I can't tell if my helmet
+comlink still works. I'm trying to figure out where
+I am...
+
+Burton? Is that you? Report in, soldier!
+Blast... he's been cut off. But they must still be
+alive!
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+#h9P    *H(    8h$    %F&P!h9p    *D4(N*p
+u=0m    U@    d32g0.
+
+Tsuke, I'm getting something weird on my comlink.
+It could be the General trying to reestablish
+contact. General, do you read me?
+
+d32g0.	U@    u=0m    *D4(N*p    %F&P!h9p
+8h$    #h9P    *H(
+
+Please identify yourself, your signal is scrambled.
+This is Extra-Terrestrial Encounter Organization,
+Major Edward Kane. Burton? Silas? Is this one of
+the scientists from Alpha Base?
+
+Hello, Major Kane. I've been observing your
+progress for some time. Very well done.
+
+Who is this?
+
+Your men are being held at another underground
+sector nearby. You must go there immediately if
+you wish to save them.
+
+What do you know about my men?
+
+I know that if you want to save them you will do
+exactly as I tell you. I've uploaded the location to
+your navigational device. The clock is ticking,
+Major.
+
+Why should I trust you?
+
+Perhaps you should ask whether your comrades
+are worthy of your trust. I will contact you when
+you reach the specified location.
+
+My comrades...?
+
+Major? Do you read me?
+
+Tsuke!
+
+We lost contact for a minute there.
+Is everything okay?
+
+...
+Affirmative.
+Just some interference.
+
+Major, I've been trying to contact General
+Lambert, but our signal doesn't seem to be strong
+enough. I've located a secondary comm dish 
+that could boost the signal, but I can't reach
+it from Alpha Base without the LOLA-RR10.
+
+Stay put, Tsuke, the surface is swarming with
+those robots. I'll move to the dish and attempt
+to reestablish contact with the General. Upload
+the coordinates to my UCA.
+
+Affirmative, Major.
+...That's odd, another location has just appeared
+in your navigational database. I don't remember
+this coming from the earlier data terminals.
+
+Well, the location isn't far from the comm dish, so
+you can continue reconnaissance once you make
+contact with Lambert.
+
+...
+Affirmative. I'll return to the surface and proceed
+to the dish.
+...And Tsuke? Do you know anything about other
+ETEO operations on the Moon?
+
+No, why?
+
+I don't think Lambert's giving us the whole story.
+
+Major, you know as much as I do. I think you're
+letting the pressure get to you. Maybe you need to
+be more careful with that liquid.
+
+I'm being as 'careful' as I can, Captain, considering
+that I've been surviving off some kind of human-
+based juice whose full effects you haven't even
+been able to explain to me...
+
+Stay cool, Kane. Just get to the satellite tower and try
+to reestablish contact with Lambert.
+Tsukigami out.
+
+Alpha Team to Command, Alpha Team to
+Command, do you read?
+ 
+The Freedom 2 has been destroyed, Major! Only
+my immediate aides and I made it to the escape
+pod. Your position is about to be overrun by
+unidentified spacecraft!
+
+Unidentified spacecraft?!
+
+Damn it, Major, you've got to hurry!
+
+Use the access road due east of your location.
+Get out of there!
+
+You better go back to that communications 
+dish and try to get in touch with Alpha 
+team.
+
+Roger that, Tsuke.
+
+Major, I've got some bad news. There's been
+extensive damage to our communications
+infrastructure. Most of our comm. satellites
+vanished off of radar when we lost contact
+with General Lambert.
+
+What are you saying? Were they destroyed?
+
+I wish I knew, Major, but we'll have to worry
+about it later. There's one active satellite left, and
+it's moving out of range in 2 minutes.
+I've uploaded the coordinates of the dish to
+LOLA's nav system. You need to get there now!
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+What's going on here... where am I?
+
+You are no longer on the surface. You're in a
+non-human transport vessel, and your only hope
+of getting out alive is to listen to me.
+
+You must access the teleportation sequencer at
+the center of the ship, but first you must destroy
+its power core.
+
+How do you know this? Why should I trust you?
+
+I leave that up to you. Once the power core is
+destroyed, you will have approximately 60
+seconds to engage the sequencer. If you survive,
+make your way to the coordinates as planned,
+and I will contact you again. Now move.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+It seems you've survived again, Major Kane.
+Perhaps you'll start trusting me now.
+
+I still don't know who you work for, what you
+want or even who you are. We're a ways off
+from 'trust.'
+
+Good. You're still thinking clearly. Being careful
+whom you trust may save your life.
+
+...
+
+Major, I want you to understand what's really
+happening on the Moon. To do that, you must
+proceed to the central processing area. The
+security system is fueled by three power cores
+that I have just marked on your map.
+
+Turn these off and continue into the facility.
+
+Wait, you said I would find my men here. Where
+the hell are they?
+...
+Hello?
+
+Major, come in! What happened back at the dish?
+
+Tsukigami, it's you... we're not alone here, and
+I'm pretty sure this isn't the liquid talking. I was
+transported onto one of the ships that attacked
+the Freedom 2 and I engaged in direct combat
+with its occupants. They were alien and hostile.
+
+I repeat: this isn't just an automated defense
+system here. We're dealing with hostile extra-
+terrestrial life forms.
+
+My God, it's finally happened! Listen, Major, I'm
+still struggling to reestablish contact with the
+General. Maybe she has some answers. Until then,
+just investigate those new locations, and be
+careful.
+
+Major, what are those things? 
+
+Matter transporters.
+
+Are you being serious, sir?
+
+That's how I got onto that vessel and back.
+What I'd like to know is why someone would need
+so many of them in one location...
+
+I've found Alpha Team's exo-suits... they've been
+sliced right off.
+
+What about Silas and Burton?
+
+Tsuke, I don't think they made it. There are signs
+of explosive decompression.
+
+I'm uploading your visual data to General
+Lambert's escape pod. She's coming through now.
+
+Are you seeing this, General? These are Alpha
+Team's suits. My people are all dead! What did
+you lead us into here?
+
+... My God. That place...
+When I sent the scientists in, I had no idea...
+
+What!? You sent scientists in? General, what the
+hell is going on?
+
+It was a calculated risk. When personnel from
+Alpha Base discovered the facility, I was the first
+to get the report. I was looking at an
+unprecedented technology harvest. A chance for
+safety and security forever.
+
+We didn't pick up any life signs, so I decided the
+facility was probably abandoned and instructed
+the scientists to investigate.
+
+Instead of sending in the ETEO, you had civilian
+scientists wandering around an alien base?
+With all due respect, ma'am... that's not just a
+violation of protocol, it's insane.
+
+I had to break the rules, Kane. I couldn't risk
+drawing attention to the facility with a large-scale
+ETEO deployment, and the technology was just
+too valuable to risk having a bunch of trigger-
+happy ETEO grunts running around the facility.
+
+No offense.
+
+... None taken.
+
+The situation got hotter than I anticipated, so I
+sent your team to bring things under control. I
+knew I could trust you to do it quietly.
+
+I can't believe this. You ignored basic protocol.
+You withheld critical intel from us. All because...
+you were afraid we'd break some alien gadget?
+How much more do you know about this place?
+
+Nothing, I...
+Damn! There are more ships approaching. I think
+I've been detected!
+My God, there are so many of them. Kane, you
+need to !#&$*(#@*  &(%
+
+We've lost contact with General Lambert. Her
+escape pod just disappeared off the radar...
+uh-oh, Kane, I'm detecting a fleet of unidentified
+vessels approaching your location.
+
+The Captain is correct, Major. Those vessels are
+full of the troops that you just encountered. These
+tunnels will soon be swarming with them.
+
+You again! You told me I would find my men here.
+What happened to them?
+
+You've seen all that's left of them. If you had
+come directly here as I told you, there may have
+been time for you to save them.
+
+Save them from what? What the hell is going on
+here?
+
+You will find out soon enough. There are hostiles
+closing in on your position. If you want to live, you
+will shut down the remaining power cores and
+move to the central processing area.
+
+Damn!
+
+Major? I lost contact with you for a second, but
+my scanners were picking up incoming and
+outgoing transmissions at your location.
+What's going on?
+
+There's no time to explain.
+I've got to get out of here!
+
+That should be the last one.
+
+Good work, Major. All three power cores are
+now off-line. The force barriers are down.
+
+And it looks like a new beacon just appeared on 
+my map. That must be the central processing area. 
+I'm proceeding to the marked location.
+
+Alright, let's get this thing done!
+
+Is that a conveyor belt up ahead?
+
+Looks like it. As a matter of fact, this whole
+place seems to be one big factory.
+
+My God, those are...
+
+Human beings. This is bad. I've got to find
+Alpha Team.
+
+Those things are actually storing living people
+in these tanks... but for what? What is the
+processing that he was talking about?
+
+Processing? Kane, what are you talking about?
+
+Tsuke, listen. There's something I haven't told
+you about. I thought that the liquid was getting
+to me, and...
+
+What are you saying?
+
+The map data was being sent by someone all
+along, and I've been in contact with him.
+
+But...
+
+Believe me, I've got the same questions. I don't
+know who he is or if he can be trusted, but my
+priority now is to figure out what's really going
+on here.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+That's another one down... barely.
+
+Congratulations are in order. The security of this
+facility is maintained by three guardian robots,
+and you have just destroyed the second.
+However, you may not relax yet. One remains,
+but it is far more powerful than the others.
+
+Kane, who is this?
+
+Tsuke, you're getting his transmission?
+
+Don't be so surprised, Major. Your comlinks
+aren't secure.
+
+Major, even with the help, you've got to stay
+frosty.
+
+Yes, Major, I recommend that you stay 'frosty.'
+It's a long road to central processing, and the
+alien troops have fortified their defenses.
+
+The door ahead can only be opened by combining
+a four-part security key code. Each data packet is
+protected by its own security unit.
+
+Kane, your map has readjusted. I'm reading four
+new marked points.
+
+Right. I'm on my way to start collecting the key
+pieces.
+
+
+Be careful, Major.
+
+Roger that, Tsuke.
+
+This must be one of the data packets, Tsuke.
+
+That so-called 'security unit' was a... brute!
+
+Three more to go.
+
+Well done, Major.
+
+Let's get through that door.
+
+Great. You collected another data packet!
+
+Great. You collected another data packet!
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+Map data is downloading... there's only one
+position marked.
+
+
+That is the location of the final guardian.
+Whether you choose to face it or not is up to
+you, but when you see what goes on in central
+processing, you may agree that it must be
+destroyed.
+
+Captain, can you see this? These people are
+frozen in the tanks.
+
+Ambient readings show that they're still alive.
+Why are they being stored like this?
+
+Major, those machines...
+Are they extracting fluids from those people?
+
+My God, Tsuke, they're still alive.
+... I've been surviving off of liquid extracted
+from living human beings...
+
+According to my calculations, it would take at
+least fifty people to make enough liquid to fill
+just one of those canisters.
+
+Fifty people for one canister? Do you have any
+idea how many crates of this stuff are in
+storage here?!
+
+Kane... you need to shut this down.
+
+I know. If our contact is telling the truth, I
+need to take down that final guardian.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+The scanners are showing that the process has
+been shut down. You did it, Major!
+
+We did it. Now, let's figure out how to free these
+people.
+
+Major, I'm afraid that will have to wait. I have
+just been informed of an unanticipated
+development.
+
+What development?
+
+Major Kane, Captain Tsukigami, the beings that
+created this facility are mustering an enormous
+strike force on their homeworld. They will be
+here in a matter of days to destroy any possible
+threats to their operation.
+
+How do you know this? For the last time, who are
+you?
+
+There is no time, and you would not believe me if
+I told you. You must travel to their world
+immediately and eliminate their leader or all life
+on Earth will be annihilated.
+
+Annihilated?!
+
+There is a vessel in the storage facility that can
+take you there. If you choose to proceed, you will
+need to activate three power cells to reroute
+power the ship. The terminal ahead will show you
+the locations.
+
+Kane... if this is true, the stakes are too high to
+ignore.
+
+We've got new map data coming in, Major.
+
+
+Three new coordinates have been marked off.
+
+If this stays true to form, those are where you'll
+find the power cells.
+
+I'm going after them now. Kane out.
+
+That's the last of them, Major. The ship is ready
+for departure. Proceed to the marked location.
+
+On my way.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+Well done, Major, well done. You continue to
+impress me. Perhaps you will stand a chance
+against their leader.
+
+... I appreciate your confidence.
+
+Major, the ship's course has been plotted roundtrip,
+so you will be able to return...
+... Should you survive.
+
+...
+
+Major... Ed... our signal booster's not powerful
+enough to maintain contact all the way. You're
+going to be on your own on this one.
+
+...
+Don't worry, old man. I'll be back.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+OK Major. I have created a simulation that 
+emulates the behaviors of the hostiles. This 
+should help you perfect your skills.
+
+Good work. Bring it on.
+
+The program is initializing. 
+Good luck!
+
+Thanks Tsuke.
+
+Well done Major! You completed the training 
+mission.
+
+Piece of cake, Tsuke.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+OK Major. I have created a simulation that 
+emulates the behaviors of the hostiles. This 
+should help you perfect your skills.
+
+Good work. Bring it on.
+
+The program is initializing. 
+Good luck!
+
+Thanks Tsuke.
+
+Well done Major! You completed the training 
+mission.
+
+Piece of cake, Tsuke.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+OK Major. I have created a simulation that 
+emulates the behaviors of the hostiles. This 
+should help you perfect your skills.
+
+Good work. Bring it on.
+
+The program is initializing. 
+Good luck!
+
+Thanks Tsuke.
+
+Well done Major! You completed the training 
+mission.
+
+Piece of cake, Tsuke.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+OK Major. I have created a simulation that 
+emulates the behaviors of the hostiles. This 
+should help you perfect your skills.
+
+Good work. Bring it on.
+
+The program is initializing. 
+Good luck!
+
+Thanks Tsuke.
+
+Well done Major! You completed the training 
+mission.
+
+Piece of cake, Tsuke.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+OK Major. I have created a simulation that 
+emulates the behaviors of the hostiles. This 
+should help you perfect your skills.
+
+Good work. Bring it on.
+
+The program is initializing. 
+Good luck!
+
+Thanks Tsuke.
+
+Well done Major! You completed the training 
+mission.
+
+Piece of cake, Tsuke.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
+
+OK Major. I have created a simulation that 
+emulates the behaviors of the hostiles. This 
+should help you perfect your skills.
+
+Good work. Bring it on.
+
+The program is initializing. 
+Good luck!
+
+Thanks Tsuke.
+
+Well done Major! You completed the training 
+mission.
+
+Piece of cake, Tsuke.
+
+I suggest you retrieve the Remote Access Droid
+before leaving this area.
