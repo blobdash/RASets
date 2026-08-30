@@ -302,6 +302,13 @@ achievements = OrderedDict({
         points=25,
         badge="00000",
     ),
+    633763: Achievement(
+        id=633763,
+        title="""Sniper Blaster""",
+        description="""Defeat the Matrix Progenitor using only the Fermion Sniper and the Oxid Cannon in Normal in Quick Play""",
+        points=5,
+        badge="00000",
+    ),
     633027: Achievement(
         id=633027,
         title="""End Log""",

@@ -110,6 +110,10 @@ class MoonSet(AchievementSet):
     def guardian3_tt(self, ach: Achievement):
         ach.add_core(conditions=chapterTimeTrial(Episode.EPISODE_13, 2, 0))
     
+    @achievement(633763)
+    def progenitor_challenge(self, ach: Achievement):
+        ach.add_core(progenitor_weaponchallenge())
+
     @achievement(633027)
     def overlord_tt(self, ach: Achievement):
         ach.add_core(chapterTimeTrial(Episode.EPISODE_17, 3, 0))

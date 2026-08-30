@@ -211,6 +211,9 @@ class Weapon:
       delta(self.UNLOCKED) == 0,
       self.UNLOCKED == 1
     )
+  
+  def ammo_consumed(self):
+    return (delta(self.AMMO) > self.AMMO)
 
 class Weapons:
   SAR = Weapon(
@@ -388,6 +391,27 @@ def phexic_accchallenge(accuracy: int):
     remember(recall() /  dword(0x04)),
     # (calculated accuracy >= req. accuracy)
     (recall() >= accuracy)
+  )
+
+def progenitor_weaponchallenge():
+  return group(
+    is_ingame(),
+    quick_play(),
+    (Memory.CURRENT_EPISODE == Episode.EPISODE_15) &
+    (Memory.CURRENT_DIFFICULTY == 0x01) &
+    # why on the 2nd frame and not the first?
+    # we are using delta/mem on ammo resetif, which are true on frame 1
+    (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c) == 0x02).with_hits(1),
+    enter_end_screen_trigger(),
+    # resetif saveload/exited level
+    reset_if((ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c) == 0x00)),
+    reset_if(Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT == 0x00),
+    # resetif ammo other than permitted weapons is consumed
+    reset_if(Weapons.SAR.ammo_consumed()),
+    reset_if(Weapons.MUON.ammo_consumed()),
+    reset_if(Weapons.QUANTA.ammo_consumed()),
+    reset_if(Weapons.LEPTON.ammo_consumed()),
+    reset_if(Weapons.SEEKER.ammo_consumed())
   )
 
 def pssitrial(seconds: int):
