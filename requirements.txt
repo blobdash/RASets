@@ -1,4 +1,4 @@
 requests
 tabulate
-pycheevos
+pycheevos @ git+https://github.com/CarlosNatanael/PyCheevos
 jinja2
