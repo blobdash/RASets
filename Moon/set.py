@@ -32,7 +32,7 @@ class MoonSet(AchievementSet):
     
     @achievement(631255)
     def pss2_enter(self, ach: Achievement):
-        ach.add_core(clearedChapter(Episode.EPISODE_03))
+        ach.add_core(clearedChapter(Episode.EPISODE_03, area_check='a1', submap_check='000'))
     
     @achievement(631256)
     def pss2_clear(self, ach: Achievement):

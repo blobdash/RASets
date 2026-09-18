@@ -283,7 +283,7 @@ def is_ingame():
 def is_not_ingame():
   return (Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT == 0)
 
-def clearedChapter(episode: int, difficulty: int | NoneType = None):
+def clearedChapter(episode: int, difficulty: int | NoneType = None, area_check: str | NoneType = None, submap_check: str | NoneType = None):
   cond = group(
     is_ingame(),
     (Memory.CURRENT_EPISODE == episode),
@@ -292,6 +292,10 @@ def clearedChapter(episode: int, difficulty: int | NoneType = None):
   )
   if(difficulty is not None):
     cond.append(Memory.CURRENT_DIFFICULTY == difficulty)
+  if(area_check is not None):
+    cond.append(string_equals(Memory.CURRENT_AREA_ID, area_check, 2, endianness='little'))
+  if(submap_check is not None):
+    cond.append(string_equals(Memory.CURRENT_SUBMAP_ID, submap_check, 3, endianness='little'))
   return cond
 
 def chapterTimeTrial(episode: int, minutes: int, seconds: int):
@@ -300,7 +304,6 @@ def chapterTimeTrial(episode: int, minutes: int, seconds: int):
     quick_play(),
     (Memory.CURRENT_EPISODE == episode),
     (Memory.CURRENT_DIFFICULTY == 0x01),
-    (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
     enter_end_screen_trigger(),
     # timer is above number of frames allowed for tt
     (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c) <= frames(minutes, seconds))
@@ -314,7 +317,6 @@ def chapterTimeTrialLeaderboard(episode: int, difficulty: int, lb: Leaderboard):
       is_ingame(),
       (Memory.CURRENT_EPISODE == episode),
       (Memory.CURRENT_DIFFICULTY == difficulty),
-      (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x03),
       enter_end_screen()
     )
   )
