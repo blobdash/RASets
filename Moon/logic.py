@@ -486,8 +486,14 @@ def all_hp():
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a5', 2, endianness='little')),
     (string_equals(Memory.CURRENT_SUBMAP_ID, '016', 3, endianness='little')),
-    (delta(bitcount(Memory.HEALTH_UPGRADES.address)) == 5),
-    measured(bitcount(Memory.HEALTH_UPGRADES.address) == 6)
+    add_source(delta(bitcount(Memory.HEALTH_UPGRADES.address))),
+    sub_source(delta(bit6(Memory.HEALTH_UPGRADES.address))),
+    sub_source(delta(bit7(Memory.HEALTH_UPGRADES.address))),
+    (value(0x00) == 5),
+    add_source(bitcount(Memory.HEALTH_UPGRADES.address)),
+    sub_source(bit6(Memory.HEALTH_UPGRADES.address)),
+    sub_source(bit7(Memory.HEALTH_UPGRADES.address)),
+    measured(value(0x00) == 6)
   )
 
 def all_ammo():
