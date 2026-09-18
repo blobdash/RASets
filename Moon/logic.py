@@ -486,13 +486,13 @@ def all_hp():
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a5', 2, endianness='little')),
     (string_equals(Memory.CURRENT_SUBMAP_ID, '016', 3, endianness='little')),
-    add_source(delta(bitcount(Memory.HEALTH_UPGRADES.address))),
-    sub_source(delta(bit6(Memory.HEALTH_UPGRADES.address))),
-    sub_source(delta(bit7(Memory.HEALTH_UPGRADES.address))),
+    add_source(delta(bitcount(Memory.UPGRADES.address))),
+    sub_source(delta(bit6(Memory.UPGRADES.address))),
+    sub_source(delta(bit7(Memory.UPGRADES.address))),
     (value(0x00) == 5),
-    add_source(bitcount(Memory.HEALTH_UPGRADES.address)),
-    sub_source(bit6(Memory.HEALTH_UPGRADES.address)),
-    sub_source(bit7(Memory.HEALTH_UPGRADES.address)),
+    add_source(bitcount(Memory.UPGRADES.address)),
+    sub_source(bit6(Memory.UPGRADES.address)),
+    sub_source(bit7(Memory.UPGRADES.address)),
     measured(value(0x00) == 6)
   )
 
@@ -504,8 +504,16 @@ def all_ammo():
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a1', 2, endianness='little')),
     (string_equals(Memory.CURRENT_SUBMAP_ID, '017', 3, endianness='little')),
-    (delta(bitcount(Memory.AMMO_CLIP_UPGRADES.address)) == 3),
-    measured(bitcount(Memory.AMMO_CLIP_UPGRADES.address) == 4)
+    add_source(delta(bit6(Memory.UPGRADES.address))),
+    add_source(delta(bit7(Memory.UPGRADES.address))),
+    add_source(delta(bit0(Memory.UPGRADES_2.address))),
+    add_source(delta(bit1(Memory.UPGRADES_2.address))),
+    value(0x00) == 0x03,
+    add_source(bit6(Memory.UPGRADES.address)),
+    add_source(bit7(Memory.UPGRADES.address)),
+    add_source(bit0(Memory.UPGRADES_2.address)),
+    add_source(bit1(Memory.UPGRADES_2.address)),
+    measured(value(0x00) == 4)
   )
 
 def vr_training():

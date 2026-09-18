@@ -663,24 +663,24 @@ class Memory:
     Bit7 = Seeker Pods
     """
 
-    HEALTH_UPGRADES = byte(0x2aa7a9)
+    UPGRADES = byte(0x2aa7a9)
     """
-    [8-bit] [Bitfield] Health Upgrades
-    Bit0 = Upgrade 1
-    Bit1 = Upgrade 2
-    Bit2 = Upgrade 3
-    Bit3 = Upgrade 4
-    Bit4 = Upgrade 5
-    Bit5 = Upgrade 6
+    [8-bit] [Bitfield] Upgrades
+    Bit0 = Health Upgrade 1
+    Bit1 = Health Upgrade 2
+    Bit2 = Health Upgrade 3
+    Bit3 = Health Upgrade 4
+    Bit4 = Health Upgrade 5
+    Bit5 = Health Upgrade 6
+    Bit6 = Muon Pistol Ammo Upgrade
+    Bit7 = Quanta Rifle Ammo Upgrade
     """
 
-    AMMO_CLIP_UPGRADES = byte(0x2aa7aa)
+    UPGRADES_2 = byte(0x2aa7aa)
     """
-    [8-bit] [Bitfield] Ammo Clip Upgrades
-    Bit0 = Upgrade 1
-    Bit1 = Upgrade 2
-    Bit2 = Upgrade 3
-    Bit3 = Upgrade 4
+    [8-bit] [Bitfield] Upgrades 2
+    Bit0 = Ammo Upgrade 3
+    Bit1 = Ammo Upgrade 4
     """
 
     ALIEN_ARTIFACTS = byte(0x2aa7ae)
