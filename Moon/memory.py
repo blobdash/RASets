@@ -117,6 +117,7 @@ class Memory:
     ... 0x04 = Options
     ... 0x18 = Delete All Data Prompt
     ... 0x2e = Title Screen
+    ... 0x46 = Quick Play Level Select
     ... 0x56 = Quick Play Level Select
     """
 

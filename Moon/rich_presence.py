@@ -18,7 +18,7 @@ class MoonRichPresence(RichPresence):
             0x04: 'Adjusting some settings',
             0x18: 'Deleting the save data?!',
             0x2e: 'On the title screen',
-            0x56: 'Selecting a level in Quick Play'
+            (0x46, 0x56): 'Selecting a level in Quick Play'
         }, default='Loading...')
         self.add_lookup('Episode', {
             0x08: 'in the Prologue',

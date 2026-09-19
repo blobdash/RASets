@@ -2,7 +2,7 @@ Lookup:MenuState
 0x4=Adjusting some settings
 0x18=Deleting the save data?!
 0x2e=On the title screen
-0x56=Selecting a level in Quick Play
+0x46,0x56=Selecting a level in Quick Play
 *=Loading...
 
 Lookup:Episode
