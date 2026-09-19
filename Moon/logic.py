@@ -367,7 +367,7 @@ def sanctus_healchallenge(seconds: int):
     quick_play(),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_05),
     (Memory.CURRENT_DIFFICULTY == 0x01),
-    enter_end_screen(),
+    enter_end_screen_trigger(),
     reset_next_if(group(
       (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> delta(dword(0x10)) == 0x03) &
       (ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x10) == 0x00)
@@ -378,7 +378,7 @@ def sanctus_healchallenge(seconds: int):
     # only count hits after boss health is initialized
     and_next(Memory.BOSS_HEALTH_STATIC_COPY != 0xffff),
     # boss regains 1hp every 20 frames, meaning 3 hp per second.
-    (delta(Memory.BOSS_HEALTH_STATIC_COPY) < Memory.BOSS_HEALTH_STATIC_COPY).with_hits(seconds*3)
+    pause_if(delta(Memory.BOSS_HEALTH_STATIC_COPY) < Memory.BOSS_HEALTH_STATIC_COPY).with_hits(seconds*3)
   )
 
 def phexic_accchallenge(accuracy: int):
@@ -387,7 +387,7 @@ def phexic_accchallenge(accuracy: int):
     quick_play(),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_11),
     (Memory.CURRENT_DIFFICULTY == 0x01),
-    enter_end_screen_trigger(),
+    enter_end_screen(),
     # hit shots * 100
     remember((ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x08)) * 100),
     add_address(ptr(Memory.GAME_STATE.address) >> ptr(0x04)),
@@ -486,9 +486,9 @@ def all_hp():
     or_next(Memory.VIEWPORT_ENABLED == 0xff),
     measured_if(Memory.TITLE_SCREEN_POINTER == 0x00),
     measured_if(adventure_mode()),
-    (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
+    (Memory.CURRENT_EPISODE == Episode.EPISODE_14),
     (string_equals(Memory.CURRENT_AREA_ID, 'a5', 2, endianness='little')),
-    (string_equals(Memory.CURRENT_SUBMAP_ID, '016', 3, endianness='little')),
+    (string_equals(Memory.CURRENT_SUBMAP_ID, '007', 3, endianness='little')),
     add_source(delta(bitcount(Memory.UPGRADES.address))),
     sub_source(delta(bit6(Memory.UPGRADES.address))),
     sub_source(delta(bit7(Memory.UPGRADES.address))),

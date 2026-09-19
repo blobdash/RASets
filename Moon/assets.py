@@ -72,6 +72,7 @@ achievements = OrderedDict({
         description="""Obtain the Fermion Sniper""",
         points=2,
         badge="726539",
+        type=AchievementType.MISSABLE,
     ),
     631259: Achievement(
         id=631259,
