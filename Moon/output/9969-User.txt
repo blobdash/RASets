@@ -10,12 +10,12 @@ Moon
 631260:"0xW151660!=0_0xH151434=255_0xH1495bc=164_0xH2f03cc!=85_d0xO2f03cc=0_0xO2f03cc=1_0xH2f0b76=255":"Bad Things Come In Threes":"Defeat the third and final Guardian in the Cold Process":::progression:blobdash:10:::::726542
 631261:"0xW151660!=0_0xH151434=255_0xH1495bc=188_0xH2f03cc!=85_d0xO2f03cc=0_0xO2f03cc=1_0xH2f0b76=255":"Deeper in Hell":"Defeat the Matrix Progenitor in the Irradiated Stratum":::progression:blobdash:10:::::726545
 631262:"0xW151660!=0_0xH151434=255_0xH1495bc=212_0xH2f03cc!=85_d0xO2f03cc=0_0xO2f03cc=1_0xH2f0b76=255":"It's Just the Beginning":"Defeat the Overlord and beat the game":::win_condition:blobdash:10:::::726546
-631263:"0xH1495bc=20_0xH1505b0=0_0xH2f0b76=255_d0xO2aa7a8=0_0xO2aa7a8=1":"Not a Typo":"Obtain the Muon Pistol"::::blobdash:2:::::726532
-631264:"0xH1495bc=56_0xH1505b0=0_0xH2f0b76=255_d0xP2aa7a8=0_0xP2aa7a8=1":"Subatomic Particles":"Obtain the Quanta Rifle"::::blobdash:2:::::726535
-631265:"0xH1495bc=128_0xH1505b0=0_0xH2f0b76=255_d0xQ2aa7a8=0_0xQ2aa7a8=1":"Otherworldly Sniper":"Obtain the Fermion Sniper":::missable:blobdash:2:::::726539
-631266:"0xH1495bc=152_0xH1505b0=0_0xH2f0b76=255_d0xR2aa7a8=0_0xR2aa7a8=1":"Bug Spray":"Obtain the Lepton Spread":::missable:blobdash:2:::::726541
-631267:"0xH1495bc=176_0xH1505b0=0_0xH2f0b76=255_d0xS2aa7a8=0_0xS2aa7a8=1":"Not a Rocket Launcher":"Obtain the Oxid Cannon":::missable:blobdash:2:::::726543
-631268:"0xH1495bc=176_0xH1505b0=0_0xH2f0b76=255_d0xT2aa7a8=0_0xT2aa7a8=1":"Not a Bigger Rocket Launcher":"Obtain the Seeker Pod":::missable:blobdash:2:::::726544
+631263:"0xW151660!=0_0xH151434=255_0xH1495bc=20_0xH2f0b76=255_d0xO2aa7a8=0_0xO2aa7a8=1":"Not a Typo":"Obtain the Muon Pistol"::::blobdash:2:::::726532
+631264:"0xW151660!=0_0xH151434=255_0xH1495bc=56_0xH2f0b76=255_d0xP2aa7a8=0_0xP2aa7a8=1":"Subatomic Particles":"Obtain the Quanta Rifle"::::blobdash:2:::::726535
+631265:"0xW151660!=0_0xH151434=255_0xH1495bc=128_0xH2f0b76=255_d0xQ2aa7a8=0_0xQ2aa7a8=1":"Otherworldly Sniper":"Obtain the Fermion Sniper":::missable:blobdash:2:::::726539
+631266:"0xW151660!=0_0xH151434=255_0xH1495bc=152_0xH2f0b76=255_d0xR2aa7a8=0_0xR2aa7a8=1":"Bug Spray":"Obtain the Lepton Spread":::missable:blobdash:2:::::726541
+631267:"0xW151660!=0_0xH151434=255_0xH1495bc=176_0xH2f0b76=255_d0xS2aa7a8=0_0xS2aa7a8=1":"Not a Rocket Launcher":"Obtain the Oxid Cannon":::missable:blobdash:2:::::726543
+631268:"0xW151660!=0_0xH151434=255_0xH1495bc=176_0xH2f0b76=255_d0xT2aa7a8=0_0xT2aa7a8=1":"Not a Bigger Rocket Launcher":"Obtain the Seeker Pod":::missable:blobdash:2:::::726544
 631407:"0xW151660!=0_0xH151434=255_0xH2f0b76!=255_0xH1495bc=32_0xX14fec8=1_0xH2f03cc!=85_d0xO2f03cc=0_T:0xO2f03cc=1_I:0xW151660_I:0xW0004_0xX000c<=3600":"Really Wanted to Get Out of Here...":"Defeat the first Guardian in less than 1:00 in Quick Play Mode on Normal difficulty"::::blobdash:5:::::726563
 631469:"0xW151660!=0_0xH151434=255_0xH2f0b76!=255_0xH1495bc=68_0xX14fec8=1_0xH2f03cc!=85_d0xO2f03cc=0_T:0xO2f03cc=1_I:0xW151660_I:0xW0004_N:d0xX0010=3_I:0xW151660_I:0xW0004_Z:0xX0010=0_N:0x2aa758=12641_N:0xW2aa75b=3551536_N:0x2f0418!=65535_P:d0x2f0418<0x2f0418.30.":"Come Back Here!":"Defeat the Sanctus Vector without letting it regenerate for more than 10 seconds in Quick Play Mode on Normal difficulty"::::blobdash:10:::::726565
 631408:"0xW151660!=0_0xH151434=255_0xH2f0b76!=255_0xH1495bc=92_0xX14fec8=1_0xH2f03cc!=85_d0xO2f03cc=0_T:0xO2f03cc=1_I:0xW151660_I:0xW0004_0xX000c<=9000":"Not Flying Off Just Yet":"Defeat the Core in less than 2:30 in Quick Play Mode on Normal difficulty"::::blobdash:5:::::726567

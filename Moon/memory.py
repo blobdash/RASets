@@ -46,15 +46,6 @@ class Memory:
     0x02 = Veteran
     """
 
-    PLAY_STATE = byte(0x1505b0)
-    """
-    [8-bit] Play State
-    0x00 = Playing
-    0x01 = In dialogue
-    0x03 = In Cutscene/Loading
-    0x02 = For one frame after cutscene
-    """
-
     VIEWPORT_ENABLED = byte(0x151434)
     """
     [8-bit] Viewport Enabled
@@ -925,6 +916,7 @@ class Memory:
     [24-bit Pointer] Pointer to last accessed ingame UI script
     // set to 0x00 when not ingame
     // written to whenever something happens on the touchscreen
+    // NOT reliable, during E16/E17 on adventure mode isn't set until a cutscene is triggered/weapon change/paused
     """
 
     QUICK_PLAY_LEVEL_SELECT_INDEX = byte(0x2f0b76)

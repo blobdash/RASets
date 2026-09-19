@@ -205,8 +205,8 @@ class Weapon:
   
   def unlocked(self, episode: int):
     return group(
+      is_ingame(),
       (Memory.CURRENT_EPISODE == episode),
-      (Memory.PLAY_STATE == 0x00),
       adventure_mode(),
       delta(self.UNLOCKED) == 0,
       self.UNLOCKED == 1
