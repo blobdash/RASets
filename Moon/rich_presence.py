@@ -59,7 +59,7 @@ class MoonRichPresence(RichPresence):
             f'@MenuState({ptr(Memory.GAME_STATE.address) >> ptr(0x190) >> measured(dword(0x30))})')
         self.add_display(
             is_ingame(),
-            f'Major Kane is @Episode({Memory.CURRENT_EPISODE}) • @Number({Condition(0x64, '-', Memory.HEALTH_HOST)})❤️ @Difficulty({Memory.CURRENT_DIFFICULTY}) • @Gamemode({Memory.QUICK_PLAY_LEVEL_SELECT_INDEX})')
+            f'Major Kane is @Episode({Memory.CURRENT_EPISODE}) • @Number({Condition(0x64, '-', Memory.HEALTH_HOST)})HP @Difficulty({Memory.CURRENT_DIFFICULTY}) • @Gamemode({Memory.QUICK_PLAY_LEVEL_SELECT_INDEX})')
         self.add_display(
             (Memory.TITLE_SCREEN_POINTER == 0x00),
             f'Major Kane is in the End Screen'
