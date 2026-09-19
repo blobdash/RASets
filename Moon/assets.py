@@ -18,7 +18,6 @@ achievements = OrderedDict({
         description="""Obtain the Muon Pistol""",
         points=2,
         badge="726532",
-        type=AchievementType.PROGRESSION,
     ),
     631254: Achievement(
         id=631254,
@@ -42,7 +41,6 @@ achievements = OrderedDict({
         description="""Obtain the Quanta Rifle""",
         points=2,
         badge="726535",
-        type=AchievementType.PROGRESSION,
     ),
     631256: Achievement(
         id=631256,
@@ -74,7 +72,6 @@ achievements = OrderedDict({
         description="""Obtain the Fermion Sniper""",
         points=2,
         badge="726539",
-        type=AchievementType.PROGRESSION,
     ),
     631259: Achievement(
         id=631259,
@@ -90,7 +87,7 @@ achievements = OrderedDict({
         description="""Obtain the Lepton Spread""",
         points=2,
         badge="726541",
-        type=AchievementType.PROGRESSION,
+        type=AchievementType.MISSABLE,
     ),
     631260: Achievement(
         id=631260,
@@ -106,7 +103,7 @@ achievements = OrderedDict({
         description="""Obtain the Oxid Cannon""",
         points=2,
         badge="726543",
-        type=AchievementType.PROGRESSION,
+        type=AchievementType.MISSABLE,
     ),
     631268: Achievement(
         id=631268,
@@ -114,7 +111,7 @@ achievements = OrderedDict({
         description="""Obtain the Seeker Pod""",
         points=2,
         badge="726544",
-        type=AchievementType.PROGRESSION,
+        type=AchievementType.MISSABLE,
     ),
     631261: Achievement(
         id=631261,
@@ -498,14 +495,14 @@ leaderboards = OrderedDict({
         id=170264,
         title="""PSS I Escape Time Trial""",
         description="""Reach the exit of the PSS I as fast as possible""",
-        format=LeaderboardFormat.VALUE,
+        format=LeaderboardFormat.TIMESECS,
         lower_is_better=False,
     ),
     170265: Leaderboard(
         id=170265,
         title="""Satellite Time Trial""",
         description="""Reach the satellite after exiting the PSS II as fast as possible""",
-        format=LeaderboardFormat.VALUE,
+        format=LeaderboardFormat.TIMESECS,
         lower_is_better=False,
     ),
 })

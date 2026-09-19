@@ -6,11 +6,8 @@ Lookup:MenuState
 *=Loading...
 
 Lookup:Episode
-0x4=training with Tsuke
 0x8=in the Prologue
-0x10=training with Tsuke
 0x14=in the PSS I
-0x1c=training with Tsuke
 0x20=fighting the first Guardian
 0x2c=escaping the PSS I
 0x38=in the PSS II
@@ -27,9 +24,7 @@ Lookup:Episode
 0xbc=fighting the Matrix Progenitor
 0xc8=in the Fermian Homeworld
 0xd4=fighting the Overlord
-0xe0=training with Tsuke
-0xec=training with Tsuke
-0xf8=training with Tsuke
+0xe0,0xec,0xf8,0x4,0x1c,0x10=training with Tsuke
 
 Lookup:Difficulty
 0x0=Rookie
@@ -37,18 +32,12 @@ Lookup:Difficulty
 0x2=Veteran
 
 Lookup:Gamemode
-0x0=Quick Play
-0x1=Quick Play
-0x2=Quick Play
-0x3=Quick Play
-0x4=Quick Play
-0x5=Quick Play
-0x6=Quick Play
-0x7=Quick Play
+0x0,0x1,0x2,0x3,0x4,0x5,0x6,0x7=Quick Play
 0xff=Adventure Mode
 
 Display:
 ?0xW151660=0?Loading...
-?0xW2f0660=0?@MenuState(I:0xW151660_I:0xW0190_M:0xX0030)
-?0xW2f0660!=0?Major Kane is @Episode(0xH1495bc) • @Number(100-0xH2aa770)❤️ @Difficulty(0xX14fec8) • @Gamemode(0xH2f0b76)
+?0xH151434=223?@MenuState(I:0xW151660_I:0xW0190_M:0xX0030)
+?0xW151660!=0_0xH151434=255?Major Kane is @Episode(0xH1495bc) • @Number(100-0xH2aa770)❤️ @Difficulty(0xX14fec8) • @Gamemode(0xH2f0b76)
+?0xW16bad0=0?Major Kane is in the End Screen
 Playing Moon

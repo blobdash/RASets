@@ -264,12 +264,14 @@ def quick_play():
 
 def enter_end_screen():
   return group(
+    (Memory.END_SCREEN != 0x55),
     (delta(bit2(Memory.END_SCREEN.address)) == 0x00),
-    (bit2(Memory.END_SCREEN.address) == 0x01),
+    (bit2(Memory.END_SCREEN.address) == 0x01)
   )
 
 def enter_end_screen_trigger():
   return group(
+    (Memory.END_SCREEN != 0x55),
     (delta(bit2(Memory.END_SCREEN.address)) == 0x00),
     (trigger(bit2(Memory.END_SCREEN.address) == 0x01)),
   )
@@ -277,11 +279,11 @@ def enter_end_screen_trigger():
 def is_ingame():
   return group(
     Memory.GAME_STATE != 0x00,
-    Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT != 0
+    Memory.VIEWPORT_ENABLED == 0xff
   )
 
 def is_not_ingame():
-  return (Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT == 0)
+  return (Memory.VIEWPORT_ENABLED == 0xdf)
 
 def clearedChapter(episode: int, difficulty: int | NoneType = None, area_check: str | NoneType = None, submap_check: str | NoneType = None):
   cond = group(
@@ -407,7 +409,7 @@ def progenitor_weaponchallenge():
     enter_end_screen_trigger(),
     # resetif saveload/exited level
     reset_if((ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> dword(0x0c) == 0x00)),
-    reset_if(Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT == 0x00),
+    reset_if(Memory.VIEWPORT_ENABLED == 0xdf),
     # resetif ammo other than permitted weapons is consumed
     reset_if(Weapons.SAR.ammo_consumed()),
     reset_if(Weapons.MUON.ammo_consumed()),
@@ -481,7 +483,8 @@ def pssiisatellite_lb(lb: Leaderboard):
 def all_hp():
   return group(
     measured_if(Memory.GAME_STATE != 0x00),
-    measured_if(Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT != 0),
+    or_next(Memory.VIEWPORT_ENABLED == 0xff),
+    measured_if(Memory.TITLE_SCREEN_POINTER == 0x00),
     measured_if(adventure_mode()),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a5', 2, endianness='little')),
@@ -499,7 +502,8 @@ def all_hp():
 def all_ammo():
   return group(
     measured_if(Memory.GAME_STATE != 0x00),
-    measured_if(Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT != 0),
+    or_next(Memory.VIEWPORT_ENABLED == 0xff),
+    measured_if(Memory.TITLE_SCREEN_POINTER == 0x00),
     measured_if(adventure_mode()),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_15),
     (string_equals(Memory.CURRENT_AREA_ID, 'a1', 2, endianness='little')),
@@ -508,12 +512,16 @@ def all_ammo():
     add_source(delta(bit7(Memory.UPGRADES.address))),
     add_source(delta(bit0(Memory.UPGRADES_2.address))),
     add_source(delta(bit1(Memory.UPGRADES_2.address))),
-    value(0x00) == 0x03,
+    add_source(delta(bit2(Memory.UPGRADES_2.address))),
+    add_source(delta(bit3(Memory.UPGRADES_2.address))),
+    value(0x00) == 5,
     add_source(bit6(Memory.UPGRADES.address)),
     add_source(bit7(Memory.UPGRADES.address)),
     add_source(bit0(Memory.UPGRADES_2.address)),
     add_source(bit1(Memory.UPGRADES_2.address)),
-    measured(value(0x00) == 4)
+    add_source(bit2(Memory.UPGRADES_2.address)),
+    add_source(bit3(Memory.UPGRADES_2.address)),
+    measured(value(0x00) == 6)
   )
 
 def vr_training():
@@ -567,7 +575,7 @@ def vr_training_veteran():
 def artifacts(episode: int):
   cond = group(
     measured_if(Memory.GAME_STATE != 0x00),
-    measured_if(Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT != 0),
+    measured_if(Memory.VIEWPORT_ENABLED == 0xff),
     measured_if(Memory.CURRENT_EPISODE == episode),
     enter_end_screen()
   )
@@ -625,7 +633,7 @@ def artifacts(episode: int):
 def merits(episode: int):
   return group(
     measured_if(Memory.GAME_STATE != 0x00),
-    measured_if(Memory.POINTER_TO_LAST_ACCESSED_INGAME_UI_SCRIPT != 0),
+    measured_if(Memory.VIEWPORT_ENABLED == 0xff),
     measured_if(Memory.CURRENT_EPISODE == episode),
     enter_end_screen(),
     add_source(ptr(Memory.GAME_STATE.address) >> ptr(0x04) >> bit3(0x01)),

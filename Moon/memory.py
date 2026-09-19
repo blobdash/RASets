@@ -55,6 +55,14 @@ class Memory:
     0x02 = For one frame after cutscene
     """
 
+    VIEWPORT_ENABLED = byte(0x151434)
+    """
+    [8-bit] Viewport Enabled
+    0xff = Enabled
+    0xdf = Disabled
+    // this might seem useless but it is actually extremely reliable to check for ingame state as this is only enabled when the 3d engine is loaded
+    """
+
     INPUTS = byte(0x151616)
     """
     [8-bit] [Bitfield] Inputs
@@ -96,9 +104,9 @@ class Memory:
     ++0x04: [32-bit] Total Shots
     ++0x08: [32-bit] Total Hit Shots
     ++0x0C: [32-bit] Current Time
-    ++0x10: [32-bit] Playing
-    ... 0x03 = In level
-    ... 0x00 = Not in level
+    ++0x10: [32-bit] Reload State
+    ... 0x03 = Loaded
+    ... 0x00 = Reloading from Quicksave
     ++0x30: [32-bit] Timed Events Seconds Remaining
     ++0x34: [32-bit] Timed Events Seconds Framecounter
     +0x190: [24-bit Pointer]
@@ -137,6 +145,13 @@ class Memory:
     MAP_DISPLAY_PLAYER_Y = dword(0x16a538)
     """
     [32-bit] Map Display Player Y (relative coords)
+    """
+
+    TITLE_SCREEN_POINTER = tbyte(0x16bad0)
+    """
+    [24-bit Pointer] Title Screen Pointer
+    0x000000 = Ingame
+    0x1ac640 = Title Screen
     """
 
     SAVE_DATA_FOR_ROOKIE_PROLOGUE = dword(0x2aa5b8)
@@ -679,8 +694,10 @@ class Memory:
     UPGRADES_2 = byte(0x2aa7aa)
     """
     [8-bit] [Bitfield] Upgrades 2
-    Bit0 = Ammo Upgrade 3
-    Bit1 = Ammo Upgrade 4
+    Bit0 = Fermion Sniper Ammo Upgrade
+    Bit1 = Lepton Spread Ammo Upgrade
+    Bit2 = Oxid Cannon Ammo Upgrade
+    Bit3 = Seeker Pod Ammo Upgrade
     """
 
     ALIEN_ARTIFACTS = byte(0x2aa7ae)
@@ -828,6 +845,7 @@ class Memory:
     Bit0 = Saving
     Bit1 = Saved
     Bit2 = End Screen Active
+    // flickers to 0x55 during loads
     """
 
     BOSS_HEALTH_STATIC_COPY = word(0x2f0418)
