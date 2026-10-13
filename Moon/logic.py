@@ -3,6 +3,7 @@ from types import NoneType
 from pycheevos.core.constants import *
 from pycheevos.core.helpers import *
 from pycheevos.core.value import MemoryValue
+from pycheevos.models.achievement import Achievement
 from pycheevos.models.leaderboard import Leaderboard
 
 from memory import Memory
@@ -45,21 +46,41 @@ class SaveData:
     self.NORMALSLOT = normalslot
     self.VETERANSLOT = veteranslot
 
+  def cleared(self):
+    return group(
+      or_next(self.ROOKIESLOT != 0),
+      or_next(self.NORMALSLOT != 0),
+      self.VETERANSLOT != 0
+    )
+  
+  def clearedDifficulty(self, difficulty: int):
+    match difficulty:
+      case 0:
+        return group(self.ROOKIESLOT != 0)
+      case 1:
+        return group(self.NORMALSLOT != 0)
+      case 2:
+        return group(self.VETERANSLOT != 0)
+      case _:
+        raise NameError()
+
   def firstClear(self):
     return group(
-      (and_next(delta(self.ROOKIESLOT) == 0)), or_next(self.ROOKIESLOT != 0),
-      (and_next(delta(self.NORMALSLOT) == 0)), or_next(self.NORMALSLOT != 0),
-      (and_next(delta(self.VETERANSLOT) == 0)), self.VETERANSLOT != 0,
+      or_next(delta(self.ROOKIESLOT) == 0),
+      or_next(delta(self.NORMALSLOT) == 0),
+      delta(self.VETERANSLOT) == 0
     )
   
   def firstClearDifficulty(self, difficulty: int):
     match difficulty:
       case 0:
-        return ((delta(self.ROOKIESLOT) == 0) & (self.ROOKIESLOT != 0))
+        return delta(self.ROOKIESLOT) == 0
       case 1:
-        return ((delta(self.NORMALSLOT) == 0) & (self.NORMALSLOT != 0))
+        return delta(self.NORMALSLOT) == 0
       case 2:
-        return ((delta(self.VETERANSLOT) == 0) & (self.VETERANSLOT != 0))
+        return delta(self.VETERANSLOT) == 0
+      case _:
+        raise NameError()
 
 class EpisodeSaveData:
   EPISODE_00 = SaveData(
@@ -524,53 +545,65 @@ def all_ammo():
     measured(value(0x00) == 6)
   )
 
-def vr_training():
-  return group(
+def vr_training(ach: Achievement):
+  saves = [
+    EpisodeSaveData.VR_1,
+    EpisodeSaveData.VR_2,
+    EpisodeSaveData.VR_3,
+    EpisodeSaveData.VR_4,
+    EpisodeSaveData.VR_5,
+    EpisodeSaveData.VR_6
+  ]
+  ach.add_core(group(
     is_ingame(),
-    enter_end_screen(),
+    (Memory.END_SCREEN != 0x55),
+    (delta(bit1(Memory.END_SCREEN.address)) == 0x00),
+    (bit1(Memory.END_SCREEN.address) == 0x01),
     or_next(Memory.CURRENT_EPISODE == Episode.VR_1),
     or_next(Memory.CURRENT_EPISODE == Episode.VR_2),
     or_next(Memory.CURRENT_EPISODE == Episode.VR_3),
     or_next(Memory.CURRENT_EPISODE == Episode.VR_4),
     or_next(Memory.CURRENT_EPISODE == Episode.VR_5),
     (Memory.CURRENT_EPISODE == Episode.VR_6),
-    or_next(EpisodeSaveData.VR_1.ROOKIESLOT != 0),
-    or_next(EpisodeSaveData.VR_1.NORMALSLOT != 0),
-    and_next(EpisodeSaveData.VR_1.VETERANSLOT != 0),
-    or_next(EpisodeSaveData.VR_2.ROOKIESLOT != 0),
-    or_next(EpisodeSaveData.VR_2.NORMALSLOT != 0),
-    and_next(EpisodeSaveData.VR_2.VETERANSLOT != 0),
-    or_next(EpisodeSaveData.VR_3.ROOKIESLOT != 0),
-    or_next(EpisodeSaveData.VR_3.NORMALSLOT != 0),
-    and_next(EpisodeSaveData.VR_3.VETERANSLOT != 0),
-    or_next(EpisodeSaveData.VR_4.ROOKIESLOT != 0),
-    or_next(EpisodeSaveData.VR_4.NORMALSLOT != 0),
-    and_next(EpisodeSaveData.VR_4.VETERANSLOT != 0),
-    or_next(EpisodeSaveData.VR_5.ROOKIESLOT != 0),
-    or_next(EpisodeSaveData.VR_5.NORMALSLOT != 0),
-    and_next(EpisodeSaveData.VR_5.VETERANSLOT != 0),
-    or_next(EpisodeSaveData.VR_6.ROOKIESLOT != 0),
-    or_next(EpisodeSaveData.VR_6.NORMALSLOT != 0),
-    EpisodeSaveData.VR_6.VETERANSLOT != 0,
-  )
+    EpisodeSaveData.VR_1.cleared(),
+    EpisodeSaveData.VR_2.cleared(),
+    EpisodeSaveData.VR_3.cleared(),
+    EpisodeSaveData.VR_4.cleared(),
+    EpisodeSaveData.VR_5.cleared(),
+    EpisodeSaveData.VR_6.cleared(),
+  ))
+  for save in saves:
+    ach.add_alt(save.firstClear())
 
-def vr_training_veteran():
-  return group(
+def vr_training_veteran(ach: Achievement):
+  saves = [
+    EpisodeSaveData.VR_1,
+    EpisodeSaveData.VR_2,
+    EpisodeSaveData.VR_3,
+    EpisodeSaveData.VR_4,
+    EpisodeSaveData.VR_5,
+    EpisodeSaveData.VR_6
+  ]
+  ach.add_core(group(
     is_ingame(),
-    enter_end_screen(),
+    (Memory.END_SCREEN != 0x55),
+    (delta(bit1(Memory.END_SCREEN.address)) == 0x00),
+    (bit1(Memory.END_SCREEN.address) == 0x01),
     or_next(Memory.CURRENT_EPISODE == Episode.VR_1),
     or_next(Memory.CURRENT_EPISODE == Episode.VR_2),
     or_next(Memory.CURRENT_EPISODE == Episode.VR_3),
     or_next(Memory.CURRENT_EPISODE == Episode.VR_4),
     or_next(Memory.CURRENT_EPISODE == Episode.VR_5),
     (Memory.CURRENT_EPISODE == Episode.VR_6),
-    and_next(EpisodeSaveData.VR_1.VETERANSLOT != 0),
-    and_next(EpisodeSaveData.VR_2.VETERANSLOT != 0),
-    and_next(EpisodeSaveData.VR_3.VETERANSLOT != 0),
-    and_next(EpisodeSaveData.VR_4.VETERANSLOT != 0),
-    and_next(EpisodeSaveData.VR_5.VETERANSLOT != 0),
-    EpisodeSaveData.VR_6.VETERANSLOT != 0,
-  )
+    EpisodeSaveData.VR_1.clearedDifficulty(difficulty=Difficulty.VETERAN),
+    EpisodeSaveData.VR_2.clearedDifficulty(difficulty=Difficulty.VETERAN),
+    EpisodeSaveData.VR_3.clearedDifficulty(difficulty=Difficulty.VETERAN),
+    EpisodeSaveData.VR_4.clearedDifficulty(difficulty=Difficulty.VETERAN),
+    EpisodeSaveData.VR_5.clearedDifficulty(difficulty=Difficulty.VETERAN),
+    EpisodeSaveData.VR_6.clearedDifficulty(difficulty=Difficulty.VETERAN),
+  ))
+  for save in saves:
+    ach.add_alt(save.firstClearDifficulty(difficulty=Difficulty.VETERAN))
 
 def artifacts(episode: int):
   cond = group(

@@ -170,11 +170,11 @@ class MoonSet(AchievementSet):
     
     @achievement(633421)
     def bonus_stages(self, ach: Achievement):
-        ach.add_core(vr_training())
+        vr_training(ach)
     
     @achievement(633422)
     def bonus_stages_veteran(self, ach: Achievement):
-        ach.add_core(vr_training_veteran())
+        vr_training_veteran(ach)
     
     @achievement(633751)
     def artifacts_e01(self, ach: Achievement):
