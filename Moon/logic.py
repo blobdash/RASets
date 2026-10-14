@@ -509,7 +509,7 @@ def all_hp():
     measured_if(adventure_mode()),
     (Memory.CURRENT_EPISODE == Episode.EPISODE_14),
     (string_equals(Memory.CURRENT_AREA_ID, 'a5', 2, endianness='little')),
-    (string_equals(Memory.CURRENT_SUBMAP_ID, '007', 3, endianness='little')),
+    (string_equals(Memory.CURRENT_SUBMAP_ID, '016', 3, endianness='little')),
     add_source(delta(bitcount(Memory.UPGRADES.address))),
     sub_source(delta(bit6(Memory.UPGRADES.address))),
     sub_source(delta(bit7(Memory.UPGRADES.address))),
